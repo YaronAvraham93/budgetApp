@@ -24,10 +24,8 @@ const getSize = (size?: Selects) => {
   }
 };
 const setImage = (src: any) => `
- 
       background-size: cover;
       background-image: url('${src}')
- 
       `;
 
 const SAvatar = styled.div<IAvatarProps>`
