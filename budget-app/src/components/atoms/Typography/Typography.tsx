@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Selects from '../../../containers/enums/index';
+import { Selects } from '../../../containers/enums/index';
 import { ITypographyProps } from '../../../models/index';
 
 const getSize = (size?: Selects) => {
@@ -18,10 +18,13 @@ const getSize = (size?: Selects) => {
 
 const STypographyProps = styled.label<ITypographyProps>`
   ${(props) => getSize(props.size)};
+  ${(props) => `color:${props.color}`};
 `;
 
-const Typography: React.FC<ITypographyProps> = ({ size = Selects.md, children }) => (
-  <STypographyProps size={size}>{children}</STypographyProps>
+const Typography: React.FC<ITypographyProps> = ({ color, size = Selects.md, children }) => (
+  <STypographyProps size={size} color={color}>
+    {children}
+  </STypographyProps>
 );
 
 export default Typography;

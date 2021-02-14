@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Typography from './Typography';
-import Selects from '../../../containers/enums';
+import { Selects } from '../../../containers/enums';
 import { ITypographyProps } from '../../../models/index';
 
 export default {
@@ -22,6 +22,7 @@ Small.args = {
 export const Medium = Template.bind({});
 Medium.args = {
   size: Selects.md,
+  color: 'yellow',
 };
 
 export const Large = Template.bind({});
