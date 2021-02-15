@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IInvestmentProps } from '../../../models/index';
-import Investment from './Investment';
+import { ISummaryProps } from '../../../models/index';
+import Summary from './Summary';
 
 export default {
-  title: 'molecules/Investment',
-  component: Investment,
+  title: 'molecules/Summary',
+  component: Summary,
 } as Meta;
 
-const Template: Story<IInvestmentProps> = (args) => <Investment {...args} />;
+const Template: Story<ISummaryProps> = (args) => <Summary {...args} />;
 export const SInvestment = Template.bind({});
 
 SInvestment.args = {

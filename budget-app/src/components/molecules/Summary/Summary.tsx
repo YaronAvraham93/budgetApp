@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import Icon from '../../atoms/IconImg/Icon';
 import { Selects } from '../../../containers/enums/index';
-import { IInvestmentProps } from '../../../models/index';
+import { ISummaryProps } from '../../../models/index';
 
 const SWrapper = styled.div`
   width: 60%;
@@ -30,7 +30,7 @@ const IconWrapper = styled.div`
   border: 2px solid black;
   justify-content: flex-end;
 `;
-const Investment: React.FC<IInvestmentProps> = ({ subtiteltwo, subtitel, titel, icon, revenue, SinceLastMonth }) => (
+const Summary: React.FC<ISummaryProps> = ({ subtiteltwo, subtitel, titel, icon, revenue, SinceLastMonth }) => (
   <SWrapper>
     {titel}
     <RevenueWrapper>
@@ -55,4 +55,4 @@ const Investment: React.FC<IInvestmentProps> = ({ subtiteltwo, subtitel, titel, 
   </SWrapper>
 );
 
-export default Investment;
+export default Summary;

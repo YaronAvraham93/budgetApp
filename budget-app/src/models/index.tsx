@@ -29,7 +29,7 @@ export interface ICardProps {
   year?: string;
   month?: number;
 }
-export interface IInvestmentProps {
+export interface ISummaryProps {
   icon?: string;
   revenue?: string;
   SinceLastMonth?: string;
