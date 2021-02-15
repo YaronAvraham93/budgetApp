@@ -33,7 +33,7 @@ const CardNumWerapper = styled.div`
   justify-content: center;
 `;
 
-const Card: React.FC<ICardProps> = ({ last4Digits, FirstName, LastName, year, month }) => (
+const CreditCard: React.FC<ICardProps> = ({ last4Digits, FirstName, LastName, year, month }) => (
   <SWrapper>
     <Typography size={Selects.lg} color="white">
       Card
@@ -68,4 +68,4 @@ const Card: React.FC<ICardProps> = ({ last4Digits, FirstName, LastName, year, mo
   </SWrapper>
 );
 
-export default Card;
+export default CreditCard;

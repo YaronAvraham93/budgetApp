@@ -8,6 +8,7 @@ import { ISummaryProps } from '../../../models/index';
 const SWrapper = styled.div`
   width: 60%;
   height: 100%;
+  padding: 15px 25px;
   border: 2px solid black;
 `;
 const RevenueWrapper = styled.div`
@@ -15,7 +16,6 @@ const RevenueWrapper = styled.div`
   flex-direction: column;
   padding-top: 10px;
   width: 42vw;
-  border: 2px solid black;
 `;
 const LastMonthWrapper = styled.div`
   display: flex;
@@ -23,11 +23,9 @@ const LastMonthWrapper = styled.div`
   justify-content: space-evenly;
   justify-content: end;
   padding-top: 10px;
-  border: 2px solid black;
 `;
 const IconWrapper = styled.div`
   display: flex;
-  border: 2px solid black;
   justify-content: flex-end;
 `;
 const Summary: React.FC<ISummaryProps> = ({ subtiteltwo, subtitel, titel, icon, revenue, SinceLastMonth }) => (

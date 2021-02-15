@@ -38,3 +38,9 @@ export interface ISummaryProps {
   subtitel?: string;
   subtiteltwo?: string;
 }
+export interface IUserrofileProps {
+  img?: string;
+  emil?: string;
+  firstName?: string;
+  lastName?: string;
+}

@@ -13,9 +13,9 @@ const getSize = (size?: Selects) => {
       return `  border: 2px solid black
           clip-path: circle(50% at 50% 50%)`;
     case Selects.lg:
-      return ` border: 2px solid black;
+      return ` border: 0.5px solid black;
       padding: 5px;
-      border-radius: 25px;
+      border-radius: 70px;
        `;
     default:
       return ` border: 2px solid black;
@@ -35,7 +35,7 @@ const SAvatar = styled.div<IAvatarProps>`
   ${(props) => `height:${props.height}`};
 `;
 
-const Avatar: React.FC<IAvatarProps> = ({ size = Selects.md, src, height, width }) => (
+const Avatar: React.FC<IAvatarProps> = ({ size, src, height, width }) => (
   <SAvatar size={size} src={src} width={width} height={height} />
 );
 export default Avatar;
