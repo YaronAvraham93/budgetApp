@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Icon from '../../atoms/IconImg/Icon';
 import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
+import { INavbarItem } from '../../../models/index';
 
 const SWrapper = styled.div`
   display: flex;
@@ -13,15 +14,11 @@ const SWrapper = styled.div`
     opacity: 1;
   }
 `;
-export default function SidebarNavItem() {
-  return (
-    <SWrapper>
-      <Icon
-        height="2vh"
-        width="2vw"
-        src="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
-      />
-      <Typography size={Selects.sm}> hello</Typography>
-    </SWrapper>
-  );
-}
+const SidebarNavItem: React.FC<INavbarItem> = ({ text, icon }) => (
+  <SWrapper>
+    <Icon width="15vw" height="15vh" src={icon} />
+    <Typography size={Selects.sm}>{text}</Typography>
+  </SWrapper>
+);
+
+export default SidebarNavItem;

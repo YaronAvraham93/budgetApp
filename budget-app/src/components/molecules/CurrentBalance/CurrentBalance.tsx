@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
+import { ICurrentBalance } from '../../../models/index';
 
 const SWrapper = styled.div`
   display: flex;
@@ -12,11 +13,10 @@ const SWrapper = styled.div`
   width: 26vw;
 `;
 
-export default function CurrentBalance() {
-  return (
-    <SWrapper>
-      <Typography size={Selects.lg}>50,000$ </Typography>
-      <Typography size={Selects.sm}> Current Balance </Typography>
-    </SWrapper>
-  );
-}
+const CurrentBalance: React.FC<ICurrentBalance> = ({ text }) => (
+  <SWrapper>
+    <Typography size={Selects.lg}>{text}</Typography>
+    <Typography size={Selects.sm}>Current Balance</Typography>
+  </SWrapper>
+);
+export default CurrentBalance;

@@ -15,3 +15,10 @@ export interface IIconProps {
   src?: any;
   width?: string;
 }
+export interface INavbarItem {
+  text?: string;
+  icon?: string;
+}
+export interface ICurrentBalance {
+  text?: string;
+}
