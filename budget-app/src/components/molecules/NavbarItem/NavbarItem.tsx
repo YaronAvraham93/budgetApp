@@ -16,7 +16,9 @@ const SWrapper = styled.div`
 `;
 const SidebarNavItem: React.FC<INavbarItem> = ({ text, icon }) => (
   <SWrapper>
-    <Icon width="15vw" height="15vh" src={icon} />
+    <Icon width="7vw" height="7vh" src={icon}>
+      {' '}
+    </Icon>
     <Typography size={Selects.sm}>{text}</Typography>
   </SWrapper>
 );

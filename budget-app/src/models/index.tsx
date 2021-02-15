@@ -22,3 +22,19 @@ export interface INavbarItem {
 export interface ICurrentBalance {
   text?: string;
 }
+export interface ICardProps {
+  last4Digits?: number;
+  FirstName?: string;
+  LastName?: string;
+  year?: string;
+  month?: number;
+}
+export interface IInvestmentProps {
+  icon?: string;
+  revenue?: string;
+  SinceLastMonth?: string;
+  Revenue?: string;
+  titel?: string;
+  subtitel?: string;
+  subtiteltwo?: string;
+}

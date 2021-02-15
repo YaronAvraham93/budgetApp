@@ -12,6 +12,6 @@ export default {
 const Template: Story<INavbarItem> = (args) => <NavbarItem {...args} />;
 export const SNavbarItem = Template.bind({});
 SCurrentBalance.args = {
-  icon: 'http://www.weijiahong2018.com/static/assets/images/avatars/avatar.png',
+  icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
   text: 'Emil',
 };
