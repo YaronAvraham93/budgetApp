@@ -7,7 +7,9 @@ import { INavbarItem } from '../../../models/index';
 
 const SWrapper = styled.div`
   display: flex;
+  width: 10vw;
   align-items: center;
+  justify-content: space-between;
   opacity: 0.6;
 
   &:hover {
@@ -16,7 +18,7 @@ const SWrapper = styled.div`
 `;
 const SidebarNavItem: React.FC<INavbarItem> = ({ text, icon }) => (
   <SWrapper>
-    <Icon width="7vw" height="7vh" src={icon}>
+    <Icon width="3vw" height="3vh" src={icon}>
       {' '}
     </Icon>
     <Typography size={Selects.sm}>{text}</Typography>
