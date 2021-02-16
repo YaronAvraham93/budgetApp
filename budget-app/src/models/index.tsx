@@ -44,3 +44,11 @@ export interface IUserrofileProps {
   firstName?: string;
   lastName?: string;
 }
+export interface IPaymentHistoryProps {
+  icon?: string;
+  titel?: string;
+  hour?: string;
+  date?: string;
+  moneyTransactions?: string;
+  money?: string;
+}
