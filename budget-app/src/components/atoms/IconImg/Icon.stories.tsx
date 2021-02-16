@@ -13,6 +13,6 @@ const Template: Story<IIconProps> = (args) => <Icon {...args} />;
 export const SmallIcon = Template.bind({});
 SmallIcon.args = {
   width: '8vw',
-  hight: '8vh',
+  height: '8vh',
   src: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
 };

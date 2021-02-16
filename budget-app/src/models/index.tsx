@@ -18,9 +18,14 @@ export interface IIconProps {
 export interface INavbarItem {
   text?: string;
   icon?: string;
+  width?: string;
+  height?: string;
 }
-export interface ICurrentBalance {
+export interface ICurrentBalancePops {
+  titel?: string;
   text?: string;
+  width?: string;
+  height?: string;
 }
 export interface ICardProps {
   last4Digits?: number;
@@ -51,4 +56,11 @@ export interface IPaymentHistoryProps {
   date?: string;
   moneyTransactions?: string;
   money?: string;
+}
+export interface ISidebarProps {
+  icon?: string;
+  CurrentBalancetText?: string;
+  CurrentBalancetTitel?: string;
+  width?: string;
+  height?: string;
 }

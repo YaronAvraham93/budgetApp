@@ -5,19 +5,21 @@ import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
 
-const SWrapper = styled.div`
+const SWrapper = styled.div<INavbarItem>`
   display: flex;
-  width: 10vw;
   align-items: center;
   justify-content: space-between;
   opacity: 0.6;
-
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
   &:hover {
     opacity: 1;
+    color: wheat;
   }
 `;
-const SidebarNavItem: React.FC<INavbarItem> = ({ text, icon }) => (
-  <SWrapper>
+
+const NavbarItem: React.FC<INavbarItem> = ({ width, height, text, icon }) => (
+  <SWrapper height={height} width={width}>
     <Icon width="3vw" height="3vh" src={icon}>
       {' '}
     </Icon>
@@ -25,4 +27,4 @@ const SidebarNavItem: React.FC<INavbarItem> = ({ text, icon }) => (
   </SWrapper>
 );
 
-export default SidebarNavItem;
+export default NavbarItem;
