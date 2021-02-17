@@ -5,14 +5,14 @@ import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 
-const SWrapper = styled.div`
+const SWrapper = styled.div<ICardProps>`
   background-image: url(${img});
   background-size: cover;
   background-position: center;
   padding: 1rem;
   border-radius: 1rem;
-  width: 100%;
-  height: 100%;
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
   max-width: 30rem;
   max-height: 18rem;
   display: grid;
@@ -33,8 +33,8 @@ const CardNumWerapper = styled.div`
   justify-content: center;
 `;
 
-const CreditCard: React.FC<ICardProps> = ({ last4Digits, FirstName, LastName, year, month }) => (
-  <SWrapper>
+const CreditCard: React.FC<ICardProps> = ({ height, width, last4Digits, FirstName, LastName, year, month }) => (
+  <SWrapper height={height} width={width}>
     <Typography size={Selects.lg} color="white">
       Card
     </Typography>
@@ -62,6 +62,7 @@ const CreditCard: React.FC<ICardProps> = ({ last4Digits, FirstName, LastName, ye
 
       <Typography size={Selects.sm} color="white">
         {month}
+        /
         {year}
       </Typography>
     </DateWrapper>

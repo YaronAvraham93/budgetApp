@@ -33,6 +33,8 @@ export interface ICardProps {
   LastName?: string;
   year?: string;
   month?: number;
+  width?: string;
+  height?: string;
 }
 export interface ISummaryProps {
   icon?: string;
@@ -42,6 +44,8 @@ export interface ISummaryProps {
   titel?: string;
   subtitel?: string;
   subtiteltwo?: string;
+  width?: string;
+  height?: string;
 }
 export interface IUserrofileProps {
   img?: string;
@@ -73,6 +77,10 @@ export interface IUserInfroProps {
   emil?: string;
   firstName?: string;
   lastName?: string;
+  width?: string;
+  height?: string;
+}
+export interface IMainProps {
   width?: string;
   height?: string;
 }

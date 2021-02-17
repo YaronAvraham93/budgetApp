@@ -16,4 +16,6 @@ SCreditCard.args = {
   LastName: 'Avraham',
   year: '/21',
   month: 12,
+  width: '100vw',
+  height: '100vh',
 };

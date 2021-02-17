@@ -56,7 +56,7 @@ const options = {
   // }
 };
 const Container = styled.div`
-  width: 60vw;
+  width: 95vw;
   height: 100vh;
 `;
 const Activity: React.FC = () => (

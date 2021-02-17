@@ -18,4 +18,6 @@ SInvestment.args = {
   titel: 'INVENSMENT',
   subtitel: 'Revnue',
   subtiteltwo: 'Since last month',
+  width: '60vw',
+  height: '100vh',
 };

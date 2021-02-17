@@ -5,10 +5,9 @@ import Icon from '../../atoms/IconImg/Icon';
 import { Selects } from '../../../containers/enums/index';
 import { ISummaryProps } from '../../../models/index';
 
-const Container = styled.div`
-  width: 60vw;
-  height: 100vh;
-  /* padding: 15px 25px; */
+const Container = styled.div<ISummaryProps>`
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 2fr;
@@ -20,20 +19,30 @@ const RevenueWrapper = styled.div`
   padding-left: 25px;
 `;
 const LastMonthWrapper = styled.div`
-  width: 42vw;
+  width: 25vw;
   padding-left: 25px;
 `;
 const IconWrapper = styled.div`
   grid-column: 2;
   grid-row: 3/4;
+  padding: 0;
 `;
 const TitelWrapper = styled.div`
   grid-column: 1/3;
   padding-left: 25px;
   padding-top: 10px;
 `;
-const Summary: React.FC<ISummaryProps> = ({ subtiteltwo, subtitel, titel, icon, revenue, SinceLastMonth }) => (
-  <Container>
+const Summary: React.FC<ISummaryProps> = ({
+  height,
+  width,
+  subtiteltwo,
+  subtitel,
+  titel,
+  icon,
+  revenue,
+  SinceLastMonth,
+}) => (
+  <Container height={height} width={width}>
     <TitelWrapper>
       <Typography size={Selects.lg}>{titel}</Typography>
     </TitelWrapper>
@@ -52,7 +61,7 @@ const Summary: React.FC<ISummaryProps> = ({ subtiteltwo, subtitel, titel, icon, 
       </Typography>
     </LastMonthWrapper>
     <IconWrapper>
-      <Icon width="11vw" height="11vh" src={icon}>
+      <Icon width="7vw" height="7vh" src={icon}>
         {' '}
       </Icon>
     </IconWrapper>
