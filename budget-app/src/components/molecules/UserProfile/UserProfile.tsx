@@ -5,21 +5,21 @@ import { Selects } from '../../../containers/enums/index';
 import { IUserrofileProps } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
 
-const SWrapper = styled.div`
+const SWrapper = styled.div<IUserrofileProps>`
   display: flex;
   flex-direction: column;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color: #f0e5c6;
+  background-color: #fdf3e7;
   border-radius: 1rem;
-  height: 26vh;
-  width: 26vw;
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
 `;
 
-const UserProfile: React.FC<IUserrofileProps> = ({ img, emil, firstName, lastName }) => (
-  <SWrapper>
+const UserProfile: React.FC<IUserrofileProps> = ({ width, height, img, emil, firstName, lastName }) => (
+  <SWrapper height={height} width={width}>
     <Avatar height="8vh" width="8vw" src={img} size={Selects.lg}>
       {' '}
     </Avatar>
@@ -27,7 +27,7 @@ const UserProfile: React.FC<IUserrofileProps> = ({ img, emil, firstName, lastNam
       {firstName}
       {lastName}
     </Typography>
-    <Typography size={Selects.sm} color="#bdbfbf">
+    <Typography size={Selects.xs} color="#bdbfbf">
       {emil}
     </Typography>
   </SWrapper>

@@ -48,6 +48,8 @@ export interface IUserrofileProps {
   emil?: string;
   firstName?: string;
   lastName?: string;
+  width?: string;
+  height?: string;
 }
 export interface IPaymentHistoryProps {
   icon?: string;
@@ -56,6 +58,8 @@ export interface IPaymentHistoryProps {
   date?: string;
   moneyTransactions?: string;
   money?: string;
+  width?: string;
+  height?: string;
 }
 export interface ISidebarProps {
   icon?: string;
@@ -63,4 +67,18 @@ export interface ISidebarProps {
   CurrentBalancetTitel?: string;
   width?: string;
   height?: string;
+}
+export interface IUserInfroProps {
+  img?: string;
+  emil?: string;
+  firstName?: string;
+  lastName?: string;
+  width?: string;
+  height?: string;
+  icon?: string;
+  titel?: string;
+  hour?: string;
+  date?: string;
+  moneyTransactions?: string;
+  money?: string;
 }

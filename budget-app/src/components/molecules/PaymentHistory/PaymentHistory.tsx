@@ -5,9 +5,10 @@ import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
 import { IPaymentHistoryProps } from '../../../models/index';
 
-const Container = styled.div`
+const Container = styled.div<IPaymentHistoryProps>`
   display: grid;
-  width: 45vw;
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
   opacity: 0.6;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 2fr 1fr;
@@ -15,25 +16,34 @@ const Container = styled.div`
 `;
 const IconWrapper = styled.div`
   grid-row: 2/4;
+  padding-top: 25px;
 `;
 const TimenWrapper = styled.div`
   padding-top: 2px;
 `;
 const TitelWrapper = styled.div`
   grid-column: 1/4;
-  padding-left: 45px;
+  padding-left: 80px;
 `;
 const SWrapper = styled.div`
   padding-top: 20px;
 `;
 const MoneyWrapper = styled.div`
-  padding-left: 24px;
   padding-top: 23px;
 `;
-const PaymentHistory: React.FC<IPaymentHistoryProps> = ({ money, moneyTransactions, date, hour, titel, icon }) => (
-  <Container>
+const PaymentHistory: React.FC<IPaymentHistoryProps> = ({
+  height,
+  width,
+  money,
+  moneyTransactions,
+  date,
+  hour,
+  titel,
+  icon,
+}) => (
+  <Container width={width} height={height}>
     <TitelWrapper>
-      <Typography size={Selects.lg}>{titel}</Typography>
+      <Typography size={Selects.md}>{titel}</Typography>
     </TitelWrapper>
     <IconWrapper>
       <Icon width="5vw" height="5vh" src={icon}>
@@ -47,7 +57,7 @@ const PaymentHistory: React.FC<IPaymentHistoryProps> = ({ money, moneyTransactio
       <Typography size={Selects.sm}>{money}</Typography>
     </MoneyWrapper>
     <TimenWrapper>
-      <Typography size={Selects.sm}>
+      <Typography size={Selects.sm} color="#d1c0ae">
         {date}
         {hour}
       </Typography>

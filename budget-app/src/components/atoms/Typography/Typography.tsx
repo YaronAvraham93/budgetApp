@@ -6,7 +6,7 @@ import { ITypographyProps } from '../../../models/index';
 const getSize = (size?: Selects) => {
   switch (size) {
     case Selects.xs:
-      return `font-size: 8px `;
+      return `font-size: 10px `;
     case Selects.sm:
       return `font-size: 16px `;
     case Selects.md:
