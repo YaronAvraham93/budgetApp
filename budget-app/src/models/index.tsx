@@ -75,10 +75,4 @@ export interface IUserInfroProps {
   lastName?: string;
   width?: string;
   height?: string;
-  icon?: string;
-  titel?: string;
-  hour?: string;
-  date?: string;
-  moneyTransactions?: string;
-  money?: string;
 }

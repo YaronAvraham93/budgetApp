@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import UserProfile from '../../molecules/UserProfile/UserProfile';
 import PaymentHistory from '../../molecules/PaymentHistory/PaymentHistory';
 import { IUserInfroProps } from '../../../models/index';
+import List from './List';
 
 const Container = styled.div<IUserInfroProps>`
   display: flex;
@@ -19,35 +20,25 @@ const UserWrapper = styled.div`
 `;
 const PaymentUI = styled.div`
   padding-top: 15px;
+  overflow-y: overlay;
 `;
-const UserInfro: React.FC<IUserInfroProps> = ({
-  height,
-  width,
-  firstName,
-  lastName,
-  emil,
-  img,
-  icon,
-  titel,
-  hour,
-  date,
-  money,
-  moneyTransactions,
-}) => (
+const UserInfro: React.FC<IUserInfroProps> = ({ height, width, firstName, lastName, emil, img }) => (
   <Container height={height} width={width}>
     <UserWrapper>
       <UserProfile width="15vw" height="24vh" img={img} firstName={firstName} lastName={lastName} emil={emil} />
     </UserWrapper>
     <PaymentUI>
-      <PaymentHistory
-        width="26vw"
-        icon={icon}
-        titel={titel}
-        hour={hour}
-        date={date}
-        moneyTransactions={moneyTransactions}
-        money={money}
-      />
+      {List.map((item) => (
+        <PaymentHistory
+          width="26vw"
+          icon={item.icon}
+          titel={item.titel}
+          hour={item.hour}
+          date={item.date}
+          moneyTransactions={item.moneyTransactions}
+          money={item.money}
+        />
+      ))}
     </PaymentUI>
   </Container>
 );

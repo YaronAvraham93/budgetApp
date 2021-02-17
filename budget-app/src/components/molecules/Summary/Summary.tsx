@@ -6,8 +6,8 @@ import { Selects } from '../../../containers/enums/index';
 import { ISummaryProps } from '../../../models/index';
 
 const Container = styled.div`
-  width: 60%;
-  height: 100%;
+  width: 60vw;
+  height: 100vh;
   /* padding: 15px 25px; */
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
