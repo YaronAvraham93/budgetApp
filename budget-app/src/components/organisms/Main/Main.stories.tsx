@@ -11,7 +11,7 @@ export default {
 const Template: Story<IMainProps> = (args) => <Main {...args} />;
 export const SMain = Template.bind({});
 
-Main.args = {
+SMain.args = {
   width: '100vw',
   height: '100vh',
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
+import { IIncomeProps } from '../../../models/index';
 
 const series = [
   {
@@ -37,13 +38,13 @@ const options = {
   },
 };
 
-const Container = styled.div`
-  width: 52vw;
-  height: 67vh;
+const Container = styled.div<IIncomeProps>`
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
 `;
 
-const Income: React.FC = () => (
-  <Container>
+const Income: React.FC<IIncomeProps> = ({ height, width }) => (
+  <Container height={height} width={width}>
     <ReactApexChart options={options} series={series} type="line" height={350} />
   </Container>
 );

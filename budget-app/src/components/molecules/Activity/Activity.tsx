@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
+import { IActivityProps } from '../../../models/index';
 
 const series = [
   {
@@ -55,12 +56,14 @@ const options = {
   //   }
   // }
 };
-const Container = styled.div`
+const Container = styled.div<IActivityProps>`
   width: 95vw;
-  height: 100vh;
+  height: 75vh;
+  ${(props) => `width:${props.width}`};
+  ${(props) => `height:${props.height}`};
 `;
-const Activity: React.FC = () => (
-  <Container>
+const Activity: React.FC<IActivityProps> = ({ height, width }) => (
+  <Container height={height} width={width}>
     <ReactApexChart options={options} series={series} type="bar" height={350} />
   </Container>
 );

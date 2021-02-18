@@ -5,7 +5,7 @@ import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 
-const SWrapper = styled.div<ICardProps>`
+const Container = styled.div<ICardProps>`
   background-image: url(${img});
   background-size: cover;
   background-position: center;
@@ -13,10 +13,12 @@ const SWrapper = styled.div<ICardProps>`
   border-radius: 1rem;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
-  max-width: 30rem;
-  max-height: 18rem;
   display: grid;
   grid-template-rows: 3fr 2fr 1fr;
+  @media (max-width: 768px) {
+    width: 38vw;
+    height: 27vh;
+  }
 `;
 const FullaNmeWrapper = styled.div`
   display: flex;
@@ -34,7 +36,7 @@ const CardNumWerapper = styled.div`
 `;
 
 const CreditCard: React.FC<ICardProps> = ({ height, width, last4Digits, FirstName, LastName, year, month }) => (
-  <SWrapper height={height} width={width}>
+  <Container height={height} width={width}>
     <Typography size={Selects.lg} color="white">
       Card
     </Typography>
@@ -66,7 +68,7 @@ const CreditCard: React.FC<ICardProps> = ({ height, width, last4Digits, FirstNam
         {year}
       </Typography>
     </DateWrapper>
-  </SWrapper>
+  </Container>
 );
 
 export default CreditCard;
