@@ -14,5 +14,6 @@ SNavbarItem.args = {
   height: '10vh',
   width: '13vw',
   icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
-  text: 'Emil',
+  titel: 'Emil',
+  route: '/',
 };

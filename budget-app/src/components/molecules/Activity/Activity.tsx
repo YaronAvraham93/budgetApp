@@ -59,6 +59,7 @@ const options = {
 const Container = styled.div<IActivityProps>`
   width: 95vw;
   height: 75vh;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
 `;

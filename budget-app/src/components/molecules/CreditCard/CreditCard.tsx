@@ -11,10 +11,13 @@ const Container = styled.div<ICardProps>`
   background-position: center;
   padding: 1rem;
   border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   display: grid;
-  grid-template-rows: 3fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
   @media (max-width: 768px) {
     width: 38vw;
     height: 27vh;

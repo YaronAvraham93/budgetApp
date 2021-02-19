@@ -16,8 +16,9 @@ export interface IIconProps {
   width?: string;
 }
 export interface INavbarItem {
-  text?: string;
+  titel?: string;
   icon?: string;
+  route?: string;
   width?: string;
   height?: string;
 }
@@ -81,8 +82,20 @@ export interface IUserInfroProps {
   height?: string;
 }
 export interface IMainProps {
+  icon?: string;
+  revenue?: string;
+  SinceLastMonth?: string;
+  Revenue?: string;
+  titel?: string;
+  subtitel?: string;
+  subtiteltwo?: string;
   width?: string;
   height?: string;
+  last4Digits?: number;
+  FirstName?: string;
+  LastName?: string;
+  year?: string;
+  month?: number;
 }
 export interface IIncomeProps {
   width?: string;

@@ -14,6 +14,12 @@ const Container = styled.div<IUserInfroProps>`
   margin-left: 25px;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
+  @media (max-width: 768px) {
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const UserWrapper = styled.div`
   padding-top: 50px;
@@ -25,12 +31,12 @@ const PaymentUI = styled.div`
 const UserInfro: React.FC<IUserInfroProps> = ({ height, width, firstName, lastName, emil, img }) => (
   <Container height={height} width={width}>
     <UserWrapper>
-      <UserProfile width="15vw" height="24vh" img={img} firstName={firstName} lastName={lastName} emil={emil} />
+      <UserProfile width="12vw" height="20vh" img={img} firstName={firstName} lastName={lastName} emil={emil} />
     </UserWrapper>
     <PaymentUI>
       {List.map((item) => (
         <PaymentHistory
-          width="26vw"
+          width="16vw"
           icon={item.icon}
           titel={item.titel}
           hour={item.hour}

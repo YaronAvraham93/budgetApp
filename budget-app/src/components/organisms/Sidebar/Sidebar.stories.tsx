@@ -16,5 +16,4 @@ SSidebar.args = {
   height: '94vh',
   CurrentBalancetText: '20,000$',
   CurrentBalancetTitel: 'Current Balance',
-  icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
 };

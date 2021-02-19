@@ -18,12 +18,12 @@ const SWrapper = styled.div<INavbarItem>`
   }
 `;
 
-const NavbarItem: React.FC<INavbarItem> = ({ width, height, text, icon }) => (
-  <SWrapper height={height} width={width}>
+const NavbarItem: React.FC<INavbarItem> = ({ width, height, titel, icon, route }) => (
+  <SWrapper height={height} width={width} route={route}>
     <Icon width="3vw" height="3vh" src={icon}>
       {' '}
     </Icon>
-    <Typography size={Selects.sm}>{text}</Typography>
+    <Typography size={Selects.sm}>{titel}</Typography>
   </SWrapper>
 );
 

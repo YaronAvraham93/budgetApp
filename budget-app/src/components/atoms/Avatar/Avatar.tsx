@@ -13,9 +13,9 @@ const getSize = (size?: Selects) => {
       return `  border: 2px solid black
           clip-path: circle(50% at 50% 50%)`;
     case Selects.lg:
-      return ` border: 0.5px solid black;
-      padding: 5px;
-      border-radius: 70px;
+      return `width: 70px;
+      height:70px;
+      border-radius:50px;
        `;
     default:
       return ` border: 2px solid black;

@@ -6,10 +6,10 @@ import UserInfro from '../organisms/UserInfro/UserInfro';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.2fr 0.99fr 0.2fr;
   @media (max-width: 768px) {
     width: 88vw;
-    height: 20vh;
+    height: 100vh;
   }
 `;
 const SidebarWapper = styled.div`
@@ -19,15 +19,31 @@ const Page: React.FC = () => (
   <Container>
     <SidebarWapper>
       <Sidebar
-        width="20vw"
+        width="15vw"
         height="100vh"
         icon="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
         CurrentBalancetTitel="Current Balance"
         CurrentBalancetText="20,000$"
       />
     </SidebarWapper>
-    <Main />
+    <Main
+      width="15vw"
+      height="13vh"
+      month={12}
+      year="/21"
+      LastName="Avraham"
+      FirstName="Yaron"
+      last4Digits={5555}
+      subtiteltwo="Since last month"
+      subtitel="Revnue"
+      titel="INVENSMENT"
+      SinceLastMonth="+5.0%"
+      revenue="40,000$"
+      icon="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
+    />
     <UserInfro
+      width="15vw"
+      height="111vh"
       firstName="Yaron"
       lastName="Avraham"
       emil="yaronavraham600@gmail.com"

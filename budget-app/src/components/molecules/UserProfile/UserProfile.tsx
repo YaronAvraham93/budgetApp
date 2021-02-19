@@ -16,6 +16,12 @@ const SWrapper = styled.div<IUserrofileProps>`
   border-radius: 1rem;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
+  @media (max-width: 768px) {
+    width: 20vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const UserProfile: React.FC<IUserrofileProps> = ({ width, height, img, emil, firstName, lastName }) => (
@@ -23,7 +29,7 @@ const UserProfile: React.FC<IUserrofileProps> = ({ width, height, img, emil, fir
     <Avatar height="8vh" width="8vw" src={img} size={Selects.lg}>
       {' '}
     </Avatar>
-    <Typography size={Selects.md}>
+    <Typography size={Selects.sm}>
       {firstName}
       {lastName}
     </Typography>

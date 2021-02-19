@@ -4,7 +4,7 @@ import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
 import { ICurrentBalancePops } from '../../../models/index';
 
-const SWrapper = styled.div<ICurrentBalancePops>`
+const Container = styled.div<ICurrentBalancePops>`
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   display: flex;
@@ -15,16 +15,20 @@ const SWrapper = styled.div<ICurrentBalancePops>`
   opacity: 0.9;
   background-color: #5142a7;
   border-radius: 1rem;
+  @media (max-width: 768px) {
+    width: 21vw;
+    height: 28vh;
+  }
 `;
 
 const CurrentBalance: React.FC<ICurrentBalancePops> = ({ width, height, text, titel }) => (
-  <SWrapper width={width} height={height}>
+  <Container width={width} height={height}>
     <Typography size={Selects.lg} color="white">
       {text}
     </Typography>
     <Typography size={Selects.sm} color="white">
       {titel}
     </Typography>
-  </SWrapper>
+  </Container>
 );
 export default CurrentBalance;

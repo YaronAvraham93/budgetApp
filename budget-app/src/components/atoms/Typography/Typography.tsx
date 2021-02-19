@@ -21,6 +21,10 @@ const getSize = (size?: Selects) => {
 const STypographyProps = styled.label<ITypographyProps>`
   ${(props) => getSize(props.size)};
   ${(props) => `color:${props.color}`};
+  @media (max-width: 768px) {
+    width: 16vw;
+    height: 10vh;
+  }
 `;
 
 const Typography: React.FC<ITypographyProps> = ({ color, size = Selects.md, children }) => (

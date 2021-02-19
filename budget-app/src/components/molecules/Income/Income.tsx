@@ -24,7 +24,7 @@ const options = {
     curve: 'straight',
   },
   title: {
-    text: 'Product Trends by Month',
+    text: '',
     align: 'left',
   },
   grid: {
@@ -41,11 +41,12 @@ const options = {
 const Container = styled.div<IIncomeProps>`
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 const Income: React.FC<IIncomeProps> = ({ height, width }) => (
   <Container height={height} width={width}>
-    <ReactApexChart options={options} series={series} type="line" height={350} />
+    <ReactApexChart options={options} series={series} type="line" height={250} />
   </Container>
 );
 export default Income;

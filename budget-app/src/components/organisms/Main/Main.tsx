@@ -8,7 +8,7 @@ import { IMainProps } from '../../../models/index';
 
 const Container = styled.div<IMainProps>`
   display: grid;
-  grid-template-columns: 0fr 0.5fr;
+  grid-template-rows: 1fr 1fr;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   @media (max-width: 768px) {
@@ -24,53 +24,67 @@ const ActivviyWapper = styled.div`
 const CWapper = styled.div`
   height: 44vh;
   width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const SWapper = styled.div`
   width: 0;
 `;
-const S2Wapper = styled.div`
-  width: 0;
-`;
-const Main: React.FC<IMainProps> = ({ height, width }) => (
+const Main: React.FC<IMainProps> = ({
+  height,
+  width,
+  subtiteltwo,
+  subtitel,
+  titel,
+  SinceLastMonth,
+  revenue,
+  icon,
+  last4Digits,
+  FirstName,
+  LastName,
+  year,
+  month,
+}) => (
   <Container height={height} width={width}>
     <CWapper>
       <CreaditCard
-        height="15vw"
-        width="34vw"
-        last4Digits={8998}
-        FirstName="Yaron"
-        LastName="Avraham"
-        month={12}
-        year="21"
+        height="14vw"
+        width="26vw"
+        last4Digits={last4Digits}
+        FirstName={FirstName}
+        LastName={LastName}
+        month={month}
+        year={year}
       />
     </CWapper>
-    <Income width="37vw" height="65vh" />
+    <Income width="25vw" height="20vh" />
     <SWapper>
       <Summary
-        height="30vh"
-        width="45vw"
-        titel="Invensmnet"
-        subtitel="Revnue"
-        revenue="40,000$"
-        SinceLastMonth="+5.0%"
-        subtiteltwo="Since last month"
-        icon="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
+        height="23vh"
+        width="26vw"
+        titel={titel}
+        subtitel={subtitel}
+        revenue={revenue}
+        SinceLastMonth={SinceLastMonth}
+        subtiteltwo={subtiteltwo}
+        icon={icon}
       />
     </SWapper>
-    <S2Wapper>
+    <SWapper>
       <Summary
-        height="30vh"
-        width="45vw"
-        titel="Sales"
-        subtitel="Revnue"
-        revenue="60,000$"
-        SinceLastMonth="-3.1%"
-        subtiteltwo="Since last month"
-        icon="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
+        height="23vh"
+        width="26vw"
+        titel={titel}
+        subtitel={subtitel}
+        revenue={revenue}
+        SinceLastMonth={SinceLastMonth}
+        subtiteltwo={subtiteltwo}
+        icon={icon}
       />
-    </S2Wapper>
+    </SWapper>
     <ActivviyWapper>
-      <Activity height="75vh" width="75vw" />
+      <Activity height="5vh" width="60vw" />
     </ActivviyWapper>
   </Container>
 );

@@ -10,9 +10,11 @@ const Container = styled.div<IPaymentHistoryProps>`
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   opacity: 0.6;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 2fr 1fr;
-  /* grid-row-gap: 24px */
+  grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 768px) {
+    width: 18vw;
+    height: 17vh;
+  }
 `;
 const IconWrapper = styled.div`
   grid-row: 2/4;
@@ -51,13 +53,13 @@ const PaymentHistory: React.FC<IPaymentHistoryProps> = ({
       </Icon>
     </IconWrapper>
     <SWrapper>
-      <Typography size={Selects.sm}>{moneyTransactions}</Typography>
+      <Typography size={Selects.xs}>{moneyTransactions}</Typography>
     </SWrapper>
     <MoneyWrapper>
       <Typography size={Selects.sm}>{money}</Typography>
     </MoneyWrapper>
     <TimenWrapper>
-      <Typography size={Selects.sm} color="#d1c0ae">
+      <Typography size={Selects.xs} color="#d1c0ae">
         {date}
         {hour}
       </Typography>
