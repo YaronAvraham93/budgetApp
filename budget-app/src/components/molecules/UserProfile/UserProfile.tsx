@@ -14,6 +14,7 @@ const SWrapper = styled.div<IUserrofileProps>`
   opacity: 0.9;
   background-color: #fdf3e7;
   border-radius: 1rem;
+  margin-bottom: 5px;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   @media (max-width: 768px) {
@@ -26,7 +27,7 @@ const SWrapper = styled.div<IUserrofileProps>`
 
 const UserProfile: React.FC<IUserrofileProps> = ({ width, height, img, emil, firstName, lastName }) => (
   <SWrapper height={height} width={width}>
-    <Avatar height="8vh" width="8vw" src={img} size={Selects.lg}>
+    <Avatar height="15vh" width="7vw" src={img} size={Selects.lg}>
       {' '}
     </Avatar>
     <Typography size={Selects.sm}>

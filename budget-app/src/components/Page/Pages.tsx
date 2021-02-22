@@ -20,7 +20,7 @@ const Page: React.FC = () => (
     <SidebarWapper>
       <Sidebar
         width="15vw"
-        height="100vh"
+        height="140vh"
         icon="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
         CurrentBalancetTitel="Current Balance"
         CurrentBalancetText="20,000$"
@@ -43,7 +43,7 @@ const Page: React.FC = () => (
     />
     <UserInfro
       width="15vw"
-      height="111vh"
+      height="140vh"
       firstName="Yaron"
       lastName="Avraham"
       emil="yaronavraham600@gmail.com"

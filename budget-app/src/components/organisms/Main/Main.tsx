@@ -7,8 +7,9 @@ import Summary from '../../molecules/Summary/Summary';
 import { IMainProps } from '../../../models/index';
 
 const Container = styled.div<IMainProps>`
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: block;
+  width: 66vw;
+  height: 120vh;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   @media (max-width: 768px) {
@@ -17,19 +18,24 @@ const Container = styled.div<IMainProps>`
   }
 `;
 const ActivviyWapper = styled.div`
-  grid-column: 1/3;
-  width: 0;
-  height: 62vh;
+  width: 68vw;
+  display: flex;
+  justify-content: center;
 `;
 const CWapper = styled.div`
   height: 44vh;
-  width: 40vw;
+  width: 68vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 15px;
+  justify-content: space-around;
+  flex-direction: row;
 `;
 const SWapper = styled.div`
-  width: 0;
+  width: 69vw;
+  height: 30vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
 `;
 const Main: React.FC<IMainProps> = ({
   height,
@@ -50,15 +56,16 @@ const Main: React.FC<IMainProps> = ({
     <CWapper>
       <CreaditCard
         height="14vw"
-        width="26vw"
+        width="23vw"
         last4Digits={last4Digits}
         FirstName={FirstName}
         LastName={LastName}
         month={month}
         year={year}
       />
+
+      <Income width="25vw" height="19vw" />
     </CWapper>
-    <Income width="25vw" height="20vh" />
     <SWapper>
       <Summary
         height="23vh"
@@ -70,8 +77,6 @@ const Main: React.FC<IMainProps> = ({
         subtiteltwo={subtiteltwo}
         icon={icon}
       />
-    </SWapper>
-    <SWapper>
       <Summary
         height="23vh"
         width="26vw"
@@ -84,7 +89,7 @@ const Main: React.FC<IMainProps> = ({
       />
     </SWapper>
     <ActivviyWapper>
-      <Activity height="5vh" width="60vw" />
+      <Activity height="60vh" width="60vw" />
     </ActivviyWapper>
   </Container>
 );

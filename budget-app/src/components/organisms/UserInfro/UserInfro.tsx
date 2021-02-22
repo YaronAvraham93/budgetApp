@@ -31,7 +31,7 @@ const PaymentUI = styled.div`
 const UserInfro: React.FC<IUserInfroProps> = ({ height, width, firstName, lastName, emil, img }) => (
   <Container height={height} width={width}>
     <UserWrapper>
-      <UserProfile width="12vw" height="20vh" img={img} firstName={firstName} lastName={lastName} emil={emil} />
+      <UserProfile width="12vw" height="22vh" img={img} firstName={firstName} lastName={lastName} emil={emil} />
     </UserWrapper>
     <PaymentUI>
       {List.map((item) => (

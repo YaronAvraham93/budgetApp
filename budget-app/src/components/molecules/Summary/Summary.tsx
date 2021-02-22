@@ -9,6 +9,9 @@ const Container = styled.div<ISummaryProps>`
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   display: grid;
+  padding-left: 15px;
+  padding-top: 10px;
+  border-radius: 25px;
   grid-template-columns: 1fr 1fr;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;

@@ -22,6 +22,10 @@ const options = {
     type: 'bar',
     height: 350,
   },
+  title: {
+    text: 'Activity',
+    align: 'left',
+  },
   plotOptions: {
     bar: {
       horizontal: false,
@@ -57,9 +61,8 @@ const options = {
   // }
 };
 const Container = styled.div<IActivityProps>`
-  width: 95vw;
-  height: 75vh;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 25px;
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
 `;

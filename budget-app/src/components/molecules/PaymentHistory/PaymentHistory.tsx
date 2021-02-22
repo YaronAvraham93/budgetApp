@@ -10,6 +10,7 @@ const Container = styled.div<IPaymentHistoryProps>`
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   opacity: 0.6;
+  border-radius: 25px;
   grid-template-columns: 1fr 1fr 1fr;
   @media (max-width: 768px) {
     width: 18vw;
@@ -18,14 +19,17 @@ const Container = styled.div<IPaymentHistoryProps>`
 `;
 const IconWrapper = styled.div`
   grid-row: 2/4;
-  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const TimenWrapper = styled.div`
   padding-top: 2px;
 `;
 const TitelWrapper = styled.div`
   grid-column: 1/4;
-  padding-left: 80px;
+  display: flex;
+  justify-content: center;
 `;
 const SWrapper = styled.div`
   padding-top: 20px;
@@ -48,7 +52,7 @@ const PaymentHistory: React.FC<IPaymentHistoryProps> = ({
       <Typography size={Selects.md}>{titel}</Typography>
     </TitelWrapper>
     <IconWrapper>
-      <Icon width="5vw" height="5vh" src={icon}>
+      <Icon width="3vw" height="3vh" src={icon}>
         {' '}
       </Icon>
     </IconWrapper>
