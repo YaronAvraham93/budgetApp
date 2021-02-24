@@ -44,9 +44,9 @@ const Container = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
-const Income: React.FC = () => (
+const IncomeChart: React.FC = () => (
   <Container>
     <ReactApexChart options={options} series={series} type="line" height={235} />
   </Container>
 );
-export default Income;
+export default IncomeChart;

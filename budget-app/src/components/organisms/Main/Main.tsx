@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Activity from '../../molecules/Activity/ActivitesChart';
 import CreaditCard from '../../molecules/CreditCard/CreditCard';
-import Income from '../../molecules/Income/Income';
+import Income from '../../molecules/Income/IncomeChart';
 import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
 import { IMainProps } from '../../../models/index';
 
