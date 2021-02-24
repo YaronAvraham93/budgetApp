@@ -5,26 +5,25 @@ import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
 
-const SWrapper = styled.div<INavbarItem>`
+const Container = styled.div<INavbarItem>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   opacity: 0.6;
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 8vh;
+  width: 12vw;
   &:hover {
     opacity: 1;
     color: wheat;
   }
 `;
 
-const NavbarItem: React.FC<INavbarItem> = ({ width, height, titel, icon, route }) => (
-  <SWrapper height={height} width={width} route={route}>
-    <Icon width="3vw" height="3vh" src={icon}>
-      {' '}
-    </Icon>
+const NavbarItem: React.FC<INavbarItem> = ({ titel, icon, route }) => (
+  <Container route={route}>
+    <Icon width="3vw" height="3vh" src={icon} />
+
     <Typography size={Selects.sm}>{titel}</Typography>
-  </SWrapper>
+  </Container>
 );
 
 export default NavbarItem;

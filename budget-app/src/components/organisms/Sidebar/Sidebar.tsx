@@ -27,9 +27,6 @@ const NavbarUl = styled.ul`
   display: grid;
   grid-template-rows: 1fr 1fr;
 `;
-// const NavbarLi = styled.il`
-//   padding-top: 20px;
-// `;
 
 const Sidebar: React.FC<ISidebarProps> = ({ height, width, CurrentBalancetTitel, CurrentBalancetText }) => (
   <Container width={width} height={height}>
@@ -41,9 +38,7 @@ const Sidebar: React.FC<ISidebarProps> = ({ height, width, CurrentBalancetTitel,
         <Typography>{item.label}</Typography>
       ))}
       {SidebarList.map((item) =>
-        item.list.map((i) => (
-          <NavbarItem height="8vh" width="12vw" icon={i.icon} titel={i.titel} route={i.rout} key={i.id} />
-        ))
+        item.list.map((i) => <NavbarItem icon={i.icon} titel={i.titel} route={i.rout} key={i.id} />)
       )}
     </NavbarUl>
   </Container>

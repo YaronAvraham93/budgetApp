@@ -19,8 +19,6 @@ export interface INavbarItem {
   titel?: string;
   icon?: string;
   route?: string;
-  width?: string;
-  height?: string;
 }
 export interface ICurrentBalancePops {
   titel?: string;
