@@ -25,8 +25,6 @@ export interface INavbarItem {
 export interface ICurrentBalancePops {
   titel?: string;
   text?: string;
-  width?: string;
-  height?: string;
 }
 export interface ICreditCardProps {
   last4Digits?: number;

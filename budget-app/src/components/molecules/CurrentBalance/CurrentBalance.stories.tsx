@@ -13,7 +13,5 @@ export const SCurrentBalance = Template.bind({});
 
 SCurrentBalance.args = {
   text: '50,000$',
-  height: '26vh',
-  width: '26vw',
   titel: 'Current Balance',
 };

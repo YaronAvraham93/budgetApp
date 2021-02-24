@@ -6,9 +6,8 @@ import { ICurrentBalancePops } from '../../../models/index';
 
 const Container = styled.div<ICurrentBalancePops>`
   height: 19vh;
-  width: 12;
+  width: 12vw;
   display: flex;
-  flex-direction: column;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -21,8 +20,8 @@ const Container = styled.div<ICurrentBalancePops>`
   }
 `;
 
-const CurrentBalance: React.FC<ICurrentBalancePops> = ({ width, height, text, titel }) => (
-  <Container width={width} height={height}>
+const CurrentBalance: React.FC<ICurrentBalancePops> = ({ text, titel }) => (
+  <Container>
     <Typography size={Selects.lg} color="white">
       {text}
     </Typography>
