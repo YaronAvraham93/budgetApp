@@ -2,45 +2,40 @@ import React from 'react';
 import styled from 'styled-components';
 import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
 import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
-import { ISidebarProps } from '../../../models/index';
-import SidebarList from './SidebarList';
-import Typography from '../../atoms/Typography/Typography';
+import SidebarItem from './SidebarItem';
 
-const Container = styled.div<ISidebarProps>`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #4333a0;
   border-radius: 1rem;
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 140vh;
+  width: 15vw;
   @media (max-width: 768px) {
     width: 20vw;
     height: 100vh;
   }
 `;
-const SWrapper = styled.div`
+const CurrentBalanceWrapper = styled.div`
   padding-top: 50px;
 `;
-const NavbarUl = styled.ul`
+const NavbarList = styled.ul`
   padding: 0;
   display: grid;
   grid-template-rows: 1fr 1fr;
 `;
 
-const Sidebar: React.FC<ISidebarProps> = ({ height, width, CurrentBalancetTitel, CurrentBalancetText }) => (
-  <Container width={width} height={height}>
-    <SWrapper>
-      <CurrentBalance text={CurrentBalancetText} title={CurrentBalancetTitel} />
-    </SWrapper>
-    <NavbarUl>
-      {SidebarList.map((item) => (
-        <Typography>{item.label}</Typography>
+const Sidebar: React.FC = () => (
+  <Container>
+    <CurrentBalanceWrapper>
+      <CurrentBalance text="20,000$" title="Current Balance" />
+    </CurrentBalanceWrapper>
+    <NavbarList>
+      {SidebarItem.map((item) => (
+        <NavbarItem icon={item.icon} title={item.titel} route={item.rout} key={item.id} />
       ))}
-      {SidebarList.map((item) =>
-        item.list.map((i) => <NavbarItem icon={i.icon} title={i.titel} route={i.rout} key={i.id} />)
-      )}
-    </NavbarUl>
+    </NavbarList>
   </Container>
 );
 export default Sidebar;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import Icon from '../../atoms/IconImg/Icon';
-import { Selects } from '../../../containers/enums/index';
+import { SelectSize } from '../../../containers/enums/index';
 import { ISummaryCardProps } from '../../../models/index';
 
 const Container = styled.div<ISummaryCardProps>`
@@ -32,19 +32,19 @@ const TitlelWrapper = styled.div`
 const SummaryCard: React.FC<ISummaryCardProps> = ({ subtiteltwo, subtitle, title, icon, revenue, sinceLastMonth }) => (
   <Container>
     <TitlelWrapper>
-      <Typography size={Selects.md}>{title}</Typography>
+      <Typography size={SelectSize.md}>{title}</Typography>
     </TitlelWrapper>
     <RevenueWrapper>
-      <Typography size={Selects.sm} color="#bdbfbf">
+      <Typography size={SelectSize.sm} color="#bdbfbf">
         {subtitle}
       </Typography>
-      <Typography size={Selects.md} color="#0ee7e7">
+      <Typography size={SelectSize.md} color="#0ee7e7">
         {revenue}
       </Typography>
     </RevenueWrapper>
     <LastMonthWrapper>
-      <Typography size={Selects.sm}>{sinceLastMonth}</Typography>
-      <Typography size={Selects.sm} color="#bdbfbf">
+      <Typography size={SelectSize.sm}>{sinceLastMonth}</Typography>
+      <Typography size={SelectSize.sm} color="#bdbfbf">
         {subtiteltwo}
       </Typography>
     </LastMonthWrapper>

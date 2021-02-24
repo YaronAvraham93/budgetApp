@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
-import { Selects } from '../../../containers/enums/index';
+import { SelectSize } from '../../../containers/enums/index';
 import { IUserrofileProps } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
 
-const SWrapper = styled.div<IUserrofileProps>`
+const Container = styled.div<IUserrofileProps>`
   display: flex;
   flex-direction: column;
   flex-direction: column;
@@ -15,8 +15,8 @@ const SWrapper = styled.div<IUserrofileProps>`
   background-color: #fdf3e7;
   border-radius: 1rem;
   margin-bottom: 5px;
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 22vh;
+  width: 12vw;
   @media (max-width: 768px) {
     width: 20vw;
     height: 10vh;
@@ -25,19 +25,17 @@ const SWrapper = styled.div<IUserrofileProps>`
   }
 `;
 
-const UserProfile: React.FC<IUserrofileProps> = ({ width, height, img, emil, firstName, lastName }) => (
-  <SWrapper height={height} width={width}>
-    <Avatar height="15vh" width="7vw" src={img} size={Selects.lg}>
-      {' '}
-    </Avatar>
-    <Typography size={Selects.sm}>
+const UserProfile: React.FC<IUserrofileProps> = ({ avatarSrc, email, firstName, lastName }) => (
+  <Container>
+    <Avatar src={avatarSrc} />
+    <Typography size={SelectSize.sm}>
       {firstName}
       {lastName}
     </Typography>
-    <Typography size={Selects.xs} color="#bdbfbf">
-      {emil}
+    <Typography size={SelectSize.xs} color="#bdbfbf">
+      {email}
     </Typography>
-  </SWrapper>
+  </Container>
 );
 
 export default UserProfile;

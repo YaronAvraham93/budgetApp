@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Selects } from '../../../containers/enums/index';
+import { SelectSize } from '../../../containers/enums/index';
 import { ITypographyProps } from '../../../models/index';
 
-const getSize = (size?: Selects) => {
+const getSize = (size?: SelectSize) => {
   switch (size) {
-    case Selects.xs:
+    case SelectSize.xs:
       return `font-size: 10px `;
-    case Selects.sm:
+    case SelectSize.sm:
       return `font-size: 16px `;
-    case Selects.md:
+    case SelectSize.md:
       return `font-size: 26px `;
-    case Selects.lg:
+    case SelectSize.lg:
       return `font-size: 36px `;
     default:
       return `font-size: 16px `;
@@ -27,7 +27,7 @@ const STypographyProps = styled.label<ITypographyProps>`
   }
 `;
 
-const Typography: React.FC<ITypographyProps> = ({ color, size = Selects.md, children }) => (
+const Typography: React.FC<ITypographyProps> = ({ color, size = SelectSize.md, children }) => (
   <STypographyProps size={size} color={color}>
     {children}
   </STypographyProps>

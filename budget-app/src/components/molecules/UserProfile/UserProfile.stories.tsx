@@ -12,8 +12,8 @@ const Template: Story<IUserrofileProps> = (args) => <UserProfile {...args} />;
 export const SUserProfile = Template.bind({});
 
 SUserProfile.args = {
-  img: 'http://www.weijiahong2018.com/static/assets/images/avatars/avatar.png',
-  emil: 'yaronavraham600@gmail.com',
+  avatarSrc: 'http://www.weijiahong2018.com/static/assets/images/avatars/avatar.png',
+  email: 'yaronavraham600@gmail.com',
   firstName: 'Yaron',
   lastName: 'Avraham',
 };

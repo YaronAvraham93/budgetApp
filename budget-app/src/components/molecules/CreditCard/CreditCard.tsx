@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ICreditCardProps } from '../../../models/index';
 import Typography from '../../atoms/Typography/Typography';
-import { Selects } from '../../../containers/enums/index';
+import { SelectSize } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 
 const Container = styled.div<ICreditCardProps>`
@@ -50,34 +50,34 @@ const FullNameWrapper = styled.div`
 const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastName, year, month }) => (
   <Container>
     <TitelWrapper>
-      <Typography size={Selects.lg} color="white">
+      <Typography size={SelectSize.lg} color="white">
         Card
       </Typography>
     </TitelWrapper>
     <CardNumWerapper>
-      <Typography size={Selects.md} color="white">
+      <Typography size={SelectSize.md} color="white">
         **** **** ****
         {last4Digits}
       </Typography>
     </CardNumWerapper>
     <FullNameDateWrapper>
       <FullNameWrapper>
-        <Typography size={Selects.xs} color="#bdbfbf">
+        <Typography size={SelectSize.xs} color="#bdbfbf">
           CARD HOLDER
         </Typography>
 
-        <Typography size={Selects.sm} color="white">
+        <Typography size={SelectSize.sm} color="white">
           {firstName}
           -
           {lastName}
         </Typography>
       </FullNameWrapper>
       <DateWrapper>
-        <Typography size={Selects.xs} color="#bdbfbf">
+        <Typography size={SelectSize.xs} color="#bdbfbf">
           VALID THRU
         </Typography>
 
-        <Typography size={Selects.sm} color="white">
+        <Typography size={SelectSize.sm} color="white">
           {month}
           /
           {year}

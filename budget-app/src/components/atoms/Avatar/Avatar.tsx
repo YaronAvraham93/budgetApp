@@ -1,41 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Selects } from '../../../containers/enums/index';
 import { IAvatarProps } from '../../../models/index';
 
-const getSize = (size?: Selects) => {
-  switch (size) {
-    case Selects.sm:
-      return `  border: 2px solid red;
-      padding: 10px;
-      border-radius: 50px 40px; `;
-    case Selects.md:
-      return `  border: 2px solid black
-          clip-path: circle(50% at 50% 50%)`;
-    case Selects.lg:
-      return `width: 70px;
-      height:70px;
-      border-radius:50px;
-       `;
-    default:
-      return ` border: 2px solid black;
-      padding: 5px;
-      border-radius: 25px`;
-  }
-};
 const setImage = (src: any) => `
       background-size: cover;
       background-image: url('${src}')
       `;
 
 const SAvatar = styled.div<IAvatarProps>`
-  ${(props) => getSize(props.size)};
+  border-radius: 50px;
   ${(props) => setImage(props.src)};
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 15vh;
+  width: 7vw;
 `;
 
-const Avatar: React.FC<IAvatarProps> = ({ size, src, height, width }) => (
-  <SAvatar size={size} src={src} width={width} height={height} />
-);
+const Avatar: React.FC<IAvatarProps> = ({ src }) => <SAvatar src={src} />;
 export default Avatar;

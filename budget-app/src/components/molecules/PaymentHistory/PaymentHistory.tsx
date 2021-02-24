@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from '../../atoms/IconImg/Icon';
 import Typography from '../../atoms/Typography/Typography';
-import { Selects } from '../../../containers/enums/index';
+import { SelectSize } from '../../../containers/enums/index';
 import { IPaymentHistoryProps } from '../../../models/index';
 
 const Container = styled.div<IPaymentHistoryProps>`
@@ -39,19 +39,19 @@ const MoneyWrapper = styled.div`
 const PaymentHistory: React.FC<IPaymentHistoryProps> = ({ money, moneyTransactions, date, hour, title, icon }) => (
   <Container>
     <TitelWrapper>
-      <Typography size={Selects.md}>{title}</Typography>
+      <Typography size={SelectSize.md}>{title}</Typography>
     </TitelWrapper>
     <IconWrapper>
       <Icon width="3vw" height="3vh" src={icon} />
     </IconWrapper>
     <TransactionsWrapper>
-      <Typography size={Selects.xs}>{moneyTransactions}</Typography>
+      <Typography size={SelectSize.xs}>{moneyTransactions}</Typography>
     </TransactionsWrapper>
     <MoneyWrapper>
-      <Typography size={Selects.sm}>{money}</Typography>
+      <Typography size={SelectSize.sm}>{money}</Typography>
     </MoneyWrapper>
     <TimenWrapper>
-      <Typography size={Selects.xs} color="#d1c0ae">
+      <Typography size={SelectSize.xs} color="#d1c0ae">
         {date}
         {hour}
       </Typography>

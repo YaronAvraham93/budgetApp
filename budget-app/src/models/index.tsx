@@ -5,10 +5,7 @@ export interface ITypographyProps {
   color?: string;
 }
 export interface IAvatarProps {
-  size?: Selects;
-  height?: string;
   src?: any;
-  width?: string;
 }
 export interface IIconProps {
   height?: string;
@@ -41,12 +38,10 @@ export interface ISummaryCardProps {
   subtiteltwo?: string;
 }
 export interface IUserrofileProps {
-  img?: string;
-  emil?: string;
+  avatarSrc?: string;
+  email?: string;
   firstName?: string;
   lastName?: string;
-  width?: string;
-  height?: string;
 }
 export interface IPaymentHistoryProps {
   icon?: string;
@@ -56,21 +51,7 @@ export interface IPaymentHistoryProps {
   moneyTransactions?: string;
   money?: string;
 }
-export interface ISidebarProps {
-  icon?: string;
-  CurrentBalancetText?: string;
-  CurrentBalancetTitel?: string;
-  width?: string;
-  height?: string;
-}
-export interface IUserInfroProps {
-  img?: string;
-  emil?: string;
-  firstName?: string;
-  lastName?: string;
-  width?: string;
-  height?: string;
-}
+
 export interface IMainProps {
   icon?: string;
   revenue?: string;

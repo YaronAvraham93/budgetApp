@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from '../../atoms/IconImg/Icon';
 import Typography from '../../atoms/Typography/Typography';
-import { Selects } from '../../../containers/enums/index';
+import { SelectSize } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
 
 const Container = styled.div<INavbarItem>`
@@ -22,7 +22,7 @@ const NavbarItem: React.FC<INavbarItem> = ({ title, icon, route }) => (
   <Container route={route}>
     <Icon width="3vw" height="3vh" src={icon} />
 
-    <Typography size={Selects.sm}>{title}</Typography>
+    <Typography size={SelectSize.sm}>{title}</Typography>
   </Container>
 );
 

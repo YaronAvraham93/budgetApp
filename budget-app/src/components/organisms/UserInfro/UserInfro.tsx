@@ -2,18 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import UserProfile from '../../molecules/UserProfile/UserProfile';
 import PaymentHistory from '../../molecules/PaymentHistory/PaymentHistory';
-import { IUserInfroProps } from '../../../models/index';
-import List from './List';
+import ListPayment from './PaymentList';
 
-const Container = styled.div<IUserInfroProps>`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fcedd8;
   border-radius: 1rem;
   margin-left: 25px;
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 140vh;
+  width: 15vw;
   @media (max-width: 768px) {
     width: 20vw;
     height: 100vh;
@@ -24,17 +23,22 @@ const Container = styled.div<IUserInfroProps>`
 const UserWrapper = styled.div`
   padding-top: 50px;
 `;
-const PaymentUI = styled.div`
+const PaymentListWrapper = styled.div`
   padding-top: 15px;
   overflow-y: overlay;
 `;
-const UserInfro: React.FC<IUserInfroProps> = ({ height, width, firstName, lastName, emil, img }) => (
-  <Container height={height} width={width}>
+const UserInfro: React.FC = () => (
+  <Container>
     <UserWrapper>
-      <UserProfile width="12vw" height="22vh" img={img} firstName={firstName} lastName={lastName} emil={emil} />
+      <UserProfile
+        avatarSrc="http://www.weijiahong2018.com/static/assets/images/avatars/avatar.png"
+        firstName="Yaron"
+        lastName="Avraham"
+        email="yaronavraham600@gmail.com"
+      />
     </UserWrapper>
-    <PaymentUI>
-      {List.map((item) => (
+    <PaymentListWrapper>
+      {ListPayment.map((item) => (
         <PaymentHistory
           icon={item.icon}
           title={item.titel}
@@ -44,7 +48,7 @@ const UserInfro: React.FC<IUserInfroProps> = ({ height, width, firstName, lastNa
           money={item.money}
         />
       ))}
-    </PaymentUI>
+    </PaymentListWrapper>
   </Container>
 );
 

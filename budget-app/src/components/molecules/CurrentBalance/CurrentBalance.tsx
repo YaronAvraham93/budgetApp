@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
-import { Selects } from '../../../containers/enums/index';
+import { SelectSize } from '../../../containers/enums/index';
 import { ICurrentBalancePops } from '../../../models/index';
 
 const Container = styled.div<ICurrentBalancePops>`
@@ -22,10 +22,10 @@ const Container = styled.div<ICurrentBalancePops>`
 
 const CurrentBalance: React.FC<ICurrentBalancePops> = ({ text, title }) => (
   <Container>
-    <Typography size={Selects.lg} color="white">
+    <Typography size={SelectSize.lg} color="white">
       {text}
     </Typography>
-    <Typography size={Selects.sm} color="white">
+    <Typography size={SelectSize.sm} color="white">
       {title}
     </Typography>
   </Container>
