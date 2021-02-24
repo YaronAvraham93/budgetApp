@@ -58,9 +58,9 @@ const Container = styled.div`
   height: 60vh;
   width: 60vw;
 `;
-const Activity: React.FC = () => (
+const ActivitesChart: React.FC = () => (
   <Container>
     <ReactApexChart options={options} series={series} type="bar" height={350} />
   </Container>
 );
-export default Activity;
+export default ActivitesChart;
