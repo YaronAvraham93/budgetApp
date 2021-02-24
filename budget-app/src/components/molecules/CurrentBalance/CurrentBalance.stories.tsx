@@ -13,5 +13,5 @@ export const SCurrentBalance = Template.bind({});
 
 SCurrentBalance.args = {
   text: '50,000$',
-  titel: 'Current Balance',
+  title: 'Current Balance',
 };

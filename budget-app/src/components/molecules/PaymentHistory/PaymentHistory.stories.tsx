@@ -18,6 +18,4 @@ SPaymentHistory.args = {
   date: '4 march',
   moneyTransactions: 'Deposit from ATL',
   money: '+2,500',
-  height: '0',
-  width: '45vw',
 };

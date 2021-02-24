@@ -31,14 +31,14 @@ const NavbarUl = styled.ul`
 const Sidebar: React.FC<ISidebarProps> = ({ height, width, CurrentBalancetTitel, CurrentBalancetText }) => (
   <Container width={width} height={height}>
     <SWrapper>
-      <CurrentBalance text={CurrentBalancetText} titel={CurrentBalancetTitel} />
+      <CurrentBalance text={CurrentBalancetText} title={CurrentBalancetTitel} />
     </SWrapper>
     <NavbarUl>
       {SidebarList.map((item) => (
         <Typography>{item.label}</Typography>
       ))}
       {SidebarList.map((item) =>
-        item.list.map((i) => <NavbarItem icon={i.icon} titel={i.titel} route={i.rout} key={i.id} />)
+        item.list.map((i) => <NavbarItem icon={i.icon} title={i.titel} route={i.rout} key={i.id} />)
       )}
     </NavbarUl>
   </Container>

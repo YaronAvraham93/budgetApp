@@ -20,13 +20,13 @@ const Container = styled.div<ICurrentBalancePops>`
   }
 `;
 
-const CurrentBalance: React.FC<ICurrentBalancePops> = ({ text, titel }) => (
+const CurrentBalance: React.FC<ICurrentBalancePops> = ({ text, title }) => (
   <Container>
     <Typography size={Selects.lg} color="white">
       {text}
     </Typography>
     <Typography size={Selects.sm} color="white">
-      {titel}
+      {title}
     </Typography>
   </Container>
 );

@@ -7,8 +7,7 @@ import { IPaymentHistoryProps } from '../../../models/index';
 
 const Container = styled.div<IPaymentHistoryProps>`
   display: grid;
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  width: 16vw;
   opacity: 0.6;
   border-radius: 25px;
   grid-template-columns: 1fr 1fr 1fr;
@@ -31,34 +30,23 @@ const TitelWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-const SWrapper = styled.div`
+const TransactionsWrapper = styled.div`
   padding-top: 20px;
 `;
 const MoneyWrapper = styled.div`
   padding-top: 23px;
 `;
-const PaymentHistory: React.FC<IPaymentHistoryProps> = ({
-  height,
-  width,
-  money,
-  moneyTransactions,
-  date,
-  hour,
-  titel,
-  icon,
-}) => (
-  <Container width={width} height={height}>
+const PaymentHistory: React.FC<IPaymentHistoryProps> = ({ money, moneyTransactions, date, hour, title, icon }) => (
+  <Container>
     <TitelWrapper>
-      <Typography size={Selects.md}>{titel}</Typography>
+      <Typography size={Selects.md}>{title}</Typography>
     </TitelWrapper>
     <IconWrapper>
-      <Icon width="3vw" height="3vh" src={icon}>
-        {' '}
-      </Icon>
+      <Icon width="3vw" height="3vh" src={icon} />
     </IconWrapper>
-    <SWrapper>
+    <TransactionsWrapper>
       <Typography size={Selects.xs}>{moneyTransactions}</Typography>
-    </SWrapper>
+    </TransactionsWrapper>
     <MoneyWrapper>
       <Typography size={Selects.sm}>{money}</Typography>
     </MoneyWrapper>

@@ -16,12 +16,12 @@ export interface IIconProps {
   width?: string;
 }
 export interface INavbarItem {
-  titel?: string;
+  title?: string;
   icon?: string;
   route?: string;
 }
 export interface ICurrentBalancePops {
-  titel?: string;
+  title?: string;
   text?: string;
 }
 export interface ICreditCardProps {
@@ -50,13 +50,11 @@ export interface IUserrofileProps {
 }
 export interface IPaymentHistoryProps {
   icon?: string;
-  titel?: string;
+  title?: string;
   hour?: string;
   date?: string;
   moneyTransactions?: string;
   money?: string;
-  width?: string;
-  height?: string;
 }
 export interface ISidebarProps {
   icon?: string;

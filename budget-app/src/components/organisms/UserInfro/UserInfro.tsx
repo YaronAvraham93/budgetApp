@@ -36,9 +36,8 @@ const UserInfro: React.FC<IUserInfroProps> = ({ height, width, firstName, lastNa
     <PaymentUI>
       {List.map((item) => (
         <PaymentHistory
-          width="16vw"
           icon={item.icon}
-          titel={item.titel}
+          title={item.titel}
           hour={item.hour}
           date={item.date}
           moneyTransactions={item.moneyTransactions}
