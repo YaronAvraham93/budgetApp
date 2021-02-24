@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Activity from '../../molecules/Activity/Activity';
+import Activity from '../../molecules/Activity/ActivitesChart';
 import CreaditCard from '../../molecules/CreditCard/CreditCard';
 import Income from '../../molecules/Income/Income';
 import Summary from '../../molecules/Summary/Summary';
@@ -89,7 +89,7 @@ const Main: React.FC<IMainProps> = ({
       />
     </SWapper>
     <ActivviyWapper>
-      <Activity height="60vh" width="60vw" />
+      <Activity />
     </ActivviyWapper>
   </Container>
 );

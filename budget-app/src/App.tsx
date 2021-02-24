@@ -1,11 +1,10 @@
 import React from 'react';
-import './App.css';
-import Page from './components/Page/Pages';
+import Dashboard from './components/Page/Dashboard';
 
 function App() {
   return (
     <div>
-      <Page />
+      <Dashboard />
     </div>
   );
 }

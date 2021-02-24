@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Activity from './Activity';
+import Activity from './ActivitesChart';
 import { IActivityProps } from '../../../models/index';
 
 export default {

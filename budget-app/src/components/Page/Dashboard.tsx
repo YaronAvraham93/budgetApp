@@ -15,7 +15,7 @@ const Container = styled.div`
 const SidebarWapper = styled.div`
   margin: 0;
 `;
-const Page: React.FC = () => (
+const Dashboard: React.FC = () => (
   <Container>
     <SidebarWapper>
       <Sidebar
@@ -51,4 +51,4 @@ const Page: React.FC = () => (
     />
   </Container>
 );
-export default Page;
+export default Dashboard;

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
-import { IActivityProps } from '../../../models/index';
 
 const series = [
   {
@@ -52,22 +51,15 @@ const options = {
   fill: {
     opacity: 1,
   },
-  // tooltip: {
-  //   y: {
-  //     formatter: function (val) {
-  //       return "$ " + val + " thousands"
-  //     }
-  //   }
-  // }
 };
-const Container = styled.div<IActivityProps>`
+const Container = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 25px;
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 60vh;
+  width: 60vw;
 `;
-const Activity: React.FC<IActivityProps> = ({ height, width }) => (
-  <Container height={height} width={width}>
+const Activity: React.FC = () => (
+  <Container>
     <ReactApexChart options={options} series={series} type="bar" height={350} />
   </Container>
 );

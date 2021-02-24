@@ -101,7 +101,3 @@ export interface IIncomeProps {
   width?: string;
   height?: string;
 }
-export interface IActivityProps {
-  width?: string;
-  height?: string;
-}
