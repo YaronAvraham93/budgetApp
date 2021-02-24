@@ -28,25 +28,21 @@ export interface ICurrentBalancePops {
   width?: string;
   height?: string;
 }
-export interface ICardProps {
+export interface ICreditCardProps {
   last4Digits?: number;
-  FirstName?: string;
-  LastName?: string;
+  firstName?: string;
+  lastName?: string;
   year?: string;
   month?: number;
-  width?: string;
-  height?: string;
 }
-export interface ISummaryProps {
+export interface ISummaryCardProps {
   icon?: string;
   revenue?: string;
-  SinceLastMonth?: string;
+  sinceLastMonth?: string;
   Revenue?: string;
-  titel?: string;
-  subtitel?: string;
+  title?: string;
+  subtitle?: string;
   subtiteltwo?: string;
-  width?: string;
-  height?: string;
 }
 export interface IUserrofileProps {
   img?: string;
@@ -96,8 +92,4 @@ export interface IMainProps {
   LastName?: string;
   year?: string;
   month?: number;
-}
-export interface IIncomeProps {
-  width?: string;
-  height?: string;
 }

@@ -9,8 +9,3 @@ export default {
 
 const Template: Story = (args) => <Income {...args} />;
 export const SIncome = Template.bind({});
-
-SIncome.args = {
-  height: '25vh',
-  width: '25vw',
-};

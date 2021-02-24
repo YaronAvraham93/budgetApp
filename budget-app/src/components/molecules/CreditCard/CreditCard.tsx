@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ICardProps } from '../../../models/index';
+import { ICreditCardProps } from '../../../models/index';
 import Typography from '../../atoms/Typography/Typography';
 import { Selects } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 
-const Container = styled.div<ICardProps>`
+const Container = styled.div<ICreditCardProps>`
   background-image: url(${img});
   background-size: cover;
   background-position: center;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: rgba(149, 157, 165, 55) 0px 8px 24px;
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 29vh;
+  width: 23vw;
   display: block;
 
   @media (max-width: 768px) {
@@ -21,7 +21,7 @@ const Container = styled.div<ICardProps>`
     height: 27vh;
   }
 `;
-const Wrapper = styled.div`
+const FullNameDateWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 48vh;
@@ -39,39 +39,39 @@ const CardNumWerapper = styled.div`
   align-items: center;
   height: 17vh;
 `;
-const Titel = styled.div`
+const TitelWrapper = styled.div`
   display: block;
 `;
-const FullName = styled.div`
+const FullNameWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const CreditCard: React.FC<ICardProps> = ({ height, width, last4Digits, FirstName, LastName, year, month }) => (
-  <Container height={height} width={width}>
-    <Titel>
+const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastName, year, month }) => (
+  <Container>
+    <TitelWrapper>
       <Typography size={Selects.lg} color="white">
         Card
       </Typography>
-    </Titel>
+    </TitelWrapper>
     <CardNumWerapper>
       <Typography size={Selects.md} color="white">
         **** **** ****
         {last4Digits}
       </Typography>
     </CardNumWerapper>
-    <Wrapper>
-      <FullName>
+    <FullNameDateWrapper>
+      <FullNameWrapper>
         <Typography size={Selects.xs} color="#bdbfbf">
           CARD HOLDER
         </Typography>
 
         <Typography size={Selects.sm} color="white">
-          {FirstName}
+          {firstName}
           -
-          {LastName}
+          {lastName}
         </Typography>
-      </FullName>
+      </FullNameWrapper>
       <DateWrapper>
         <Typography size={Selects.xs} color="#bdbfbf">
           VALID THRU
@@ -83,7 +83,7 @@ const CreditCard: React.FC<ICardProps> = ({ height, width, last4Digits, FirstNam
           {year}
         </Typography>
       </DateWrapper>
-    </Wrapper>
+    </FullNameDateWrapper>
   </Container>
 );
 

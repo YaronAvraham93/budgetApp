@@ -34,7 +34,7 @@ const NavbarUl = styled.ul`
 const Sidebar: React.FC<ISidebarProps> = ({ height, width, CurrentBalancetTitel, CurrentBalancetText }) => (
   <Container width={width} height={height}>
     <SWrapper>
-      <CurrentBalance height="19vh" width="12vw" text={CurrentBalancetText} titel={CurrentBalancetTitel} />
+      <CurrentBalance text={CurrentBalancetText} titel={CurrentBalancetTitel} />
     </SWrapper>
     <NavbarUl>
       {SidebarList.map((item) => (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ICardProps } from '../../../models/index';
+import { ICreditCardProps } from '../../../models/index';
 import CreditCard from './CreditCard';
 
 export default {
@@ -8,14 +8,12 @@ export default {
   component: CreditCard,
 } as Meta;
 
-const Template: Story<ICardProps> = (args) => <CreditCard {...args} />;
+const Template: Story<ICreditCardProps> = (args) => <CreditCard {...args} />;
 export const SCreditCard = Template.bind({});
 SCreditCard.args = {
   last4Digits: 5555,
-  FirstName: 'Yaron',
-  LastName: 'Avraham',
+  firstName: 'Yaron',
+  lastName: 'Avraham',
   year: '/21',
   month: 12,
-  width: '100vw',
-  height: '100vh',
 };

@@ -5,8 +5,8 @@ import { Selects } from '../../../containers/enums/index';
 import { ICurrentBalancePops } from '../../../models/index';
 
 const Container = styled.div<ICurrentBalancePops>`
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
+  height: 19vh;
+  width: 12;
   display: flex;
   flex-direction: column;
   flex-direction: column;

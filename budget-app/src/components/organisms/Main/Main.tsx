@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Activity from '../../molecules/Activity/ActivitesChart';
 import CreaditCard from '../../molecules/CreditCard/CreditCard';
 import Income from '../../molecules/Income/Income';
-import Summary from '../../molecules/Summary/Summary';
+import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
 import { IMainProps } from '../../../models/index';
 
 const Container = styled.div<IMainProps>`
@@ -54,36 +54,24 @@ const Main: React.FC<IMainProps> = ({
 }) => (
   <Container height={height} width={width}>
     <CWapper>
-      <CreaditCard
-        height="14vw"
-        width="23vw"
-        last4Digits={last4Digits}
-        FirstName={FirstName}
-        LastName={LastName}
-        month={month}
-        year={year}
-      />
+      <CreaditCard last4Digits={last4Digits} firstName={FirstName} lastName={LastName} month={month} year={year} />
 
-      <Income width="25vw" height="19vw" />
+      <Income />
     </CWapper>
     <SWapper>
-      <Summary
-        height="23vh"
-        width="26vw"
-        titel={titel}
-        subtitel={subtitel}
+      <SummaryCard
+        title={titel}
+        subtitle={subtitel}
         revenue={revenue}
-        SinceLastMonth={SinceLastMonth}
+        sinceLastMonth={SinceLastMonth}
         subtiteltwo={subtiteltwo}
         icon={icon}
       />
-      <Summary
-        height="23vh"
-        width="26vw"
-        titel={titel}
-        subtitel={subtitel}
+      <SummaryCard
+        title={titel}
+        subtitle={subtitel}
         revenue={revenue}
-        SinceLastMonth={SinceLastMonth}
+        sinceLastMonth={SinceLastMonth}
         subtiteltwo={subtiteltwo}
         icon={icon}
       />
