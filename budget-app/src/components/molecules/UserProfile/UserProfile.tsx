@@ -5,14 +5,15 @@ import { SelectSize } from '../../../containers/enums/index';
 import { IUserrofileProps } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
 
-const Container = styled.div<IUserrofileProps>`
+const Container = styled.div(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color: #fdf3e7;
+  background-color:${theme.colors.lightorange};
   border-radius: 1rem;
   margin-bottom: 5px;
   height: 22vh;
@@ -23,7 +24,8 @@ const Container = styled.div<IUserrofileProps>`
     display: flex;
     flex-direction: column;
   }
-`;
+`
+);
 
 const UserProfile: React.FC<IUserrofileProps> = ({ avatarSrc, email, firstName, lastName }) => (
   <Container>

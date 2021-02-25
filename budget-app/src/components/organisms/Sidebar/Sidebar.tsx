@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
 import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
-import SidebarItem from './SidebarItem';
+import SidebarItem from '../../../constants/SidebarItem';
 
 const Container = styled.div`
   display: flex;
@@ -32,8 +32,8 @@ const Sidebar: React.FC = () => (
       <CurrentBalance text="20,000$" title="Current Balance" />
     </CurrentBalanceWrapper>
     <NavbarList>
-      {SidebarItem.map((item) => (
-        <NavbarItem icon={item.icon} title={item.titel} route={item.rout} key={item.id} />
+      {SidebarItem.map(({ icon, title, route, id }) => (
+        <NavbarItem icon={icon} title={title} route={route} key={id} />
       ))}
     </NavbarList>
   </Container>

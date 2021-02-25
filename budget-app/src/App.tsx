@@ -1,11 +1,11 @@
 import React from 'react';
-import Dashboard from './components/HomePage/HomePage';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   return (
-    <div>
-      <Dashboard />
-    </div>
+    <>
+      <HomePage />
+    </>
   );
 }
 

@@ -1,32 +1,32 @@
 const SidebarItem = [
   {
     icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
-    titel: 'Deshboard',
-    rout: '/',
+    title: 'Deshboard',
+    route: '/',
     id: 1,
   },
   {
     icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
-    titel: 'Transactions',
-    rout: '/Transactions',
+    title: 'Transactions',
+    route: '/Transactions',
     id: 2,
   },
   {
     icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
-    titel: 'Charts',
-    rout: '/Charts',
+    title: 'Charts',
+    route: '/Charts',
     id: 3,
   },
   {
     icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
-    titel: 'Cards',
-    rout: '/Cards',
+    title: 'Cards',
+    route: '/Cards',
     id: 4,
   },
   {
     icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
-    titel: 'User Profile',
-    rout: '/UserProfile',
+    title: 'User Profile',
+    route: '/UserProfile',
     id: 5,
   },
 ];

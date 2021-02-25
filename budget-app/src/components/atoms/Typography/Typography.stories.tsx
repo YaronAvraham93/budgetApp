@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Typography from './Typography';
-import { Selects } from '../../../containers/enums';
+import { SelectSize } from '../../../containers/enums';
 import { ITypographyProps } from '../../../models/index';
 
 export default {
@@ -16,16 +16,16 @@ const Template: Story<ITypographyProps> = (args) => <Typography {...args}> Hello
 
 export const Small = Template.bind({});
 Small.args = {
-  size: Selects.sm,
+  size: SelectSize.sm,
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: Selects.md,
+  size: SelectSize.md,
   color: 'yellow',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: Selects.lg,
+  size: SelectSize.lg,
 };

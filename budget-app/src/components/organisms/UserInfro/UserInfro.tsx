@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import UserProfile from '../../molecules/UserProfile/UserProfile';
 import PaymentHistory from '../../molecules/PaymentHistory/PaymentHistory';
-import ListPayment from './PaymentList';
+import ListPayment from '../../../constants/PaymentList';
 
 const Container = styled.div`
   display: flex;
@@ -38,14 +38,14 @@ const UserInfro: React.FC = () => (
       />
     </UserWrapper>
     <PaymentListWrapper>
-      {ListPayment.map((item) => (
+      {ListPayment.map(({ icon, title, hour, date, moneyTransactions, money }) => (
         <PaymentHistory
-          icon={item.icon}
-          title={item.titel}
-          hour={item.hour}
-          date={item.date}
-          moneyTransactions={item.moneyTransactions}
-          money={item.money}
+          icon={icon}
+          title={title}
+          hour={hour}
+          date={date}
+          moneyTransactions={moneyTransactions}
+          money={money}
         />
       ))}
     </PaymentListWrapper>

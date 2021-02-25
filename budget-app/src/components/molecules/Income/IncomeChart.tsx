@@ -1,44 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
-
-const series = [
-  {
-    name: 'Desktops',
-    data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
-  },
-];
-const options = {
-  chart: {
-    height: 350,
-    type: 'line',
-    zoom: {
-      enabled: false,
-    },
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  stroke: {
-    curve: 'straight',
-  },
-  title: {
-    text: 'Income',
-    align: 'left',
-  },
-  grid: {
-    row: {
-      colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-      opacity: 0.5,
-    },
-  },
-  xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-  },
-};
+import { series, options } from '../../../constants/Chart/IncomeData';
 
 const Container = styled.div`
-  height: 19vh;
+  height: 40vh;
   width: 25vw;
   border-radius: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
