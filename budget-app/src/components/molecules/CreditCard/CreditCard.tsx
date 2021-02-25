@@ -5,7 +5,8 @@ import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 
-const Container = styled.div<ICreditCardProps>`
+const Container = styled.div<ICreditCardProps>(
+  ({ theme }) => `
   background-image: url(${img});
   background-size: cover;
   background-position: center;
@@ -16,11 +17,12 @@ const Container = styled.div<ICreditCardProps>`
   width: 23vw;
   display: block;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     width: 38vw;
     height: 27vh;
   }
-`;
+`
+);
 const FullNameDateWrapper = styled.div`
   display: flex;
   flex-direction: row;

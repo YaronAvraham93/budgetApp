@@ -4,7 +4,8 @@ import UserProfile from '../../molecules/UserProfile/UserProfile';
 import PaymentHistory from '../../molecules/PaymentHistory/PaymentHistory';
 import ListPayment from '../../../constants/PaymentList';
 
-const Container = styled.div`
+const Container = styled.div(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,13 +14,14 @@ const Container = styled.div`
   margin-left: 25px;
   height: 140vh;
   width: 15vw;
-  @media (max-width: 768px) {
+  @media (max-width:  ${theme.breakpoints.tablet}) {
     width: 20vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
   }
-`;
+`
+);
 const UserWrapper = styled.div`
   padding-top: 50px;
 `;

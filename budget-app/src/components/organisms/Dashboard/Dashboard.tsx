@@ -5,15 +5,17 @@ import CreaditCard from '../../molecules/CreditCard/CreditCard';
 import Income from '../../molecules/Income/IncomeChart';
 import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
 
-const Container = styled.div`
+const Container = styled.div(
+  ({ theme }) => `
   display: block;
   width: 15vw;
   height: 13vh;
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     width: 88vw;
     height: 170vh;
   }
-`;
+`
+);
 const ActivviyWapper = styled.div`
   width: 68vw;
   display: flex;

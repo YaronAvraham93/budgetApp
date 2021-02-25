@@ -4,7 +4,8 @@ import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { ICurrentBalancePops } from '../../../models/index';
 
-const Container = styled.div<ICurrentBalancePops>`
+const Container = styled.div<ICurrentBalancePops>(
+  ({ theme }) => `
   height: 19vh;
   width: 12vw;
   display: flex;
@@ -14,11 +15,12 @@ const Container = styled.div<ICurrentBalancePops>`
   opacity: 0.9;
   background-color: #5142a7;
   border-radius: 1rem;
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     width: 21vw;
     height: 28vh;
   }
-`;
+`
+);
 
 const CurrentBalance: React.FC<ICurrentBalancePops> = ({ text, title }) => (
   <Container>

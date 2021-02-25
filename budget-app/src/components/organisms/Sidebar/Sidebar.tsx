@@ -4,7 +4,8 @@ import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
 import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
 import SidebarItem from '../../../constants/SidebarItem';
 
-const Container = styled.div`
+const Container = styled.div(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,11 +13,12 @@ const Container = styled.div`
   border-radius: 1rem;
   height: 140vh;
   width: 15vw;
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     width: 20vw;
     height: 100vh;
   }
-`;
+`
+);
 const CurrentBalanceWrapper = styled.div`
   padding-top: 50px;
 `;

@@ -5,17 +5,19 @@ import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { IPaymentHistoryProps } from '../../../models/index';
 
-const Container = styled.div<IPaymentHistoryProps>`
+const Container = styled.div<IPaymentHistoryProps>(
+  ({ theme }) => `
   display: grid;
   width: 16vw;
   opacity: 0.6;
   border-radius: 25px;
   grid-template-columns: 1fr 1fr 1fr;
-  @media (max-width: 768px) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     width: 18vw;
     height: 17vh;
   }
-`;
+`
+);
 const IconWrapper = styled.div`
   grid-row: 2/4;
   display: flex;
