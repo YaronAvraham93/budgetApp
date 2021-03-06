@@ -20,6 +20,7 @@ const Container = styled.div<ICreditCardProps>(
   @media (max-width: ${theme.breakpoints.tablet}) {
     width: 38vw;
     height: 27vh;
+    flex-direction: column;
   }
 `
 );

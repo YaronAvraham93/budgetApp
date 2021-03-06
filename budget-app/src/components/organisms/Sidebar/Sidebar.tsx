@@ -14,8 +14,9 @@ const Container = styled.div(
   height: 140vh;
   width: 15vw;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 20vw;
+    width: 100vw;
     height: 100vh;
+
   }
 `
 );

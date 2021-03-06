@@ -13,6 +13,7 @@ const Container = styled.div(
   @media (max-width: ${theme.breakpoints.tablet}) {
     width: 88vw;
     height: 170vh;
+    
   }
 `
 );

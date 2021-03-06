@@ -5,7 +5,8 @@ import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
 
-const Container = styled.div<INavbarItem>`
+const Container = styled.div<INavbarItem>(
+  ({ theme }) => `
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +17,12 @@ const Container = styled.div<INavbarItem>`
     opacity: 1;
     color: wheat;
   }
-`;
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    width: 8vw;
+    height: 27vh;
+  }
+`
+);
 
 const NavbarItem: React.FC<INavbarItem> = ({ title, icon, route }) => (
   <Container route={route}>

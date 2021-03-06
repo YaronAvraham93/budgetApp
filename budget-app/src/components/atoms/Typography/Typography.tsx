@@ -22,7 +22,7 @@ const STypographyProps = styled.label<ITypographyProps>`
   ${(props) => getSize(props.size)};
   ${(props) => `color:${props.color}`};
   @media (max-width: 768px) {
-    width: 16vw;
+    width: 10vw;
     height: 10vh;
   }
 `;
