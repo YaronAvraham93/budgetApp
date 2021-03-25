@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
 import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
@@ -41,7 +42,9 @@ const Sidebar: React.FC = () => (
     </CurrentBalanceWrapper>
     <NavbarList>
       {SidebarItem.map(({ icon, title, route, id }) => (
-        <NavbarItem icon={icon} title={title} route={route} key={id} />
+        <Link to={route}>
+          <NavbarItem icon={icon} title={title} key={id} />
+        </Link>
       ))}
     </NavbarList>
   </Container>
