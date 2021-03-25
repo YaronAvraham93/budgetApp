@@ -5,7 +5,8 @@ import Icon from '../../atoms/IconImg/Icon';
 import { SelectSize } from '../../../containers/enums/index';
 import { ISummaryCardProps } from '../../../models/index';
 
-const Container = styled.div<ISummaryCardProps>`
+const Container = styled.div<ISummaryCardProps>(
+  ({ theme }) => `
   height: 23vh;
   width: 26vw;
   display: grid;
@@ -14,18 +15,33 @@ const Container = styled.div<ISummaryCardProps>`
   border-radius: 25px;
   grid-template-columns: 1fr 1fr;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-`;
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    width: 60vw;
+    height: 35vh;
+  }
+`
+);
 const RevenueWrapper = styled.div`
   display: flex;
   flex-direction: column;
   grid-column: 1/3;
 `;
-const LastMonthWrapper = styled.div`
+const LastMonthWrapper = styled.div(
+  ({ theme }) => `
   width: 15w;
-`;
-const IconWrapper = styled.div`
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    width: 33vw;
+  }
+`
+);
+const IconWrapper = styled.div(
+  ({ theme }) => `
   grid-column: 2;
-`;
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    width: 9vw;
+  }
+`
+);
 const TitlelWrapper = styled.div`
   grid-column: 1/3;
 `;

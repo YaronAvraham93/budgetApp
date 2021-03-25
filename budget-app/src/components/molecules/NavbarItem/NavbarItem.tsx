@@ -18,8 +18,7 @@ const Container = styled.div<INavbarItem>(
     color: wheat;
   }
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 8vw;
-    height: 27vh;
+    display: none;
   }
 `
 );

@@ -8,12 +8,13 @@ import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
 const Container = styled.div(
   ({ theme }) => `
   display: block;
-  width: 15vw;
-  height: 13vh;
+  width: 65vw;
+  height: 47vh;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 88vw;
-    height: 170vh;
-    
+    width: 68vw;
+    height: 175vh;
+    flex-direction: column;
+    padding-left: 20%;
   }
 `
 );
@@ -22,21 +23,33 @@ const ActivviyWapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-const CreaditCardWapper = styled.div`
-  height: 44vh;
-  width: 68vw;
+const CreaditCardWapper = styled.div(
+  ({ theme }) => `
+  height: 45vh;
+  width: 67vw;
   display: flex;
   padding-top: 15px;
   justify-content: space-around;
   flex-direction: row;
-`;
-const SummaryCardWapper = styled.div`
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    height: 73vh;
+    flex-direction: column;
+  }
+`
+);
+const SummaryCardWapper = styled.div(
+  ({ theme }) => `
   width: 69vw;
   height: 30vh;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-`;
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    height: 73vh;
+    flex-direction: column;
+  }
+`
+);
 const Dashboard: React.FC = () => (
   <Container>
     <CreaditCardWapper>

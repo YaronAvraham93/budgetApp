@@ -18,37 +18,61 @@ const Container = styled.div<ICreditCardProps>(
   display: block;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 38vw;
-    height: 27vh;
-    flex-direction: column;
+  width: 55vw;
+    height: 30vh;
   }
 `
 );
-const FullNameDateWrapper = styled.div`
+const FullNameDateWrapper = styled.div(
+  ({ theme }) => `
   display: flex;
   flex-direction: row;
   width: 48vh;
   justify-content: space-between;
   height: 4vh;
   align-items: center;
-`;
-const DateWrapper = styled.div`
+  @media (max-width: ${theme.breakpoints.tablet}) {
+  width:45vw;
+    height: 9vh;
+  }
+  
+`
+);
+const DateWrapper = styled.div(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
-`;
-const CardNumWerapper = styled.div`
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    height: 0vh;
+    width: 0vw;
+    }
+`
+);
+const CardNumWerapper = styled.div(
+  ({ theme }) => `
   display: flex;
   justify-content: center;
   align-items: center;
   height: 17vh;
-`;
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    height: 12vh;
+    display: block;
+    }
+`
+);
 const TitelWrapper = styled.div`
   display: block;
 `;
-const FullNameWrapper = styled.div`
+const FullNameWrapper = styled.div(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
-`;
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    height: 12vh;
+    width: 14vw;
+    }
+`
+);
 
 const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastName, year, month }) => (
   <Container>
@@ -68,7 +92,6 @@ const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastNa
         <Typography size={SelectSize.xs} color="#bdbfbf">
           CARD HOLDER
         </Typography>
-
         <Typography size={SelectSize.sm} color="white">
           {firstName}
           -
@@ -79,7 +102,6 @@ const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastNa
         <Typography size={SelectSize.xs} color="#bdbfbf">
           VALID THRU
         </Typography>
-
         <Typography size={SelectSize.sm} color="white">
           {month}
           /

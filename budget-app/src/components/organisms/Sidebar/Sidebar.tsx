@@ -9,20 +9,25 @@ const Container = styled.div(
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #4333a0;
+  background-color: ${theme.colors.darkBlue};
   border-radius: 1rem;
   height: 140vh;
   width: 15vw;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 100vw;
-    height: 100vh;
+    width: 10vw;
+    height: 10vh;
 
   }
 `
 );
-const CurrentBalanceWrapper = styled.div`
+const CurrentBalanceWrapper = styled.div(
+  ({ theme }) => `
   padding-top: 50px;
-`;
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
+`
+);
 const NavbarList = styled.ul`
   padding: 0;
   display: grid;

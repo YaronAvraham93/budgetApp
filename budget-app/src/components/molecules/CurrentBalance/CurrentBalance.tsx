@@ -13,7 +13,7 @@ const Container = styled.div<ICurrentBalancePops>(
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color: #5142a7;
+  background-color: ${theme.colors.purple};
   border-radius: 1rem;
   @media (max-width: ${theme.breakpoints.tablet}) {
     width: 21vw;

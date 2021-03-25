@@ -9,16 +9,15 @@ const Container = styled.div(
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fcedd8;
+  background-color: ${theme.colors.lightorange};
   border-radius: 1rem;
   margin-left: 25px;
   height: 140vh;
   width: 15vw;
   @media (max-width:  ${theme.breakpoints.tablet}) {
-    width: 20vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    
+    display: none;
+    
   }
 `
 );
