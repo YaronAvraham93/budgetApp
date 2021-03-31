@@ -1,4 +1,4 @@
-const SidebarItem = [
+const navbarItem = [
   {
     icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
     title: 'Deshboard',
@@ -31,4 +31,4 @@ const SidebarItem = [
   },
 ];
 
-export default SidebarItem;
+export default navbarItem;
