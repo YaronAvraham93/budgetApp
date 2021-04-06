@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import BudgetServiceApi from './budgetServiceApi';
 
 describe('testing budget Api', () => {
@@ -21,7 +18,6 @@ describe('testing budget Api', () => {
       current_balance_currency: 'IDR',
       credit_card: [
         {
-          _id: '605356c70b425034c006f4c3',
           exp_year: 24,
           exp_month: 12,
           last4Digits: 9512,
@@ -39,9 +35,9 @@ describe('testing budget Api', () => {
   });
   it('Checks if a user has been created', async () => {
     const result = await BudgetServiceApi.createUser({
-      first_name: 'David',
-      last_name: 'Mangisto',
-      email: 'yoni@v@gamil.com',
+      first_name: 'Almog',
+      last_name: 'melachi',
+      email: 'almog@b@gamil.com',
       avatar: 'http://www.avatarpro.biz/avatar?s=200',
       current_balance: '10341.91',
       current_balance_currency: 'IDR',
@@ -51,17 +47,16 @@ describe('testing budget Api', () => {
         last4Digits: 2512,
       },
     });
-    console.log(result);
     expect(result).toHaveProperty('first_name');
     expect(result).toHaveProperty('last_name');
   });
   it('check transaction to have necessary properties', async () => {
     const transaction = await BudgetServiceApi.getAllTransactions('606b21b6c88c6d0005fe8f97');
-    console.log(transaction);
+
     expect(transaction[0]).toHaveProperty('paymentType');
   });
   it('Checks if a transaction has been deleted', async () => {
-    const result = await BudgetServiceApi.deleteTransaction('606b2213c88c6d0005fe8f98');
+    const result = await BudgetServiceApi.deleteTransaction('606c9a518cfda50008f9fd81');
     expect(result).toBe('The transaction has been deleted');
   });
   it('checks if the fields in transaction have been updateds', async () => {
@@ -83,7 +78,7 @@ describe('testing budget Api', () => {
         lng: 119.579153,
       },
     });
-    console.log(updateTransaction);
+
     expect(updateTransaction).toBe('The transaction has been updated');
   });
   it('Checks if a transaction has been created', async () => {
@@ -105,7 +100,6 @@ describe('testing budget Api', () => {
         lng: 119.579153,
       },
     });
-    console.log(result);
     expect(result).toBe('transaction created!');
   });
 });

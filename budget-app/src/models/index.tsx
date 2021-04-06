@@ -39,9 +39,9 @@ export interface ISummaryCardProps {
 }
 export interface IUserrofileProps {
   avatarSrc?: string;
-  email?: string;
-  firstName?: string;
-  lastName?: string;
+  email: string;
+  firstName: string;
+  lastName: string;
 }
 export interface IPaymentHistoryProps {
   icon?: string;
@@ -59,7 +59,7 @@ export interface IMainProps {
   Revenue?: string;
   titel?: string;
   subtitel?: string;
-  subtiteltwo?: string;
+  anotherTitle?: string;
   width?: string;
   height?: string;
   last4Digits?: number;
