@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
 import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
-import SidebarItem from '../../../constants/SidebarItem';
+import navbarItem from '../../../constants/SidebarItem';
 
 const Container = styled.div(
   ({ theme }) => `
@@ -41,7 +41,7 @@ const Sidebar: React.FC = () => (
       <CurrentBalance text="20,000$" title="Current Balance" />
     </CurrentBalanceWrapper>
     <NavbarList>
-      {SidebarItem.map(({ icon, title, route, id }) => (
+      {navbarItem.map(({ icon, title, route, id }) => (
         <Link to={route}>
           <NavbarItem icon={icon} title={title} key={id} />
         </Link>
