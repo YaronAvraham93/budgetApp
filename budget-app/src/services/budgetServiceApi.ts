@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-export default class budgetServiceApi {
+class BudgetServiceApi {
   axiosInstance = axios.create({
     baseURL: 'https://budget-server-theta.vercel.app',
   });
 
   updateTransaction = async (transactionId: string) => {
     try {
-      await this.axiosInstance.put(`/api/transaction/:${transactionId}`);
-      return { massage: 'The operation was successful' };
+      const response = await this.axiosInstance.put(`/api/transaction/:${transactionId}`);
+      return response.data;
     } catch (e) {
       return e.massage;
     }
@@ -16,8 +16,8 @@ export default class budgetServiceApi {
 
   deleteTransaction = async (transactionId: string) => {
     try {
-      await this.axiosInstance.delete(`/api/transaction/:${transactionId}`);
-      return { massage: 'The operation was successful' };
+      const response = await this.axiosInstance.delete(`/api/transaction/${transactionId}`);
+      return response.data;
     } catch (e) {
       return e.massage;
     }
@@ -25,26 +25,26 @@ export default class budgetServiceApi {
 
   getAllTransactions = async () => {
     try {
-      const result = await this.axiosInstance.get(`/api/transaction/transactions`);
-      return result;
+      const response = await this.axiosInstance.get(`/api/transaction/transactions`);
+      return response.data;
     } catch (e) {
       return e.massage;
     }
   };
 
-  createTransaction = async (data: string) => {
+  createTransaction = async (payloadTransaction: string) => {
     try {
-      await this.axiosInstance.post(`/api/transaction/${data}`);
-      return { massage: 'The operation was successful' };
+      const response = await this.axiosInstance.post(`/api/transaction/`, payloadTransaction);
+      return response.data;
     } catch (e) {
       return e.massage;
     }
   };
 
-  createUser = async (data: string) => {
+  createUser = async (payloadUser: string) => {
     try {
-      await this.axiosInstance.post(`/api/user/${data}`);
-      return { massage: 'The operation was successful' };
+      const response = await this.axiosInstance.post(`/api/user`, payloadUser);
+      return response.data;
     } catch (e) {
       return e.massage;
     }
@@ -52,28 +52,30 @@ export default class budgetServiceApi {
 
   getUserById = async (userId: string) => {
     try {
-      await this.axiosInstance.get(`/api/user/:${userId}`);
-      return { massage: 'The operation was successful' };
+      const response = await this.axiosInstance.get(`/api/user/${userId}`);
+      return response.data;
     } catch (e) {
-      return e.massage();
+      return e.massage;
     }
   };
 
   deleteUser = async (userId: string) => {
     try {
-      await this.axiosInstance.delete(`/api/user/:${userId}`);
-      return { massage: 'The operation was successful' };
+      const response = await this.axiosInstance.delete(`/api/user/${userId}`);
+      return response.data;
     } catch (e) {
       return e.massage;
     }
   };
 
-  updateUser = async (userId: string) => {
+  updateUser = async (userId: string, payloadUser: string) => {
     try {
-      await this.axiosInstance.put(`/api/user/:${userId}`);
-      return { massage: 'The operation was successful' };
+      const response = await this.axiosInstance.put(`/api/user/${userId}`, payloadUser);
+      return response.data;
     } catch (e) {
       return e.massage;
     }
   };
 }
+
+export default new BudgetServiceApi();
