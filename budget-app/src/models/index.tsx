@@ -45,11 +45,11 @@ export interface IUserrofileProps {
 }
 export interface IPaymentHistoryProps {
   icon?: string;
-  title?: string;
   hour?: string;
   date?: string;
-  moneyTransactions?: string;
-  money?: string;
+  paymentType?: string;
+  paymentMethod?: string;
+  amount?: string;
 }
 
 export interface IMainProps {

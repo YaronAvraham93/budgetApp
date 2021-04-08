@@ -7,7 +7,7 @@ import { IPaymentHistoryProps } from '../../../models/index';
 
 const Container = styled.div<IPaymentHistoryProps>(
   ({ theme }) => `
-  display: grid;
+
   width: 16vw;
   opacity: 0.6;
   border-radius: 25px;
@@ -19,45 +19,56 @@ const Container = styled.div<IPaymentHistoryProps>(
 `
 );
 const IconWrapper = styled.div`
-  grid-row: 2/4;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-const TimenWrapper = styled.div`
-  padding-top: 2px;
+const TimenpPymentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 const TitelWrapper = styled.div`
-  grid-column: 1/4;
   display: flex;
   justify-content: center;
 `;
-const TransactionsWrapper = styled.div`
-  padding-top: 20px;
-`;
+
 const MoneyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+`;
+const TransactionListWrapper = styled.div`
+  display: flex;
+  padding-top: 23px;
+  align-items: end;
   padding-top: 23px;
 `;
-const PaymentHistory: React.FC<IPaymentHistoryProps> = ({ money, moneyTransactions, date, hour, title, icon }) => (
+interface ItransactionProps {
+  transactions?: [];
+}
+
+const PaymentHistory: React.FC<ItransactionProps> = ({ transactions }) => (
   <Container>
     <TitelWrapper>
-      <Typography size={SelectSize.md}>{title}</Typography>
+      <Typography size={SelectSize.md}>Paymnet History</Typography>
     </TitelWrapper>
-    <IconWrapper>
-      <Icon width="3vw" height="3vh" src={icon} />
-    </IconWrapper>
-    <TransactionsWrapper>
-      <Typography size={SelectSize.xs}>{moneyTransactions}</Typography>
-    </TransactionsWrapper>
-    <MoneyWrapper>
-      <Typography size={SelectSize.sm}>{money}</Typography>
-    </MoneyWrapper>
-    <TimenWrapper>
-      <Typography size={SelectSize.xs} color="#d1c0ae">
-        {date}
-        {hour}
-      </Typography>
-    </TimenWrapper>
+    {transactions?.map((transaction: IPaymentHistoryProps) => (
+      <TransactionListWrapper>
+        <IconWrapper>
+          <Icon width="3vw" height="3vh" />
+        </IconWrapper>
+        <TimenpPymentWrapper>
+          <Typography size={SelectSize.xl}>{transaction.paymentMethod}</Typography>
+          <Typography size={SelectSize.xl} color="#d1c0ae">
+            {transaction.date}
+          </Typography>
+        </TimenpPymentWrapper>
+        <MoneyWrapper>
+          <Typography size={SelectSize.sm}>{transaction.amount}</Typography>
+          <Typography size={SelectSize.xs}>USD</Typography>
+        </MoneyWrapper>
+      </TransactionListWrapper>
+    ))}
   </Container>
 );
 
