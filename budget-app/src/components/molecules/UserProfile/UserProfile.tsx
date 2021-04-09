@@ -13,7 +13,7 @@ const Container = styled.div(
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color:${theme.colors.lightorange};
+  background-color:${theme.colors.lightOrange};
   border-radius: 1rem;
   margin-bottom: 5px;
   height: 22vh;

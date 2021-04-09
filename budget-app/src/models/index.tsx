@@ -9,8 +9,9 @@ export interface IAvatarProps {
 }
 export interface IIconProps {
   height?: string;
-  src?: any;
   width?: string;
+  icon?: any;
+  color?: string;
 }
 export interface INavbarItem {
   title?: string;
@@ -29,13 +30,14 @@ export interface ICreditCardProps {
   month?: number;
 }
 export interface ISummaryCardProps {
-  icon?: string;
+  icon?: any;
   revenue?: string;
   sinceLastMonth?: string;
   Revenue?: string;
   title?: string;
   subtitle?: string;
   subtiteltwo?: string;
+  backgroundColor?: string;
 }
 export interface IUserrofileProps {
   avatarSrc?: string;

@@ -46,7 +46,7 @@ const TransactionListWrapper = styled.div`
 interface ItransactionProps {
   transactions?: [];
 }
-
+const getFormtDate = (date: string) => new Date(date).toLocaleString();
 const PaymentHistory: React.FC<ItransactionProps> = ({ transactions }) => (
   <Container>
     <TitelWrapper>
@@ -60,7 +60,7 @@ const PaymentHistory: React.FC<ItransactionProps> = ({ transactions }) => (
         <TimenpPymentWrapper>
           <Typography size={SelectSize.xl}>{transaction.paymentMethod}</Typography>
           <Typography size={SelectSize.xl} color="#d1c0ae">
-            {transaction.date}
+            {transaction.date ? getFormtDate(transaction.date) : ''}
           </Typography>
         </TimenpPymentWrapper>
         <MoneyWrapper>

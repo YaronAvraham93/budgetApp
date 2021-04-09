@@ -10,7 +10,7 @@ const Container = styled.div(
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${theme.colors.darkBlue};
+  background-color: ${theme.colors.darkPurple};
   border-radius: 1rem;
   height: 140vh;
   width: 15vw;
@@ -41,9 +41,9 @@ const Sidebar: React.FC = () => (
       <CurrentBalance text="20,000$" title="Current Balance" />
     </CurrentBalanceWrapper>
     <NavbarList>
-      {navbarItem.map(({ icon, title, route, id }) => (
+      {navbarItem.map(({ title, route, id }) => (
         <Link to={route}>
-          <NavbarItem icon={icon} title={title} key={id} />
+          <NavbarItem title={title} key={id} />
         </Link>
       ))}
     </NavbarList>
