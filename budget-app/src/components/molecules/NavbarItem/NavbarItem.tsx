@@ -6,17 +6,17 @@ import { SelectSize } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
-const Container = styled.div<INavbarItem>(
+const Container = styled.li<INavbarItem>(
   () => `
+  color:floralwhite;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  opacity: 0.6;
   height: 8vh;
   width: 12vw;
   &:hover {
     opacity: 1;
-    color: wheat;
+    color: lightgray;
   }
   @media (max-width: ${theme.breakpoints.tablet}) {
     display: none;
