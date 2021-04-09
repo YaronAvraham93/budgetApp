@@ -1,30 +1,32 @@
+import { faThLarge, faMoneyCheck, faChartPie, faSquare, faUser } from '@fortawesome/free-solid-svg-icons';
+
 const navbarItem = [
   {
-    icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
-    title: 'Deshboard',
+    icon: faThLarge,
+    title: 'Dashboard',
     route: '/',
     id: 1,
   },
   {
-    icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
+    icon: faMoneyCheck,
     title: 'Transactions',
     route: '/Transactions',
     id: 2,
   },
   {
-    icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
+    icon: faChartPie,
     title: 'Charts',
     route: '/Charts',
     id: 3,
   },
   {
-    icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
+    icon: faSquare,
     title: 'Cards',
     route: '/Cards',
     id: 4,
   },
   {
-    icon: 'https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg',
+    icon: faUser,
     title: 'User Profile',
     route: '/UserProfile',
     id: 5,

@@ -4,9 +4,10 @@ import Icon from '../../atoms/IconImg/Icon';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div<INavbarItem>(
-  ({ theme }) => `
+  () => `
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +26,7 @@ const Container = styled.div<INavbarItem>(
 
 const NavbarItem: React.FC<INavbarItem> = ({ title, icon, route }) => (
   <Container route={route}>
-    <Icon width="3vw" height="3vh" icon={icon} />
+    <Icon width="3vw" height="3vh" icon={icon} color="white" />
     <Typography size={SelectSize.sm}>{title}</Typography>
   </Container>
 );

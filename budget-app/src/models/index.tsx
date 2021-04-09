@@ -15,7 +15,7 @@ export interface IIconProps {
 }
 export interface INavbarItem {
   title?: string;
-  icon?: string;
+  icon?: any;
   route?: string;
 }
 export interface ICurrentBalancePops {

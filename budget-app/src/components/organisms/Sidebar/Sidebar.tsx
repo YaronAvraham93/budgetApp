@@ -41,9 +41,9 @@ const Sidebar: React.FC = () => (
       <CurrentBalance text="20,000$" title="Current Balance" />
     </CurrentBalanceWrapper>
     <NavbarList>
-      {navbarItem.map(({ title, route, id }) => (
+      {navbarItem.map(({ icon, title, route, id }) => (
         <Link to={route}>
-          <NavbarItem title={title} key={id} />
+          <NavbarItem icon={icon} title={title} key={id} />
         </Link>
       ))}
     </NavbarList>
