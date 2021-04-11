@@ -9,12 +9,14 @@ export interface IAvatarProps {
 }
 export interface IIconProps {
   height?: string;
-  src?: any;
   width?: string;
+  icon?: any;
+  color?: string;
+  backgroundColor?: string;
 }
 export interface INavbarItem {
   title?: string;
-  icon?: string;
+  icon?: any;
   route?: string;
 }
 export interface ICurrentBalancePops {
@@ -29,13 +31,14 @@ export interface ICreditCardProps {
   month?: number;
 }
 export interface ISummaryCardProps {
-  icon?: string;
+  icon?: any;
   revenue?: string;
   sinceLastMonth?: string;
   Revenue?: string;
   title?: string;
   subtitle?: string;
   subtiteltwo?: string;
+  backgroundColor?: string;
 }
 export interface IUserrofileProps {
   avatarSrc?: string;
@@ -45,11 +48,11 @@ export interface IUserrofileProps {
 }
 export interface IPaymentHistoryProps {
   icon?: string;
-  title?: string;
   hour?: string;
   date?: string;
-  moneyTransactions?: string;
-  money?: string;
+  paymentType?: string;
+  paymentMethod?: string;
+  amount?: string;
 }
 
 export interface IMainProps {
@@ -67,4 +70,13 @@ export interface IMainProps {
   LastName?: string;
   year?: string;
   month?: number;
+}
+export interface ITransactionSwitchCaseProps {
+  icon?: any;
+  text?: string;
+  color?: string;
+  backgroundColor?: string;
+}
+export interface ISidebar {
+  clicked?: boolean;
 }

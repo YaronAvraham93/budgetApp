@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { faBox, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import Activity from '../../molecules/Activity/ActivitesChart';
 import CreaditCard from '../../molecules/CreditCard/CreditCard';
 import Income from '../../molecules/Income/IncomeChart';
 import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   display: block;
   width: 65vw;
   height: 47vh;
@@ -24,7 +26,7 @@ const ActivviyWapper = styled.div`
   justify-content: center;
 `;
 const CreaditCardWapper = styled.div(
-  ({ theme }) => `
+  () => `
   height: 45vh;
   width: 67vw;
   display: flex;
@@ -38,7 +40,7 @@ const CreaditCardWapper = styled.div(
 `
 );
 const SummaryCardWapper = styled.div(
-  ({ theme }) => `
+  () => `
   width: 69vw;
   height: 30vh;
   display: flex;
@@ -54,25 +56,26 @@ const Dashboard: React.FC = () => (
   <Container>
     <CreaditCardWapper>
       <CreaditCard last4Digits={5555} firstName="Yaron" lastName="Avraham" month={12} year="/12" />
-
       <Income />
     </CreaditCardWapper>
     <SummaryCardWapper>
       <SummaryCard
         title="INVENSMENT"
-        subtitle="Revnue"
+        subtitle="Revenue"
         revenue="40,000$"
         sinceLastMonth="+5.0%"
         subtiteltwo="Since last month"
-        icon="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
+        icon={faBox}
+        backgroundColor={theme.colors.lightBlue}
       />
       <SummaryCard
-        title="INVENSMENT"
-        subtitle="Revnue"
+        title="Sales"
+        subtitle="Revenue"
         revenue="40,000$"
         sinceLastMonth="+5.0%"
         subtiteltwo="Since last month"
-        icon="https://img.favpng.com/3/8/12/email-logo-icon-png-favpng-158EyDT9NQ1jfdXbwDdzD6ns6.jpg"
+        icon={faChartLine}
+        backgroundColor={theme.colors.darkBlue}
       />
     </SummaryCardWapper>
     <ActivviyWapper>

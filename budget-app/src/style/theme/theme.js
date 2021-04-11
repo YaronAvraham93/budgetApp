@@ -1,9 +1,11 @@
 const theme = {
   colors: {
-    lightorange: '#fdf3e7',
-    ightgray: '#bdbfbf',
-    purple: '#5142a7',
-    darkBlue: '#4333a0',
+    lightBlue: '#1BA9E9',
+    lightOrange: '#fdf3e7',
+    lightGray: '#bdbfbf',
+    lightPurple: '#5142a7',
+    darkPurple: '#4333a0',
+    darkBlue: '#080B8D',
   },
   breakpoints: {
     mobile: '320px',

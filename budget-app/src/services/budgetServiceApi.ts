@@ -31,9 +31,12 @@ interface Itransactions {
     lng: Number;
   };
 }
+const baseURl = process.env.REACT_APP_BASE_URL;
+console.log('baseURL', baseURl);
+
 class BudgetServiceApi {
   axiosInstance = axios.create({
-    baseURL: 'https://budget-server-theta.vercel.app',
+    baseURL: baseURl,
   });
 
   updateTransaction = async (transactionId: string, payloadTransaction: Itransactions) => {

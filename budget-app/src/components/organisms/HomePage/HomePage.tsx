@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Dashboard from '../Dashboard/Dashboard';
@@ -7,9 +7,11 @@ import UserInfro from '../UserInfro/UserInfro';
 import Charts from './Charts';
 import Transactions from './Transactions';
 import Cards from './Cards';
+import BudgetServiceApi from '../../../services/budgetServiceApi';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   display: grid;
   grid-template-columns: 0.2fr 0.99fr 0.2fr;
   @media (max-width:${theme.breakpoints.tablet}) {
@@ -22,18 +24,30 @@ const Container = styled.div(
 const SidebarWapper = styled.div`
   margin: 0;
 `;
-const HomePage: React.FC = () => (
-  <Container>
-    <SidebarWapper>
-      <Sidebar />
-    </SidebarWapper>
-    <Switch>
-      <Route exact path="/" component={Dashboard} />
-      <Route path="/Transactions" component={Transactions} />
-      <Route path="/Charts" component={Charts} />
-      <Route path="/Cards" component={Cards} />
-    </Switch>
-    <UserInfro />
-  </Container>
-);
+const HomePage: React.FC = () => {
+  const [transactions, setTransactions] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await BudgetServiceApi.getAllTransactions();
+
+      setTransactions(data);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <Container>
+      <SidebarWapper>
+        <Sidebar />
+      </SidebarWapper>
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route path="/Transactions" component={Transactions} />
+        <Route path="/Charts" component={Charts} />
+        <Route path="/Cards" component={Cards} />
+      </Switch>
+      <UserInfro transactions={transactions} />
+    </Container>
+  );
+};
 export default HomePage;

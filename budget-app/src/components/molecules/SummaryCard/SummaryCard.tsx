@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typography from '../../atoms/Typography/Typography';
 import Icon from '../../atoms/IconImg/Icon';
 import { SelectSize } from '../../../containers/enums/index';
 import { ISummaryCardProps } from '../../../models/index';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div<ISummaryCardProps>(
-  ({ theme }) => `
+  () => `
   height: 23vh;
   width: 26vw;
   display: grid;
@@ -26,17 +28,19 @@ const RevenueWrapper = styled.div`
   flex-direction: column;
   grid-column: 1/3;
 `;
+
 const LastMonthWrapper = styled.div(
-  ({ theme }) => `
-  width: 15w;
+  () => `
+  width: 15vw;
   @media (max-width: ${theme.breakpoints.tablet}) {
     width: 33vw;
   }
 `
 );
 const IconWrapper = styled.div(
-  ({ theme }) => `
+  () => `
   grid-column: 2;
+  padding-left: 75px;
   @media (max-width: ${theme.breakpoints.tablet}) {
     width: 9vw;
   }
@@ -45,7 +49,15 @@ const IconWrapper = styled.div(
 const TitlelWrapper = styled.div`
   grid-column: 1/3;
 `;
-const SummaryCard: React.FC<ISummaryCardProps> = ({ subtiteltwo, subtitle, title, icon, revenue, sinceLastMonth }) => (
+const SummaryCard: React.FC<ISummaryCardProps> = ({
+  backgroundColor,
+  icon,
+  subtiteltwo,
+  subtitle,
+  title,
+  revenue,
+  sinceLastMonth,
+}) => (
   <Container>
     <TitlelWrapper>
       <Typography size={SelectSize.md}>{title}</Typography>
@@ -65,7 +77,7 @@ const SummaryCard: React.FC<ISummaryCardProps> = ({ subtiteltwo, subtitle, title
       </Typography>
     </LastMonthWrapper>
     <IconWrapper>
-      <Icon width="7vw" height="7vh" src={icon} />
+      <Icon icon={icon || 'check'} color="white" width="4vw" height="7vh" backgroundColor={backgroundColor} />
     </IconWrapper>
   </Container>
 );
