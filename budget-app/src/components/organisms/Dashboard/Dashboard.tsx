@@ -61,7 +61,7 @@ const Dashboard: React.FC = () => (
     <SummaryCardWapper>
       <SummaryCard
         title="INVENSMENT"
-        subtitle="Revnue"
+        subtitle="Revenue"
         revenue="40,000$"
         sinceLastMonth="+5.0%"
         subtiteltwo="Since last month"
@@ -70,7 +70,7 @@ const Dashboard: React.FC = () => (
       />
       <SummaryCard
         title="Sales"
-        subtitle="Revnue"
+        subtitle="Revenue"
         revenue="40,000$"
         sinceLastMonth="+5.0%"
         subtiteltwo="Since last month"

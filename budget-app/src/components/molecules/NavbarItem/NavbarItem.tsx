@@ -26,7 +26,7 @@ const Container = styled.li<INavbarItem>(
 
 const NavbarItem: React.FC<INavbarItem> = ({ title, icon, route }) => (
   <Container route={route}>
-    <Icon width="3vw" height="3vh" icon={icon} color="white" />
+    <Icon icon={icon} color="white" />
     <Typography size={SelectSize.sm}>{title}</Typography>
   </Container>
 );

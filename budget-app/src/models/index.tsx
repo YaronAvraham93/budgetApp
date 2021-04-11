@@ -12,6 +12,7 @@ export interface IIconProps {
   width?: string;
   icon?: any;
   color?: string;
+  backgroundColor?: string;
 }
 export interface INavbarItem {
   title?: string;
@@ -69,4 +70,13 @@ export interface IMainProps {
   LastName?: string;
   year?: string;
   month?: number;
+}
+export interface ITransactionSwitchCaseProps {
+  icon?: any;
+  text?: string;
+  color?: string;
+  backgroundColor?: string;
+}
+export interface ISidebar {
+  clicked?: boolean;
 }

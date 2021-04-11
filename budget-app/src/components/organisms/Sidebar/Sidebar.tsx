@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
 import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
 import navbarItem from '../../../constants/SidebarItem';
+import theme from '../../../style/theme/theme';
+import { ISidebar } from '../../../models/index';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,12 +23,12 @@ const Container = styled.div(
   }
 `
 );
-const CurrentBalanceWrapper = styled.div(
-  ({ theme }) => `
+const CurrentBalanceWrapper = styled.div<ISidebar>(
+  () => `
   padding-top: 50px;
   @media (max-width: ${theme.breakpoints.tablet}) {
     display: none;
-  }
+   
 `
 );
 const NavbarList = styled.ul`
@@ -35,7 +37,7 @@ const NavbarList = styled.ul`
   grid-template-rows: 1fr 1fr;
 `;
 
-const Sidebar: React.FC = () => (
+const Sidebar: React.FC<ISidebar> = () => (
   <Container>
     <CurrentBalanceWrapper>
       <CurrentBalance text="20,000$" title="Current Balance" />

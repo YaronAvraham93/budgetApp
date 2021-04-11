@@ -8,9 +8,10 @@ import Charts from './Charts';
 import Transactions from './Transactions';
 import Cards from './Cards';
 import BudgetServiceApi from '../../../services/budgetServiceApi';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   display: grid;
   grid-template-columns: 0.2fr 0.99fr 0.2fr;
   @media (max-width:${theme.breakpoints.tablet}) {

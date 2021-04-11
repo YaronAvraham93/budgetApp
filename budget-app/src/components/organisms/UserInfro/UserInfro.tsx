@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import UserProfile from '../../molecules/UserProfile/UserProfile';
 import PaymentHistory from '../../molecules/PaymentHistory/PaymentHistory';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   display: flex;
   flex-direction: column;
   align-items: center;

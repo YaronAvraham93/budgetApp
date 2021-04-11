@@ -4,9 +4,10 @@ import Icon from '../../atoms/IconImg/Icon';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { IPaymentHistoryProps } from '../../../models/index';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div<IPaymentHistoryProps>(
-  ({ theme }) => `
+  () => `
 
   width: 16vw;
   opacity: 0.6;
@@ -47,6 +48,7 @@ interface ItransactionProps {
   transactions?: [];
 }
 const getFormtDate = (date: string) => new Date(date).toLocaleString();
+
 const PaymentHistory: React.FC<ItransactionProps> = ({ transactions }) => (
   <Container>
     <TitelWrapper>
@@ -59,7 +61,7 @@ const PaymentHistory: React.FC<ItransactionProps> = ({ transactions }) => (
         </IconWrapper>
         <TimenpPymentWrapper>
           <Typography size={SelectSize.xl}>{transaction.paymentMethod}</Typography>
-          <Typography size={SelectSize.xl} color="#d1c0ae">
+          <Typography size={SelectSize.xs} color="#d1c0ae">
             {transaction.date ? getFormtDate(transaction.date) : ''}
           </Typography>
         </TimenpPymentWrapper>
