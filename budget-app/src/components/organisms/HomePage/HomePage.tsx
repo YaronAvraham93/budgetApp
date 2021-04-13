@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Dashboard from '../Dashboard/Dashboard';
@@ -8,6 +8,7 @@ import Charts from './Charts';
 import Transactions from './Transactions';
 import Cards from './Cards';
 import BudgetServiceApi from '../../../services/budgetServiceApi';
+import { TransactionContext } from '../../../contexts/transactionContext';
 import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
@@ -25,11 +26,10 @@ const SidebarWapper = styled.div`
   margin: 0;
 `;
 const HomePage: React.FC = () => {
-  const [transactions, setTransactions] = useState([]);
+  const { setTransactions } = useContext(TransactionContext);
   useEffect(() => {
     const fetchData = async () => {
       const data = await BudgetServiceApi.getAllTransactions();
-
       setTransactions(data);
     };
     fetchData();
@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
         <Route path="/Charts" component={Charts} />
         <Route path="/Cards" component={Cards} />
       </Switch>
-      <UserInfro transactions={transactions} />
+      <UserInfro />
     </Container>
   );
 };

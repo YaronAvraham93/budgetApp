@@ -47,12 +47,18 @@ export interface IUserrofileProps {
   lastName: string;
 }
 export interface IPaymentHistoryProps {
-  icon?: string;
-  hour?: string;
-  date?: string;
-  paymentType?: string;
-  paymentMethod?: string;
-  amount?: string;
+  date: string;
+  paymentType: string;
+  paymentMethod: string;
+  amount: Number;
+  currency: string;
+  category?: string;
+  company?: string;
+  cancelled?: boolean;
+  location: {
+    country: string;
+    city: string;
+  };
 }
 
 export interface IMainProps {
@@ -70,13 +76,4 @@ export interface IMainProps {
   LastName?: string;
   year?: string;
   month?: number;
-}
-export interface ITransactionSwitchCaseProps {
-  icon?: any;
-  text?: string;
-  color?: string;
-  backgroundColor?: string;
-}
-export interface ISidebar {
-  clicked?: boolean;
 }

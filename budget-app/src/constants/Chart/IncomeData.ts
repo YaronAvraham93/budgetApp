@@ -1,6 +1,9 @@
+// import React, { useContext } from 'react';
+// import { TransactionContext } from '../../contexts/transactionContext';
+// const { transactions } = useContext(TransactionContext);
 const series = [
   {
-    name: 'Desktops',
+    name: 'Income',
     data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
   },
 ];
