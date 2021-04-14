@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
-import { ICurrentBalancePops } from '../../../models/index';
+import { ICurrentBalance } from '../../../models/index';
 
-const Container = styled.div<ICurrentBalancePops>(
+const Container = styled.div<ICurrentBalance>(
   ({ theme }) => `
   height: 19vh;
   width: 12vw;
@@ -22,7 +22,7 @@ const Container = styled.div<ICurrentBalancePops>(
 `
 );
 
-const CurrentBalance: React.FC<ICurrentBalancePops> = ({ text, title }) => (
+const CurrentBalance: React.FC<ICurrentBalance> = ({ text, title }) => (
   <Container>
     <Typography size={SelectSize.lg} color="white">
       {text}

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { IPaymentHistoryProps } from '../models/index';
+import { ITransaction } from '../models/index';
 
 interface Itransaction {
-  transactions: IPaymentHistoryProps[];
-  setTransactions: (transactions: IPaymentHistoryProps[]) => void;
+  transactions: ITransaction[];
+  setTransactions: (transactions: ITransaction[]) => void;
 }
 const initialTransactionContext = {
   transactions: [],
@@ -13,7 +13,7 @@ const initialTransactionContext = {
 export const TransactionContext = React.createContext<Itransaction>(initialTransactionContext);
 
 const TransactionProvider: React.FC = ({ children }) => {
-  const [transactions, setTransactions] = useState<IPaymentHistoryProps[]>([]);
+  const [transactions, setTransactions] = useState<ITransaction[]>([]);
 
   return (
     <TransactionContext.Provider value={{ transactions, setTransactions }}>{children}</TransactionContext.Provider>

@@ -18,7 +18,12 @@ const getTransactionStyle = (paymentMethod: string) => {
         backgroundColor: theme.colors.mediumRed,
       };
     default:
-      return {};
+      return {
+        text: 'Credit payment',
+        icon: faSignOutAlt,
+        color: theme.colors.mediumRed,
+        backgroundColor: theme.colors.mediumRed,
+      };
   }
 };
 

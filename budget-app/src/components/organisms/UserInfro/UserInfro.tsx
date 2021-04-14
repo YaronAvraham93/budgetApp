@@ -29,7 +29,7 @@ const PaymentListWrapper = styled.div`
   overflow-y: overlay;
 `;
 
-const UserInfro: React.FC<any> = () => (
+const UserInfro: React.FC = () => (
   <Container>
     <UserWrapper>
       <UserProfile

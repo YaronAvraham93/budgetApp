@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SelectSize } from '../../../containers/enums/index';
-import { ITypographyProps } from '../../../models/index';
+import { ITypography } from '../../../models/index';
 
 const getSize = (size?: SelectSize) => {
   switch (size) {
@@ -18,7 +18,7 @@ const getSize = (size?: SelectSize) => {
   }
 };
 
-const STypographyProps = styled.label<ITypographyProps>`
+const STypographyProps = styled.label<ITypography>`
   ${(props) => getSize(props.size)};
   ${(props) => `color:${props.color}`};
   @media (max-width: 768px) {
@@ -27,7 +27,7 @@ const STypographyProps = styled.label<ITypographyProps>`
   }
 `;
 
-const Typography: React.FC<ITypographyProps> = ({ color, size = SelectSize.md, children }) => (
+const Typography: React.FC<ITypography> = ({ color, size = SelectSize.md, children }) => (
   <STypographyProps size={size} color={color}>
     {children}
   </STypographyProps>

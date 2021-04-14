@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Typography from './Typography';
 import { SelectSize } from '../../../containers/enums';
-import { ITypographyProps } from '../../../models/index';
+import { ITypography } from '../../../models/index';
 
 export default {
   title: 'atom/Typography',
@@ -12,7 +12,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ITypographyProps> = (args) => <Typography {...args}> Hello </Typography>;
+const Template: Story<ITypography> = (args) => <Typography {...args}> Hello </Typography>;
 
 export const Small = Template.bind({});
 Small.args = {

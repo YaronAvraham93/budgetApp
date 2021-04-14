@@ -5,7 +5,7 @@ import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { TransactionContext } from '../../../contexts/transactionContext';
 import theme from '../../../style/theme/theme';
-import getTransactionStyle from '../../../helpers/SwichTransaction';
+import getTransactionStyle from '../../../helpers/getTransactionStyle';
 
 const Container = styled.div(
   () => `
@@ -32,7 +32,6 @@ const TitelWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-
 const MoneyWrapper = styled.div`
   display: flex;
   flex-direction: column;

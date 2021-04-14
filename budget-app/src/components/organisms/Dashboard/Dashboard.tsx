@@ -7,7 +7,7 @@ import Income from '../../molecules/Income/IncomeChart';
 import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
 import { TransactionContext } from '../../../contexts/transactionContext';
-import { getAverage } from '../../../helpers/average';
+import getAverage from '../../../helpers/average';
 
 const Container = styled.div(
   () => `
@@ -59,16 +59,18 @@ const Dashboard: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
   const income = getAverage(transactions.filter((transaction) => transaction.paymentType === 'income'));
   const Expenses = getAverage(transactions.filter((transaction) => transaction.paymentType === 'Expenses'));
+  const incomeList = transactions.filter((transaction) => transaction.paymentType === 'income');
+  const amountList = incomeList.map((transaction) => transaction.amount);
 
   return (
     <Container>
       <CreaditCardWapper>
         <CreaditCard last4Digits={5555} firstName="Yaron" lastName="Avraham" month={12} year="/12" />
-        <Income />
+        <Income series={amountList} />
       </CreaditCardWapper>
       <SummaryCardWapper>
         <SummaryCard
-          title="income"
+          title="Income"
           subtitle="Average"
           revenue={income}
           sinceLastMonth="+5.0%"

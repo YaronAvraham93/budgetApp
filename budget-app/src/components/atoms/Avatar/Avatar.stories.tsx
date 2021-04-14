@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IAvatarProps } from '../../../models/index';
+import { IAvatar } from '../../../models/index';
 import Avatar from './Avatar';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: Avatar,
 } as Meta;
 
-const Template: Story<IAvatarProps> = (args) => <Avatar {...args} />;
+const Template: Story<IAvatar> = (args) => <Avatar {...args} />;
 
 export const SmallAvatar = Template.bind({});
 

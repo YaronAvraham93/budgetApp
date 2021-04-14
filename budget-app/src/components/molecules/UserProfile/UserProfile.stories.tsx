@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IUserrofileProps } from '../../../models/index';
+import { IUserrofile } from '../../../models/index';
 import UserProfile from './UserProfile';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: UserProfile,
 } as Meta;
 
-const Template: Story<IUserrofileProps> = (args) => <UserProfile {...args} />;
+const Template: Story<IUserrofile> = (args) => <UserProfile {...args} />;
 export const SUserProfile = Template.bind({});
 
 SUserProfile.args = {

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IIconProps } from '../../../models/index';
+import { IIcon } from '../../../models/index';
 
-const STIcon = styled.div<IIconProps>`
+const STIcon = styled.div<IIcon>`
   ${(props) => `width:${props.width}`};
   ${(props) => `height:${props.height}`};
   ${(props) => `background-color:${props.backgroundColor}`};
@@ -14,7 +14,7 @@ const STIcon = styled.div<IIconProps>`
   text-align: center;
 `;
 
-const Icon: React.FC<IIconProps> = ({ icon, width, height, color, backgroundColor }) => (
+const Icon: React.FC<IIcon> = ({ icon, width, height, color, backgroundColor }) => (
   <STIcon width={width} height={height} backgroundColor={backgroundColor}>
     <FontAwesomeIcon icon={icon} color={color} />
   </STIcon>

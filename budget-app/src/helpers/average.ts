@@ -1,12 +1,12 @@
-import { IPaymentHistoryProps } from '../models/index';
+import { ITransaction } from '../models/index';
 
-export const getAverage = (transactions: IPaymentHistoryProps[]) => {
+const getAverage = (transactions: ITransaction[]) => {
   let total = 0;
-  transactions.forEach((item: IPaymentHistoryProps) => {
-    total = +item.amount;
+  transactions.forEach((transaction: ITransaction) => {
+    total = +transaction.amount;
   });
-  const avregae = total / transactions.length;
-  return avregae.toFixed(2);
+  const average = total / transactions.length;
+  return average.toFixed(2);
 };
 
 export default getAverage;

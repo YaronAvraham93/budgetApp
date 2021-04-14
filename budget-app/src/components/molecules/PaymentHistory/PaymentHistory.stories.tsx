@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IPaymentHistoryProps } from '../../../models/index';
+import { ITransaction } from '../../../models/index';
 import PaymentHistory from './PaymentHistory';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: PaymentHistory,
 } as Meta;
 
-const Template: Story<IPaymentHistoryProps> = (args) => <PaymentHistory {...args} />;
+const Template: Story<ITransaction> = (args) => <PaymentHistory {...args} />;
 export const SPaymentHistory = Template.bind({});
 
 SPaymentHistory.args = {
