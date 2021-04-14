@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Icon from '../../atoms/IconImg/Icon';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
-import { TransactionContext } from '../../../contexts/transactionContext';
+import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
 import getTransactionStyle from '../../../helpers/getTransactionStyle';
 

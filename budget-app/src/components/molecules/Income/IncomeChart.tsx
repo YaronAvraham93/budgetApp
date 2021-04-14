@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
-import { IincomeChart } from '../../../models/index';
+import filtredByPaymentType from '../../../helpers/filtredByPaymentType';
+import { TransactionContext } from '../../../contexts/contextTransaction';
 
 const Container = styled.div(
   ({ theme }) => `
@@ -15,44 +16,47 @@ const Container = styled.div(
   }
 `
 );
-const incomeChart = (array: IincomeChart) => [
-  {
-    name: 'income',
-    data: array,
-  },
-];
 
-const options = {
-  chart: {
-    height: 350,
-    type: 'line',
-    zoom: {
+const IncomeChart: React.FC = () => {
+  const { transactions } = useContext(TransactionContext);
+  const incomeChart = [
+    {
+      name: 'income',
+      data: filtredByPaymentType(transactions, 'income'),
+    },
+  ];
+  const options = {
+    chart: {
+      height: 350,
+      type: 'line',
+      zoom: {
+        enabled: false,
+      },
+    },
+    dataLabels: {
       enabled: false,
     },
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  stroke: {
-    curve: 'straight',
-  },
-  title: {
-    text: 'Income',
-    align: 'left',
-  },
-  grid: {
-    row: {
-      colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-      opacity: 0.5,
+    stroke: {
+      curve: 'straight',
     },
-  },
-  xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-  },
+    title: {
+      text: 'Income',
+      align: 'left',
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'],
+        opacity: 0.5,
+      },
+    },
+    xaxis: {
+      categories: transactions.map(({ date }) => new Date(date).toLocaleString('default', { month: 'short' })),
+    },
+  };
+  return (
+    <Container>
+      <ReactApexChart options={options} series={incomeChart} type="line" height={235} />
+    </Container>
+  );
 };
-const IncomeChart: React.FC<IincomeChart> = ({ series }) => (
-  <Container>
-    <ReactApexChart options={options} series={incomeChart(series)} type="line" height={235} />
-  </Container>
-);
 export default IncomeChart;

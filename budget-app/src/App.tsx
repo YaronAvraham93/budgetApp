@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import TransactionProvider from './contexts/transactionContext';
 import HomePage from './components/organisms/HomePage/HomePage';
+import TransactionContextProvider from './contexts/contextTransaction';
 
 function App() {
   return (
     <>
-      <TransactionProvider>
+      <TransactionContextProvider>
         <BrowserRouter>
           <HomePage />
         </BrowserRouter>
-      </TransactionProvider>
+      </TransactionContextProvider>
     </>
   );
 }

@@ -8,7 +8,8 @@ import Charts from './Charts';
 import Transactions from './Transactions';
 import Cards from './Cards';
 import BudgetServiceApi from '../../../services/budgetServiceApi';
-import { TransactionContext } from '../../../contexts/transactionContext';
+// import { TransactionContext } from '../../../contexts/transactionContext';
+import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
@@ -26,7 +27,7 @@ const SidebarWapper = styled.div`
   margin: 0;
 `;
 const HomePage: React.FC = () => {
-  const { setTransactions } = useContext(TransactionContext);
+  const { setTransactions, transactions } = useContext(TransactionContext);
   useEffect(() => {
     const fetchData = async () => {
       const data = await BudgetServiceApi.getAllTransactions();
@@ -34,6 +35,7 @@ const HomePage: React.FC = () => {
     };
     fetchData();
   }, []);
+  console.log(transactions);
 
   return (
     <Container>

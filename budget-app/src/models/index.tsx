@@ -61,6 +61,7 @@ export interface ITransaction {
   };
 }
 
-export interface IincomeChart {
-  series: any;
+export interface ITransactionInitialState {
+  transactions: ITransaction[];
+  setTransactions: (transactions: ITransaction[]) => void;
 }
