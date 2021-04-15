@@ -1,13 +1,12 @@
 import React, { useReducer, createContext } from 'react';
 import { ITransaction, ITransactionInitialState } from '../models/index';
 import transactionReducer from './transactionReducer';
+import { ActionType } from '../containers/enums/index';
 
 const initialState = {
   transactions: [],
   setTransactions: () => {},
 };
-
-export const SET_TRANSACTIONS = 'SET_TRANSACTIONS';
 
 export const TransactionContext = createContext<ITransactionInitialState>(initialState);
 
@@ -16,7 +15,7 @@ const TransactionContextProvider: React.FC = ({ children }) => {
 
   const setTransactions = (transactions: ITransaction[]) => {
     dispatch({
-      type: SET_TRANSACTIONS,
+      type: ActionType.SET_TRANSACTIONS,
       payload: transactions,
     });
   };

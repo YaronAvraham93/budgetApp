@@ -5,4 +5,7 @@ export enum SelectSize {
   sm = 'sm',
   xs = 'xs',
 }
+export enum ActionType {
+  SET_TRANSACTIONS = 'SET_TRANSACTIONS',
+}
 export default SelectSize;

@@ -27,7 +27,7 @@ const SidebarWapper = styled.div`
   margin: 0;
 `;
 const HomePage: React.FC = () => {
-  const { setTransactions, transactions } = useContext(TransactionContext);
+  const { setTransactions } = useContext(TransactionContext);
   useEffect(() => {
     const fetchData = async () => {
       const data = await BudgetServiceApi.getAllTransactions();
@@ -35,7 +35,6 @@ const HomePage: React.FC = () => {
     };
     fetchData();
   }, []);
-  console.log(transactions);
 
   return (
     <Container>

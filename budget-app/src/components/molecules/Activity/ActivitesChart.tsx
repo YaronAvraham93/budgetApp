@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
-import { options, series } from '../../../constants/Chart/ActivityData';
+import { TransactionContext } from '../../../contexts/contextTransaction';
+import filtredByPaymentType from '../../../helpers/filtredByPaymentType';
 
 const Container = styled.div(
   ({ theme }) => `
@@ -15,9 +16,58 @@ const Container = styled.div(
   }
 `
 );
-const ActivitesChart: React.FC = () => (
-  <Container>
-    <ReactApexChart options={options} series={series} type="bar" height={350} />
-  </Container>
-);
+const ActivitesChart: React.FC = () => {
+  const { transactions } = useContext(TransactionContext);
+  const series = [
+    {
+      name: 'Income',
+      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+    },
+    {
+      name: 'Expenses',
+      data: filtredByPaymentType(transactions, 'Expenses'),
+    },
+  ];
+  const options = {
+    chart: {
+      type: 'bar',
+      height: 350,
+    },
+    title: {
+      text: 'Activity',
+      align: 'left',
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded',
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent'],
+    },
+    xaxis: {
+      categories: transactions.map(({ date }) => new Date(date).toLocaleString('default', { month: 'short' })),
+    },
+    yaxis: {
+      title: {
+        text: '$ (thousands)',
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+  };
+  return (
+    <Container>
+      <ReactApexChart options={options} series={series} type="bar" height={350} />
+    </Container>
+  );
+};
 export default ActivitesChart;
