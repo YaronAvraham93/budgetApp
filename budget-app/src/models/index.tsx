@@ -63,3 +63,20 @@ export interface ITransactionInitialState {
   transactions: ITransaction[];
   setTransactions: (transactions: ITransaction[]) => void;
 }
+export interface IUser {
+  firstName: string;
+  lastName: string;
+  email: string;
+  avatar: string;
+  currentBalance: string;
+  currentBalanceCurrency: string;
+  creditCard: {
+    expYear: Number;
+    expMonth: Number;
+    last4Digits: Number;
+  };
+}
+export interface IUserInitialState {
+  user: IUser[];
+  setUser: (user: IUser) => void;
+}

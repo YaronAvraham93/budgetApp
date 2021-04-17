@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
-import { IUserProfile } from '../models/index';
+import React, { createContext, useReducer } from 'react';
+import { IUser, IUserInitialState } from '../models/index';
+import userReducer from "./userReducer";
+import { ActionType } from '../containers/enums/index';
 
-export const initialUserContext = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  avatar: '',
+const initialState = {
+  user: [],
+  setUser: () => {},
 };
 
-export const UserContext = React.createContext<IUserProfile>(initialUserContext);
+export const UserContext = createContext<IUserInitialState>(initialState);
 export const UserDispatchContext = React.createContext<Function>(() => {});
 
 const UserProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<IUserProfile>(initialUserContext);
-
-  return (
-    <UserContext.Provider value={{ ...user }}>
-      <UserDispatchContext.Provider value={setUser}>{children}</UserDispatchContext.Provider>
-    </UserContext.Provider>
-  );
+  const [state, dispatch] = useReducer(userReducer, initialState);
+  const setUser = (user: IUser) => {
+    dispatch({
+      type: ActionType.SET_USER,
+      payload: user,
+    });
+  };
+  return <UserContext.Provider value={{ ...state, setUser }}>{children}</UserContext.Provider>;
 };
 
 export default UserProvider;
