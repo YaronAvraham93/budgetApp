@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
-import { IUserrofile } from '../../../models/index';
+import { IUserProfile } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
 
 const Container = styled.div(
@@ -27,7 +27,7 @@ const Container = styled.div(
 `
 );
 
-const UserProfile: React.FC<IUserrofile> = ({ avatarSrc, email, firstName, lastName }) => (
+const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, lastName }) => (
   <Container>
     <Avatar src={avatarSrc} />
     <Typography size={SelectSize.sm}>

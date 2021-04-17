@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Icon from './Icon';
-import { IIcon } from '../../../models/index';
+import { IIconProps } from '../../../models/index';
 
 export default {
   title: 'atom/Icon',
   component: Icon,
 } as Meta;
 
-const Template: Story<IIcon> = (args) => <Icon {...args} />;
+const Template: Story<IIconProps> = (args) => <Icon {...args} />;
 
 export const SmallIcon = Template.bind({});
 SmallIcon.args = {

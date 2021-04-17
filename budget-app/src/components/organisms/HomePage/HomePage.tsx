@@ -8,7 +8,6 @@ import Charts from './Charts';
 import Transactions from './Transactions';
 import Cards from './Cards';
 import BudgetServiceApi from '../../../services/budgetServiceApi';
-// import { TransactionContext } from '../../../contexts/transactionContext';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
 

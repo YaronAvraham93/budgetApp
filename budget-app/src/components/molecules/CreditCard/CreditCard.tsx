@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ICreditCard } from '../../../models/index';
+import { ICreditCardProps } from '../../../models/index';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 
-const Container = styled.div<ICreditCard>(
+const Container = styled.div(
   ({ theme }) => `
   background-image: url(${img});
   background-size: cover;
@@ -74,7 +74,7 @@ const FullNameWrapper = styled.div(
 `
 );
 
-const CreditCard: React.FC<ICreditCard> = ({ last4Digits, firstName, lastName, year, month }) => (
+const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastName, year, month }) => (
   <Container>
     <TitelWrapper>
       <Typography size={SelectSize.lg} color="white">

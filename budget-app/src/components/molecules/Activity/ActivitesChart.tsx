@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
 import { TransactionContext } from '../../../contexts/contextTransaction';
-import filtredByPaymentType from '../../../helpers/filtredByPaymentType';
+import filtrByPaymentType from '../../../helpers/filtrByPaymentType';
 
 const Container = styled.div(
   ({ theme }) => `
@@ -25,7 +25,7 @@ const ActivitesChart: React.FC = () => {
     },
     {
       name: 'Expenses',
-      data: filtredByPaymentType(transactions, 'Expenses'),
+      data: filtrByPaymentType(transactions, 'Expenses'),
     },
   ];
   const options = {

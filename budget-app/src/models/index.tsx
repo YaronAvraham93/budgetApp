@@ -1,13 +1,13 @@
 import Selects from '../containers/enums/index';
 
-export interface ITypography {
+export interface ITypographyProps {
   size?: Selects;
   color?: string;
 }
-export interface IAvatar {
+export interface IAvatarProps {
   src?: any;
 }
-export interface IIcon {
+export interface IIconProps {
   height?: string;
   width?: string;
   icon?: any;
@@ -15,32 +15,30 @@ export interface IIcon {
   backgroundColor?: string;
 }
 export interface INavbarItem {
-  title?: string;
+  title: string;
   icon?: any;
-  route?: string;
 }
-export interface ICurrentBalance {
+export interface ICurrentBalanceProps {
   title?: string;
   text?: string;
 }
-export interface ICreditCard {
-  last4Digits?: number;
-  firstName?: string;
-  lastName?: string;
-  year?: string;
-  month?: number;
+export interface ICreditCardProps {
+  last4Digits: number;
+  firstName: string;
+  lastName: string;
+  year: string;
+  month: number;
 }
 export interface ISummaryCard {
   icon?: any;
-  revenue?: string;
-  sinceLastMonth?: string;
-  Revenue?: string;
-  title?: string;
-  subtitle?: string;
-  subtiteltwo?: string;
+  revenue: string;
+  sinceLastMonth: string;
+  title: string;
+  subtitle: string;
+  subtiteltwo: string;
   backgroundColor?: string;
 }
-export interface IUserrofile {
+export interface IUserProfile {
   avatarSrc?: string;
   email: string;
   firstName: string;

@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IAvatar } from '../../../models/index';
+import { IAvatarProps } from '../../../models/index';
 
-const setImage = (src: any) => `
+type SAvatarBoxProps = Pick<IAvatarProps, 'src'>;
+const setImage = (src: string) => `
       background-size: cover;
       background-image: url('${src}')
       `;
 
-const SAvatar = styled.div<IAvatar>`
+const SAvatar = styled.div<SAvatarBoxProps>`
   border-radius: 50px;
-  ${(props) => setImage(props.src)};
+  ${({ src }) => setImage(src)};
   height: 15vh;
   width: 7vw;
 `;
 
-const Avatar: React.FC<IAvatar> = ({ src }) => <SAvatar src={src} />;
+const Avatar: React.FC<IAvatarProps> = ({ src }) => <SAvatar src={src} />;
 export default Avatar;

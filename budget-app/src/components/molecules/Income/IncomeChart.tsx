@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
-import filtredByPaymentType from '../../../helpers/filtredByPaymentType';
+import filtredByPaymentType from '../../../helpers/filtrByPaymentType';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 
 const Container = styled.div(

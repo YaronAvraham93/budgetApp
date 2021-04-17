@@ -28,7 +28,7 @@ const CurrentBalanceWrapper = styled.div(
   @media (max-width: ${theme.breakpoints.tablet}) {
     display: none;
    
-`
+  }`
 );
 const NavbarList = styled.ul`
   padding: 0;

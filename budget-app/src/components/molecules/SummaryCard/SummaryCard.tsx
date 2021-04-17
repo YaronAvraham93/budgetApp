@@ -6,7 +6,7 @@ import { SelectSize } from '../../../containers/enums/index';
 import { ISummaryCard } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
-const Container = styled.div<ISummaryCard>(
+const Container = styled.div(
   () => `
   height: 23vh;
   width: 26vw;
