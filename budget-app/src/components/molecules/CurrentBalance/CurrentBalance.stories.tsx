@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ICurrentBalancePops } from '../../../models/index';
+import { ICurrentBalanceProps } from '../../../models/index';
 import CurrentBalance from './CurrentBalance';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: CurrentBalance,
 } as Meta;
 
-const Template: Story<ICurrentBalancePops> = (args) => <CurrentBalance {...args} />;
+const Template: Story<ICurrentBalanceProps> = (args) => <CurrentBalance {...args} />;
 export const SCurrentBalance = Template.bind({});
 
 SCurrentBalance.args = {

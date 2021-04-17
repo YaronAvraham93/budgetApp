@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typography from '../../atoms/Typography/Typography';
 import Icon from '../../atoms/IconImg/Icon';
 import { SelectSize } from '../../../containers/enums/index';
-import { ISummaryCardProps } from '../../../models/index';
+import { ISummaryCard } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
-const Container = styled.div<ISummaryCardProps>(
+const Container = styled.div(
   () => `
   height: 23vh;
   width: 26vw;
@@ -49,7 +48,7 @@ const IconWrapper = styled.div(
 const TitlelWrapper = styled.div`
   grid-column: 1/3;
 `;
-const SummaryCard: React.FC<ISummaryCardProps> = ({
+const SummaryCard: React.FC<ISummaryCard> = ({
   backgroundColor,
   icon,
   subtiteltwo,

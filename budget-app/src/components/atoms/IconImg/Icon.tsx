@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IIconProps } from '../../../models/index';
 
 const STIcon = styled.div<IIconProps>`
-  ${(props) => `width:${props.width}`};
-  ${(props) => `height:${props.height}`};
-  ${(props) => `background-color:${props.backgroundColor}`};
+  ${({ width }) => `width:${width}`};
+  ${({ height }) => `height:${height}`};
+  ${({ backgroundColor }) => `background-color:${backgroundColor}`};
   border-radius: 25px;
   display: flex;
   align-items: center;

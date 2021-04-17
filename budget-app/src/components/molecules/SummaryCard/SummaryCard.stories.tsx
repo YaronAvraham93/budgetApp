@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ISummaryCardProps } from '../../../models/index';
+import { ISummaryCard } from '../../../models/index';
 import SummaryCard from './SummaryCard';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: SummaryCard,
 } as Meta;
 
-const Template: Story<ISummaryCardProps> = (args) => <SummaryCard {...args} />;
+const Template: Story<ISummaryCard> = (args) => <SummaryCard {...args} />;
 export const SInvestment = Template.bind({});
 
 SInvestment.args = {

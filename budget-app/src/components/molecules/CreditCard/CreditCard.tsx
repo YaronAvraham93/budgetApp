@@ -5,7 +5,7 @@ import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 
-const Container = styled.div<ICreditCardProps>(
+const Container = styled.div(
   ({ theme }) => `
   background-image: url(${img});
   background-size: cover;

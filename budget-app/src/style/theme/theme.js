@@ -6,6 +6,7 @@ const theme = {
     lightPurple: '#5142a7',
     darkPurple: '#4333a0',
     darkBlue: '#080B8D',
+    mediumRed: '#FF0000',
   },
   breakpoints: {
     mobile: '320px',

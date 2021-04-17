@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { IAvatarProps } from '../../../models/index';
 
-const setImage = (src: any) => `
+type SAvatarBoxProps = Pick<IAvatarProps, 'src'>;
+const setImage = (src: string) => `
       background-size: cover;
       background-image: url('${src}')
       `;
 
-const SAvatar = styled.div<IAvatarProps>`
+const SAvatar = styled.div<SAvatarBoxProps>`
   border-radius: 50px;
-  ${(props) => setImage(props.src)};
+  ${({ src }) => setImage(src)};
   height: 15vh;
   width: 7vw;
 `;

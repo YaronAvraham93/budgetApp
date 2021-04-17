@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { faBox, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import Activity from '../../molecules/Activity/ActivitesChart';
@@ -6,6 +6,8 @@ import CreaditCard from '../../molecules/CreditCard/CreditCard';
 import Income from '../../molecules/Income/IncomeChart';
 import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
+import { TransactionContext } from '../../../contexts/contextTransaction';
+import getAverage from '../../../helpers/average';
 
 const Container = styled.div(
   () => `
@@ -52,36 +54,43 @@ const SummaryCardWapper = styled.div(
   }
 `
 );
-const Dashboard: React.FC = () => (
-  <Container>
-    <CreaditCardWapper>
-      <CreaditCard last4Digits={5555} firstName="Yaron" lastName="Avraham" month={12} year="/12" />
-      <Income />
-    </CreaditCardWapper>
-    <SummaryCardWapper>
-      <SummaryCard
-        title="INVENSMENT"
-        subtitle="Revenue"
-        revenue="40,000$"
-        sinceLastMonth="+5.0%"
-        subtiteltwo="Since last month"
-        icon={faBox}
-        backgroundColor={theme.colors.lightBlue}
-      />
-      <SummaryCard
-        title="Sales"
-        subtitle="Revenue"
-        revenue="40,000$"
-        sinceLastMonth="+5.0%"
-        subtiteltwo="Since last month"
-        icon={faChartLine}
-        backgroundColor={theme.colors.darkBlue}
-      />
-    </SummaryCardWapper>
-    <ActivviyWapper>
-      <Activity />
-    </ActivviyWapper>
-  </Container>
-);
+
+const Dashboard: React.FC = () => {
+  const { transactions } = useContext(TransactionContext);
+  const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'income'));
+  const Expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
+
+  return (
+    <Container>
+      <CreaditCardWapper>
+        <CreaditCard last4Digits={5555} firstName="Yaron" lastName="Avraham" month={12} year="/12" />
+        <Income />
+      </CreaditCardWapper>
+      <SummaryCardWapper>
+        <SummaryCard
+          title="Income"
+          subtitle="Average"
+          revenue={income}
+          sinceLastMonth="+5.0%"
+          subtiteltwo="Since last month"
+          icon={faBox}
+          backgroundColor={theme.colors.lightBlue}
+        />
+        <SummaryCard
+          title="Expenses"
+          subtitle="Average"
+          revenue={Expenses}
+          sinceLastMonth="+5.0%"
+          subtiteltwo="Since last month"
+          icon={faChartLine}
+          backgroundColor={theme.colors.darkBlue}
+        />
+      </SummaryCardWapper>
+      <ActivviyWapper>
+        <Activity />
+      </ActivviyWapper>
+    </Container>
+  );
+};
 
 export default Dashboard;

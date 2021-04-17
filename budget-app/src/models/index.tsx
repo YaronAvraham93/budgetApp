@@ -15,68 +15,51 @@ export interface IIconProps {
   backgroundColor?: string;
 }
 export interface INavbarItem {
-  title?: string;
+  title: string;
   icon?: any;
-  route?: string;
 }
-export interface ICurrentBalancePops {
+export interface ICurrentBalanceProps {
   title?: string;
   text?: string;
 }
 export interface ICreditCardProps {
-  last4Digits?: number;
-  firstName?: string;
-  lastName?: string;
-  year?: string;
-  month?: number;
+  last4Digits: number;
+  firstName: string;
+  lastName: string;
+  year: string;
+  month: number;
 }
-export interface ISummaryCardProps {
+export interface ISummaryCard {
   icon?: any;
-  revenue?: string;
-  sinceLastMonth?: string;
-  Revenue?: string;
-  title?: string;
-  subtitle?: string;
-  subtiteltwo?: string;
+  revenue: string;
+  sinceLastMonth: string;
+  title: string;
+  subtitle: string;
+  subtiteltwo: string;
   backgroundColor?: string;
 }
-export interface IUserrofileProps {
+export interface IUserProfile {
   avatarSrc?: string;
   email: string;
   firstName: string;
   lastName: string;
 }
-export interface IPaymentHistoryProps {
-  icon?: string;
-  hour?: string;
-  date?: string;
-  paymentType?: string;
-  paymentMethod?: string;
-  amount?: string;
+export interface ITransaction {
+  date: string;
+  paymentType: string;
+  paymentMethod: string;
+  amount: Number;
+  currency: string;
+  category?: string;
+  company?: string;
+  cancelled?: boolean;
+  location: {
+    country: string;
+    city: string;
+  };
 }
 
-export interface IMainProps {
-  icon?: string;
-  revenue?: string;
-  SinceLastMonth?: string;
-  Revenue?: string;
-  titel?: string;
-  subtitel?: string;
-  anotherTitle?: string;
-  width?: string;
-  height?: string;
-  last4Digits?: number;
-  FirstName?: string;
-  LastName?: string;
-  year?: string;
-  month?: number;
-}
-export interface ITransactionSwitchCaseProps {
-  icon?: any;
-  text?: string;
-  color?: string;
-  backgroundColor?: string;
-}
-export interface ISidebar {
-  clicked?: boolean;
+export interface ITransactionInitialState {
+  transactions: ITransaction[];
+  setTransactions: (transactions: ITransaction[]) => void;
 }

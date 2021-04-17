@@ -6,7 +6,7 @@ import { SelectSize } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
-const Container = styled.li<INavbarItem>(
+const Container = styled.li(
   () => `
   color:floralwhite;
   display: flex;
@@ -24,8 +24,8 @@ const Container = styled.li<INavbarItem>(
 `
 );
 
-const NavbarItem: React.FC<INavbarItem> = ({ title, icon, route }) => (
-  <Container route={route}>
+const NavbarItem: React.FC<INavbarItem> = ({ title, icon }) => (
+  <Container>
     <Icon icon={icon} color="white" />
     <Typography size={SelectSize.sm}>{title}</Typography>
   </Container>

@@ -29,7 +29,7 @@ const PaymentListWrapper = styled.div`
   overflow-y: overlay;
 `;
 
-const UserInfro: React.FC<any> = ({ transactions }) => (
+const UserInfro: React.FC = () => (
   <Container>
     <UserWrapper>
       <UserProfile
@@ -40,7 +40,7 @@ const UserInfro: React.FC<any> = ({ transactions }) => (
       />
     </UserWrapper>
     <PaymentListWrapper>
-      <PaymentHistory transactions={transactions} />
+      <PaymentHistory />
     </PaymentListWrapper>
   </Container>
 );

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
-import { series, options } from '../../../constants/Chart/IncomeData';
+import filtredByPaymentType from '../../../helpers/filtrByPaymentType';
+import { TransactionContext } from '../../../contexts/contextTransaction';
 
 const Container = styled.div(
   ({ theme }) => `
@@ -16,9 +17,46 @@ const Container = styled.div(
 `
 );
 
-const IncomeChart: React.FC = () => (
-  <Container>
-    <ReactApexChart options={options} series={series} type="line" height={235} />
-  </Container>
-);
+const IncomeChart: React.FC = () => {
+  const { transactions } = useContext(TransactionContext);
+  const incomeChart = [
+    {
+      name: 'income',
+      data: filtredByPaymentType(transactions, 'income'),
+    },
+  ];
+  const options = {
+    chart: {
+      height: 350,
+      type: 'line',
+      zoom: {
+        enabled: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: 'straight',
+    },
+    title: {
+      text: 'Income',
+      align: 'left',
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'],
+        opacity: 0.5,
+      },
+    },
+    xaxis: {
+      categories: transactions.map(({ date }) => new Date(date).toLocaleString('default', { month: 'short' })),
+    },
+  };
+  return (
+    <Container>
+      <ReactApexChart options={options} series={incomeChart} type="line" height={235} />
+    </Container>
+  );
+};
 export default IncomeChart;

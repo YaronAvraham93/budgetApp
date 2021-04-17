@@ -32,7 +32,6 @@ interface Itransactions {
   };
 }
 const baseURl = process.env.REACT_APP_BASE_URL;
-console.log('baseURL', baseURl);
 
 class BudgetServiceApi {
   axiosInstance = axios.create({
