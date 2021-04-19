@@ -67,11 +67,11 @@ const Dashboard: React.FC = () => {
     <Container>
       <CreaditCardWapper>
         <CreaditCard
-          last4Digits={user.creditCard.last4Digits}
+          last4Digits={user.creditCard[0].last4Digits}
           firstName={user.firstName}
           lastName={user.lastName}
-          month={11}
-          year="/12"
+          month={user.creditCard[0].expMonth}
+          year={user.creditCard[0].expYear}
         />
         <Income />
       </CreaditCardWapper>

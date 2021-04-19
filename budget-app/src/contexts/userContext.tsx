@@ -11,11 +11,13 @@ const initialState = {
     avatar: '',
     currentBalance: '',
     currentBalanceCurrency: '',
-    creditCard: {
-      expYear: 0,
-      expMonth: 0,
-      last4Digits: 0,
-    },
+    creditCard: [
+      {
+        expYear: 0,
+        expMonth: 0,
+        last4Digits: 0,
+      },
+    ],
   },
   setUser: () => {},
 };

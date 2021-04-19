@@ -26,7 +26,7 @@ export interface ICreditCardProps {
   last4Digits: Number;
   firstName: string;
   lastName: string;
-  year: string;
+  year: Number;
   month: Number;
 }
 export interface ISummaryCard {
@@ -74,7 +74,7 @@ export interface IUser {
     expYear: Number;
     expMonth: Number;
     last4Digits: Number;
-  };
+  }[];
 }
 export interface IUserInitialState {
   user: IUser;
