@@ -1,9 +1,4 @@
-import { IUserInitialState } from '../models/index';
-
-interface IAction {
-  type: string;
-  payload: any;
-}
+import { IUserInitialState, IAction } from '../models/index';
 
 const userReducer = (state: IUserInitialState, action: IAction) => {
   switch (action.type) {

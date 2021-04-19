@@ -7,6 +7,7 @@ import Income from '../../molecules/Income/IncomeChart';
 import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
 import { TransactionContext } from '../../../contexts/contextTransaction';
+import { UserContext } from '../../../contexts/userContext';
 import getAverage from '../../../helpers/average';
 
 const Container = styled.div(
@@ -57,13 +58,21 @@ const SummaryCardWapper = styled.div(
 
 const Dashboard: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
-  const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'income'));
+  const { user } = useContext(UserContext);
+
+  const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Income'));
   const Expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
 
   return (
     <Container>
       <CreaditCardWapper>
-        <CreaditCard last4Digits={5555} firstName="Yaron" lastName="Avraham" month={12} year="/12" />
+        <CreaditCard
+          last4Digits={user.creditCard.last4Digits}
+          firstName={user.firstName}
+          lastName={user.lastName}
+          month={11}
+          year="/12"
+        />
         <Income />
       </CreaditCardWapper>
       <SummaryCardWapper>

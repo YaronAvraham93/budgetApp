@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import UserProfile from '../../molecules/UserProfile/UserProfile';
 import PaymentHistory from '../../molecules/PaymentHistory/PaymentHistory';
 import theme from '../../../style/theme/theme';
+import { UserContext } from '../../../contexts/userContext';
 
 const Container = styled.div(
   () => `
@@ -29,20 +30,18 @@ const PaymentListWrapper = styled.div`
   overflow-y: overlay;
 `;
 
-const UserInfro: React.FC = () => (
-  <Container>
-    <UserWrapper>
-      <UserProfile
-        avatarSrc="http://www.weijiahong2018.com/static/assets/images/avatars/avatar.png"
-        firstName="Yaron"
-        lastName="Avraham"
-        email="yaronavraham600@gmail.com"
-      />
-    </UserWrapper>
-    <PaymentListWrapper>
-      <PaymentHistory />
-    </PaymentListWrapper>
-  </Container>
-);
+const UserInfro: React.FC = () => {
+  const { user } = useContext(UserContext);
+  return (
+    <Container>
+      <UserWrapper>
+        <UserProfile avatarSrc={user.avatar} firstName={user.firstName} lastName={user.lastName} email={user.email} />
+      </UserWrapper>
+      <PaymentListWrapper>
+        <PaymentHistory />
+      </PaymentListWrapper>
+    </Container>
+  );
+};
 
 export default UserInfro;

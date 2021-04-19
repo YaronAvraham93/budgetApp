@@ -22,7 +22,7 @@ const IncomeChart: React.FC = () => {
   const incomeChart = [
     {
       name: 'income',
-      data: filtredByPaymentType(transactions, 'income'),
+      data: filtredByPaymentType(transactions, 'Income'),
     },
   ];
   const options = {

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
 import { TransactionContext } from '../../../contexts/contextTransaction';
-import filtrByPaymentType from '../../../helpers/filtrByPaymentType';
 
 const Container = styled.div(
   ({ theme }) => `
@@ -18,14 +17,36 @@ const Container = styled.div(
 );
 const ActivitesChart: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
+  const helperIncome: any = {};
+  const helperExpenses: any = {};
+  transactions.forEach((transaction: any) => {
+    const date = new Date(transaction.date).toLocaleString('default', { month: 'short' });
+
+    if (transaction.paymentType === 'Income') {
+      if (!helperIncome[date]) {
+        helperIncome[date] = transaction.amount;
+      } else {
+        helperIncome[date] = +transaction.amount;
+      }
+    }
+    if (transaction.paymentType === 'Expenses') {
+      if (!helperExpenses[date]) {
+        helperExpenses[date] = transaction.amount;
+      } else {
+        helperExpenses[date] = +transaction.amount;
+      }
+    }
+  });
+  const incomes = Object.entries(helperIncome).map(([month, amount]) => ({ x: month, y: amount }));
+  const expenses = Object.entries(helperExpenses).map(([month, amount]) => ({ x: month, y: amount }));
   const series = [
     {
       name: 'Income',
-      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+      data: incomes,
     },
     {
       name: 'Expenses',
-      data: filtrByPaymentType(transactions, 'Expenses'),
+      data: expenses,
     },
   ];
   const options = {
@@ -52,9 +73,7 @@ const ActivitesChart: React.FC = () => {
       width: 2,
       colors: ['transparent'],
     },
-    xaxis: {
-      categories: transactions.map(({ date }) => new Date(date).toLocaleString('default', { month: 'short' })),
-    },
+
     yaxis: {
       title: {
         text: '$ (thousands)',

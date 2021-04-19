@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
 import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
 import navbarItem from '../../../constants/SidebarItem';
 import theme from '../../../style/theme/theme';
+import { UserContext } from '../../../contexts/userContext';
 
 const Container = styled.div(
   () => `
@@ -36,18 +37,22 @@ const NavbarList = styled.ul`
   grid-template-rows: 1fr 1fr;
 `;
 
-const Sidebar: React.FC = () => (
-  <Container>
-    <CurrentBalanceWrapper>
-      <CurrentBalance text="20,000$" title="Current Balance" />
-    </CurrentBalanceWrapper>
-    <NavbarList>
-      {navbarItem.map(({ icon, title, route, id }) => (
-        <Link to={route}>
-          <NavbarItem icon={icon} title={title} key={id} />
-        </Link>
-      ))}
-    </NavbarList>
-  </Container>
-);
+const Sidebar: React.FC = () => {
+  const { user } = useContext(UserContext);
+
+  return (
+    <Container>
+      <CurrentBalanceWrapper>
+        <CurrentBalance text={user.currentBalance} title="Current Balance" />
+      </CurrentBalanceWrapper>
+      <NavbarList>
+        {navbarItem.map(({ icon, title, route, id }) => (
+          <Link to={route}>
+            <NavbarItem icon={icon} title={title} key={id} />
+          </Link>
+        ))}
+      </NavbarList>
+    </Container>
+  );
+};
 export default Sidebar;

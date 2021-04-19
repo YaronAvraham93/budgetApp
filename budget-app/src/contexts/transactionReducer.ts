@@ -1,9 +1,4 @@
-import { ITransactionInitialState } from '../models/index';
-
-interface IAction {
-  type: string;
-  payload: any;
-}
+import { ITransactionInitialState, IAction } from '../models/index';
 
 const transactionReducer = (state: ITransactionInitialState, action: IAction) => {
   switch (action.type) {
