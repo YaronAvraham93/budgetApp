@@ -37,7 +37,7 @@ const NavbarList = styled.ul`
   grid-template-rows: 1fr 1fr;
 `;
 
-const Sidebar: React.FC = () => {
+const NavBar: React.FC = () => {
   const { user } = useContext(UserContext);
 
   return (
@@ -55,4 +55,4 @@ const Sidebar: React.FC = () => {
     </Container>
   );
 };
-export default Sidebar;
+export default NavBar;

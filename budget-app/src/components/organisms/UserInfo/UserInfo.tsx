@@ -30,7 +30,7 @@ const PaymentListWrapper = styled.div`
   overflow-y: overlay;
 `;
 
-const UserInfro: React.FC = () => {
+const UserInfo: React.FC = () => {
   const { user } = useContext(UserContext);
   return (
     <Container>
@@ -44,4 +44,4 @@ const UserInfro: React.FC = () => {
   );
 };
 
-export default UserInfro;
+export default UserInfo;

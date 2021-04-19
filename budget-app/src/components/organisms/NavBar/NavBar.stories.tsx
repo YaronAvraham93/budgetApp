@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Sidebar from './Sidebar';
+import NavBar from './NavBar';
 
 export default {
-  title: 'organisms/Sidebar',
-  component: Sidebar,
+  title: 'organisms/NavBar',
+  component: NavBar,
 } as Meta;
 
-const Template: Story = (args) => <Sidebar {...args} />;
+const Template: Story = (args) => <NavBar {...args} />;
 export const SSidebar = Template.bind({});

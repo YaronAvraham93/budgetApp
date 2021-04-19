@@ -2,8 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Dashboard from '../Dashboard/Dashboard';
-import Sidebar from '../Sidebar/Sidebar';
-import UserInfro from '../UserInfro/UserInfro';
+import NavBar from '../NavBar/NavBar';
+import UserInfro from '../UserInfo/UserInfo';
 import Charts from './Charts';
 import Transactions from './Transactions';
 import Cards from './Cards';
@@ -23,7 +23,7 @@ const Container = styled.div(
   }
 `
 );
-const SidebarWapper = styled.div`
+const NavBarWapper = styled.div`
   margin: 0;
 `;
 const HomePage: React.FC = () => {
@@ -41,9 +41,9 @@ const HomePage: React.FC = () => {
 
   return (
     <Container>
-      <SidebarWapper>
-        <Sidebar />
-      </SidebarWapper>
+      <NavBarWapper>
+        <NavBar />
+      </NavBarWapper>
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/Transactions" component={Transactions} />
