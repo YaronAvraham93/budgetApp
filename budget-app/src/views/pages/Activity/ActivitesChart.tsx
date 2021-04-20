@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import getTotalAmountByPaymentType from '../../../helpers/totalAmountByPaymentType';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 25px;
   height: 60vh;

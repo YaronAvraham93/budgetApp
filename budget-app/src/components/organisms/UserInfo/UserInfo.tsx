@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import UserProfile from '../../molecules/UserProfile/UserProfile';
-import PaymentHistory from '../../molecules/PaymentHistory/PaymentHistory';
+import PaymentHistory from '../PaymentHistory/PaymentHistory';
 import theme from '../../../style/theme/theme';
 import { UserContext } from '../../../contexts/userContext';
 

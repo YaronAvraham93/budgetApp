@@ -1,6 +1,5 @@
 import React from 'react';
-
-import HomePage from './components/organisms/HomePage/HomePage';
+import HomePage from './views/pages/HomePage/HomePage';
 import TransactionContextProvider from './contexts/contextTransaction';
 import UserContextProvider from './contexts/userContext';
 

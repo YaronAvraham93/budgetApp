@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { ICurrentBalanceProps } from '../../../models/index';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div<ICurrentBalanceProps>(
-  ({ theme }) => `
+  () => `
   height: 19vh;
   width: 12vw;
   display: flex;

@@ -8,4 +8,4 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => <NavBar {...args} />;
-export const SSidebar = Template.bind({});
+export const SNavBar = Template.bind({});

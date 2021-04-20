@@ -4,9 +4,10 @@ import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import { IUserProfile } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   display: flex;
   flex-direction: column;
   flex-direction: column;

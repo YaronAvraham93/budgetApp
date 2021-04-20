@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { faBox, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import Activity from '../../molecules/Activity/ActivitesChart';
-import CreaditCard from '../../molecules/CreditCard/CreditCard';
-import Income from '../../molecules/Income/IncomeChart';
-import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
+import Activity from '../Activity/ActivitesChart';
+import CreaditCard from '../../../components/molecules/CreditCard/CreditCard';
+import Income from '../Income/IncomeChart';
+import SummaryCard from '../SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import { UserContext } from '../../../contexts/userContext';

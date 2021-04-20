@@ -23,11 +23,11 @@ export interface ICurrentBalanceProps {
   text?: string;
 }
 export interface ICreditCardProps {
-  last4Digits: Number;
+  last4Digits: number;
   firstName: string;
   lastName: string;
-  year: Number;
-  month: Number;
+  year: number;
+  month: number;
 }
 export interface ISummaryCard {
   icon?: any;
@@ -48,7 +48,7 @@ export interface ITransaction {
   date: string;
   paymentType: string;
   paymentMethod: string;
-  amount: Number;
+  amount: number;
   currency: string;
   category?: string;
   company?: string;
@@ -71,9 +71,9 @@ export interface IUser {
   currentBalance: string;
   currentBalanceCurrency: string;
   creditCard: {
-    expYear: Number;
-    expMonth: Number;
-    last4Digits: Number;
+    expYear: number;
+    expMonth: number;
+    last4Digits: number;
   }[];
 }
 export interface IUserInitialState {

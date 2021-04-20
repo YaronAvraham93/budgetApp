@@ -4,9 +4,10 @@ import { ICreditCardProps } from '../../../models/index';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   background-image: url(${img});
   background-size: cover;
   background-position: center;
@@ -24,7 +25,7 @@ const Container = styled.div(
 `
 );
 const FullNameDateWrapper = styled.div(
-  ({ theme }) => `
+  () => `
   display: flex;
   flex-direction: row;
   width: 48vh;
@@ -39,7 +40,7 @@ const FullNameDateWrapper = styled.div(
 `
 );
 const DateWrapper = styled.div(
-  ({ theme }) => `
+  () => `
   display: flex;
   flex-direction: column;
   @media (max-width: ${theme.breakpoints.tablet}) {
@@ -49,7 +50,7 @@ const DateWrapper = styled.div(
 `
 );
 const CardNumWerapper = styled.div(
-  ({ theme }) => `
+  () => `
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +65,7 @@ const TitelWrapper = styled.div`
   display: block;
 `;
 const FullNameWrapper = styled.div(
-  ({ theme }) => `
+  () => `
   display: flex;
   flex-direction: column;
   @media (max-width: ${theme.breakpoints.tablet}) {

@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
 import filtredByPaymentType from '../../../helpers/filtrByPaymentType';
 import { TransactionContext } from '../../../contexts/contextTransaction';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   height: 40vh;
   width: 25vw;
   border-radius: 20px;
