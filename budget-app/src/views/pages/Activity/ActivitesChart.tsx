@@ -24,7 +24,7 @@ const ActivitesChart: React.FC = () => {
   const expenses = getTotalAmountByPaymentType(transactions, 'Expenses');
   const series = [
     {
-      name: 'Income',
+      name: 'Incomes',
       data: incomes,
     },
     {

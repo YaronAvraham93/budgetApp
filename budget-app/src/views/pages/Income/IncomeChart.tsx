@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
-import filtredByPaymentType from '../../../helpers/filtrByPaymentType';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
+import getTotalAmountByPaymentType from '../../../helpers/totalAmountByPaymentType';
 
 const Container = styled.div(
   () => `
@@ -23,7 +23,7 @@ const IncomeChart: React.FC = () => {
   const incomeChart = [
     {
       name: 'income',
-      data: filtredByPaymentType(transactions, 'Income'),
+      data: getTotalAmountByPaymentType(transactions, 'Income'),
     },
   ];
   const options = {
