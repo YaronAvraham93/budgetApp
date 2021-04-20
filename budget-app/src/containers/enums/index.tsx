@@ -7,5 +7,6 @@ export enum SelectSize {
 }
 export enum ActionType {
   SET_TRANSACTIONS = 'SET_TRANSACTIONS',
+  SET_USER = 'SET_USER',
 }
 export default SelectSize;

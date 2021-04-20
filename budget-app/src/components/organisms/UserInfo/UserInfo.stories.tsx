@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import UserInfro from './UserInfro';
+import UserInfro from './UserInfo';
 
 export default {
   title: 'organisms/UserInfro',

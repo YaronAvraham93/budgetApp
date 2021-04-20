@@ -2,13 +2,14 @@ import React, { useEffect, useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Dashboard from '../Dashboard/Dashboard';
-import Sidebar from '../Sidebar/Sidebar';
-import UserInfro from '../UserInfro/UserInfro';
+import NavBar from '../../../components/organisms/NavBar/NavBar';
+import UserInfro from '../../../components/organisms/UserInfo/UserInfo';
 import Charts from './Charts';
 import Transactions from './Transactions';
 import Cards from './Cards';
 import BudgetServiceApi from '../../../services/budgetServiceApi';
 import { TransactionContext } from '../../../contexts/contextTransaction';
+import { UserContext } from '../../../contexts/userContext';
 import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
@@ -22,24 +23,27 @@ const Container = styled.div(
   }
 `
 );
-const SidebarWapper = styled.div`
+const NavBarWapper = styled.div`
   margin: 0;
 `;
 const HomePage: React.FC = () => {
   const { setTransactions } = useContext(TransactionContext);
+  const { setUser } = useContext(UserContext);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await BudgetServiceApi.getAllTransactions();
-      setTransactions(data);
+      const transactions = await BudgetServiceApi.getAllTransactions();
+      setTransactions(transactions);
+      const user = await BudgetServiceApi.getUserById('606b2062c88c6d0005fe8f91');
+      setUser(user);
     };
     fetchData();
   }, []);
 
   return (
     <Container>
-      <SidebarWapper>
-        <Sidebar />
-      </SidebarWapper>
+      <NavBarWapper>
+        <NavBar />
+      </NavBarWapper>
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/Transactions" component={Transactions} />

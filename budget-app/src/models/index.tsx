@@ -26,7 +26,7 @@ export interface ICreditCardProps {
   last4Digits: number;
   firstName: string;
   lastName: string;
-  year: string;
+  year: number;
   month: number;
 }
 export interface ISummaryCard {
@@ -48,7 +48,7 @@ export interface ITransaction {
   date: string;
   paymentType: string;
   paymentMethod: string;
-  amount: Number;
+  amount: number;
   currency: string;
   category?: string;
   company?: string;
@@ -62,4 +62,25 @@ export interface ITransaction {
 export interface ITransactionInitialState {
   transactions: ITransaction[];
   setTransactions: (transactions: ITransaction[]) => void;
+}
+export interface IUser {
+  firstName: string;
+  lastName: string;
+  email: string;
+  avatar: string;
+  currentBalance: string;
+  currentBalanceCurrency: string;
+  creditCard: {
+    expYear: number;
+    expMonth: number;
+    last4Digits: number;
+  }[];
+}
+export interface IUserInitialState {
+  user: IUser;
+  setUser: (user: IUser) => void;
+}
+export interface IAction {
+  type: string;
+  payload: any;
 }

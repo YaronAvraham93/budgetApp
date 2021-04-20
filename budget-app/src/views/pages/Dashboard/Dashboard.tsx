@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { faBox, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import Activity from '../../molecules/Activity/ActivitesChart';
-import CreaditCard from '../../molecules/CreditCard/CreditCard';
-import Income from '../../molecules/Income/IncomeChart';
-import SummaryCard from '../../molecules/SummaryCard/SummaryCard';
+import Activity from '../Activity/ActivitesChart';
+import CreaditCard from '../../../components/molecules/CreditCard/CreditCard';
+import Income from '../Income/IncomeChart';
+import SummaryCard from '../SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
 import { TransactionContext } from '../../../contexts/contextTransaction';
+import { UserContext } from '../../../contexts/userContext';
 import getAverage from '../../../helpers/average';
 
 const Container = styled.div(
@@ -57,13 +58,21 @@ const SummaryCardWapper = styled.div(
 
 const Dashboard: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
-  const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'income'));
+  const { user } = useContext(UserContext);
+
+  const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Income'));
   const Expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
 
   return (
     <Container>
       <CreaditCardWapper>
-        <CreaditCard last4Digits={5555} firstName="Yaron" lastName="Avraham" month={12} year="/12" />
+        <CreaditCard
+          last4Digits={user.creditCard[0].last4Digits}
+          firstName={user.firstName}
+          lastName={user.lastName}
+          month={user.creditCard[0].expMonth}
+          year={user.creditCard[0].expYear}
+        />
         <Income />
       </CreaditCardWapper>
       <SummaryCardWapper>

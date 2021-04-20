@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactApexChart from 'react-apexcharts';
 import { TransactionContext } from '../../../contexts/contextTransaction';
-import filtrByPaymentType from '../../../helpers/filtrByPaymentType';
+import getTotalAmountByPaymentType from '../../../helpers/totalAmountByPaymentType';
+import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
-  ({ theme }) => `
+  () => `
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 25px;
   height: 60vh;
@@ -18,14 +19,17 @@ const Container = styled.div(
 );
 const ActivitesChart: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
+
+  const incomes = getTotalAmountByPaymentType(transactions, 'Income');
+  const expenses = getTotalAmountByPaymentType(transactions, 'Expenses');
   const series = [
     {
-      name: 'Income',
-      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+      name: 'Incomes',
+      data: incomes,
     },
     {
       name: 'Expenses',
-      data: filtrByPaymentType(transactions, 'Expenses'),
+      data: expenses,
     },
   ];
   const options = {
@@ -52,9 +56,7 @@ const ActivitesChart: React.FC = () => {
       width: 2,
       colors: ['transparent'],
     },
-    xaxis: {
-      categories: transactions.map(({ date }) => new Date(date).toLocaleString('default', { month: 'short' })),
-    },
+
     yaxis: {
       title: {
         text: '$ (thousands)',
