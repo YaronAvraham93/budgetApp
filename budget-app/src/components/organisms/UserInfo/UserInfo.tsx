@@ -32,10 +32,11 @@ const PaymentListWrapper = styled.div`
 
 const UserInfo: React.FC = () => {
   const { user } = useContext(UserContext);
+  const { avatar, firstName, lastName, email } = user;
   return (
     <Container>
       <UserWrapper>
-        <UserProfile avatarSrc={user.avatar} firstName={user.firstName} lastName={user.lastName} email={user.email} />
+        <UserProfile avatarSrc={avatar} firstName={firstName} lastName={lastName} email={email} />
       </UserWrapper>
       <PaymentListWrapper>
         <PaymentHistory />

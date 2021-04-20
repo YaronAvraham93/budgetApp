@@ -32,8 +32,8 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const transactions = await BudgetServiceApi.getAllTransactions();
-      setTransactions(transactions);
       const user = await BudgetServiceApi.getUserById('606b2062c88c6d0005fe8f91');
+      setTransactions(transactions);
       setUser(user);
     };
     fetchData();

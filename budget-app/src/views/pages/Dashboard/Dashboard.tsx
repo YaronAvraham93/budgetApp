@@ -59,7 +59,7 @@ const SummaryCardWapper = styled.div(
 const Dashboard: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
   const { user } = useContext(UserContext);
-
+  const { creditCard, firstName, lastName } = user;
   const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Income'));
   const Expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
 
@@ -67,11 +67,11 @@ const Dashboard: React.FC = () => {
     <Container>
       <CreaditCardWapper>
         <CreaditCard
-          last4Digits={user.creditCard[0].last4Digits}
-          firstName={user.firstName}
-          lastName={user.lastName}
-          month={user.creditCard[0].expMonth}
-          year={user.creditCard[0].expYear}
+          last4Digits={creditCard[0].last4Digits}
+          firstName={firstName}
+          lastName={lastName}
+          month={creditCard[0].expMonth}
+          year={creditCard[0].expYear}
         />
         <Income />
       </CreaditCardWapper>

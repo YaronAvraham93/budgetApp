@@ -39,11 +39,11 @@ const NavbarList = styled.ul`
 
 const NavBar: React.FC = () => {
   const { user } = useContext(UserContext);
-
+  const { currentBalance } = user;
   return (
     <Container>
       <CurrentBalanceWrapper>
-        <CurrentBalance text={user.currentBalance} title="Current Balance" />
+        <CurrentBalance text={currentBalance} title="Current Balance" />
       </CurrentBalanceWrapper>
       <NavbarList>
         {navbarItem.map(({ icon, title, route, id }) => (
