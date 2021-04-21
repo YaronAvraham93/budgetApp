@@ -11,8 +11,8 @@ const setImage = (src: string) => `
 const SAvatar = styled.div<SAvatarBoxProps>`
   border-radius: 50px;
   ${({ src }) => setImage(src)};
-  height: 15vh;
-  width: 7vw;
+  height: 60%;
+  width: 50%;
 `;
 
 const Avatar: React.FC<IAvatarProps> = ({ src }) => <SAvatar src={src} />;

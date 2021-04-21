@@ -15,14 +15,14 @@ const Container = styled.div(
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color:${colors.Orange.lightOrange};
+  background-color:${colors.orange.lightOrange};
   border-radius: 1rem;
   margin-bottom: 5px;
-  height: 22vh;
-  width: 12vw;
+  height: 100%;
+  width: 100%;
   @media (max-width: 768px) {
-    width: 20vw;
-    height: 10vh;
+    width: 20%;
+    height: 10%;
     display: flex;
     flex-direction: column;
   }
@@ -36,7 +36,7 @@ const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, last
       {firstName}
       {lastName}
     </Typography>
-    <Typography size={SelectSize.xs} color={colors.Gray.lightGray}>
+    <Typography size={SelectSize.xs} color={colors.gray.lightGray}>
       {email}
     </Typography>
   </Container>

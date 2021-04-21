@@ -83,7 +83,7 @@ const Dashboard: React.FC = () => {
           sinceLastMonth="+5.0%"
           subtiteltwo="Since last month"
           icon={faBox}
-          backgroundColor={colors.Blue.lightBlue}
+          backgroundColor={colors.blue.lightBlue}
         />
         <SummaryCard
           title="Expenses"
@@ -92,7 +92,7 @@ const Dashboard: React.FC = () => {
           sinceLastMonth="+5.0%"
           subtiteltwo="Since last month"
           icon={faChartLine}
-          backgroundColor={colors.Blue.darkBlue}
+          backgroundColor={colors.blue.darkBlue}
         />
       </SummaryCardWapper>
       <ActivviyWapper>

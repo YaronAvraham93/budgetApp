@@ -8,18 +8,18 @@ import theme from '../../../style/theme/theme';
 const { colors, breakpoints } = theme;
 const Container = styled.div<ICurrentBalanceProps>(
   () => `
-  height: 19vh;
-  width: 12vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color: ${colors.Purple.lightPurple};
+  background-color: ${colors.purple.lightPurple};
   border-radius: 1rem;
   @media (max-width: ${breakpoints.tablet}) {
-    width: 21vw;
-    height: 28vh;
+    width: 21%;
+    height: 28%;
   }
 `
 );

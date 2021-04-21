@@ -6,16 +6,17 @@ import { SelectSize } from '../../../containers/enums/index';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
 import getTransactionStyle from '../../../helpers/getTransactionStyle';
+import getFormtDate from '../../../helpers/getFormtDate';
 
 const Container = styled.div(
   () => `
-  width: 16vw;
+  width: 50%;
   opacity: 0.6;
   border-radius: 25px;
   grid-template-columns: 1fr 1fr 1fr;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 18vw;
-    height: 17vh;
+    width: 18%;
+    height: 17%;
   }
 `
 );
@@ -43,8 +44,6 @@ const TransactionListWrapper = styled.div`
   align-items: end;
   padding-top: 23px;
 `;
-
-const getFormtDate = (date: string) => new Date(date).toLocaleString();
 
 const PaymentHistory: React.FC = () => {
   const { transactions } = useContext(TransactionContext);

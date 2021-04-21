@@ -15,7 +15,7 @@ import theme from '../../../style/theme/theme';
 const Container = styled.div(
   () => `
   display: grid;
-  grid-template-columns: 0.2fr 0.99fr 0.2fr;
+  grid-template-columns: 0.2fr 0.99fr 0.3fr;
   @media (max-width:${theme.breakpoints.tablet}) {
     flex-direction: column;
     width: 88vw;

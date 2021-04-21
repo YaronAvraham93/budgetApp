@@ -1,20 +1,20 @@
 const theme = {
   colors: {
-    Blue: {
+    blue: {
       lightBlue: '#1BA9E9',
       darkBlue: '#080B8D',
     },
-    Orange: {
+    orange: {
       lightOrange: '#fdf3e7',
     },
-    Gray: {
+    gray: {
       lightGray: '#bdbfbf',
     },
-    Purple: {
+    purple: {
       lightPurple: '#5142a7',
       darkPurple: '#4333a0',
     },
-    Red: {
+    red: {
       mediumRed: '#FF0000',
     },
   },

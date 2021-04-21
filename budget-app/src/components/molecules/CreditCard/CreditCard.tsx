@@ -14,13 +14,13 @@ const Container = styled.div(
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: rgba(149, 157, 165, 55) 0px 8px 24px;
-  height: 29vh;
-  width: 23vw;
+  height: 60%;
+  width: 33%;
   display: block;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-  width: 55vw;
-    height: 30vh;
+  width: 75%;
+    height: 40%;
   }
 `
 );
@@ -28,13 +28,13 @@ const FullNameDateWrapper = styled.div(
   () => `
   display: flex;
   flex-direction: row;
-  width: 48vh;
+  width: 100%;
   justify-content: space-between;
-  height: 4vh;
+  height: 15%;
   align-items: center;
   @media (max-width: ${theme.breakpoints.tablet}) {
-  width:45vw;
-    height: 9vh;
+  width:65%;
+    height: 19%;
   }
   
 `
@@ -54,7 +54,7 @@ const CardNumWerapper = styled.div(
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 17vh;
+  height: 50%;
   @media (max-width: ${theme.breakpoints.tablet}) {
     height: 12vh;
     display: block;

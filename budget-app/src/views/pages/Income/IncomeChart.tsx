@@ -7,13 +7,13 @@ import getTotalAmountByPaymentType from '../../../helpers/totalAmountByPaymentTy
 
 const Container = styled.div(
   () => `
-  height: 40vh;
-  width: 25vw;
+  height: 84%;
+  width: 40%;
   border-radius: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 60vw;
-    height: 50
+    width: 60%;
+    height: 50%
   }
 `
 );

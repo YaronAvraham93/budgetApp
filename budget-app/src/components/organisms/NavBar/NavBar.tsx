@@ -13,10 +13,10 @@ const Container = styled.div(
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.Purple.darkPurple};
+  background-color: ${colors.purple.darkPurple};
   border-radius: 1rem;
-  height: 140vh;
-  width: 15vw;
+  height: 100%;
+  width: 120%;
   @media (max-width: ${breakpoints.tablet}) {
     width: 10vw;
     height: 10vh;
@@ -26,6 +26,8 @@ const Container = styled.div(
 );
 const CurrentBalanceWrapper = styled.div(
   () => `
+  height: 14%;
+  width: 84%;
   padding-top: 50px;
   @media (max-width: ${breakpoints.tablet}) {
     display: none;

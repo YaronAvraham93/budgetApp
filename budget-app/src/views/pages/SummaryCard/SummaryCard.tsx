@@ -8,8 +8,8 @@ import theme from '../../../style/theme/theme';
 
 const Container = styled.div(
   () => `
-  height: 23vh;
-  width: 26vw;
+  height: 76%;
+  width: 38%;
   display: grid;
   padding-left: 15px;
   padding-top: 10px;
@@ -17,8 +17,8 @@ const Container = styled.div(
   grid-template-columns: 1fr 1fr;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 60vw;
-    height: 35vh;
+    width: 60%;
+    height: 35%;
   }
 `
 );
@@ -32,7 +32,7 @@ const LastMonthWrapper = styled.div(
   () => `
   width: 15vw;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 33vw;
+    width: 33%;
   }
 `
 );
@@ -41,7 +41,7 @@ const IconWrapper = styled.div(
   grid-column: 2;
   padding-left: 75px;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 9vw;
+    width: 9%;
   }
 `
 );

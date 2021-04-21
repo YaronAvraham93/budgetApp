@@ -11,11 +11,11 @@ const Container = styled.div(
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.Orange.lightOrange};
+  background-color: ${colors.orange.lightOrange};
   border-radius: 1rem;
   margin-left: 25px;
-  height: 140vh;
-  width: 15vw;
+  height: 100%;
+  width: 160%;
   @media (max-width:  ${breakpoints.tablet}) {
     
     display: none;
@@ -24,6 +24,8 @@ const Container = styled.div(
 `
 );
 const UserWrapper = styled.div`
+  height: 30%;
+  width: 100%;
   padding-top: 50px;
 `;
 const PaymentListWrapper = styled.div`

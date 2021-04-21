@@ -9,11 +9,11 @@ const Container = styled.div(
   () => `
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 25px;
-  height: 60vh;
-  width: 60vw;
+  height: 90%;
+  width: 90%;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 60vw;
-    height: 61vh;
+    width: 90%;
+    height: 91%;
   }
 `
 );
