@@ -55,7 +55,7 @@ const SummaryCardWapper = styled.div(
   }
 `
 );
-
+const { colors } = theme;
 const Dashboard: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
   const { user } = useContext(UserContext);
@@ -83,7 +83,7 @@ const Dashboard: React.FC = () => {
           sinceLastMonth="+5.0%"
           subtiteltwo="Since last month"
           icon={faBox}
-          backgroundColor={theme.colors.lightBlue}
+          backgroundColor={colors.Blue.lightBlue}
         />
         <SummaryCard
           title="Expenses"
@@ -92,7 +92,7 @@ const Dashboard: React.FC = () => {
           sinceLastMonth="+5.0%"
           subtiteltwo="Since last month"
           icon={faChartLine}
-          backgroundColor={theme.colors.darkBlue}
+          backgroundColor={colors.Blue.darkBlue}
         />
       </SummaryCardWapper>
       <ActivviyWapper>

@@ -6,6 +6,7 @@ import { IUserProfile } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
 import theme from '../../../style/theme/theme';
 
+const { colors } = theme;
 const Container = styled.div(
   () => `
   display: flex;
@@ -14,7 +15,7 @@ const Container = styled.div(
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color:${theme.colors.lightOrange};
+  background-color:${colors.Orange.lightOrange};
   border-radius: 1rem;
   margin-bottom: 5px;
   height: 22vh;
@@ -35,7 +36,7 @@ const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, last
       {firstName}
       {lastName}
     </Typography>
-    <Typography size={SelectSize.xs} color="#bdbfbf">
+    <Typography size={SelectSize.xs} color={colors.Gray.lightGray}>
       {email}
     </Typography>
   </Container>

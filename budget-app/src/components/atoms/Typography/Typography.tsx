@@ -21,14 +21,15 @@ const getSize = (size?: SelectSize) => {
 const STypographyProps = styled.label<ITypographyProps>`
   ${(props) => getSize(props.size)};
   ${(props) => `color:${props.color}`};
+  ${(props) => `font-family:${props.fontFamily}`};
   @media (max-width: 768px) {
     width: 10vw;
     height: 10vh;
   }
 `;
 
-const Typography: React.FC<ITypographyProps> = ({ color, size = SelectSize.md, children }) => (
-  <STypographyProps size={size} color={color}>
+const Typography: React.FC<ITypographyProps> = ({ fontFamily, color, size = SelectSize.md, children }) => (
+  <STypographyProps size={size} color={color} font-family={fontFamily}>
     {children}
   </STypographyProps>
 );

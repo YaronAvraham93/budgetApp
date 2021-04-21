@@ -5,7 +5,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import NavBar from '../../../components/organisms/NavBar/NavBar';
 import UserInfro from '../../../components/organisms/UserInfo/UserInfo';
 import Charts from './Charts';
-import Transactions from './Transactions';
+import Transactions from '../Transactions/Transactions';
 import Cards from './Cards';
 import BudgetServiceApi from '../../../services/budgetServiceApi';
 import { TransactionContext } from '../../../contexts/contextTransaction';

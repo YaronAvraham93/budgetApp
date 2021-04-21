@@ -5,6 +5,7 @@ import { SelectSize } from '../../../containers/enums/index';
 import { ICurrentBalanceProps } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
+const { colors, breakpoints } = theme;
 const Container = styled.div<ICurrentBalanceProps>(
   () => `
   height: 19vh;
@@ -14,9 +15,9 @@ const Container = styled.div<ICurrentBalanceProps>(
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color: ${theme.colors.lightPurple};
+  background-color: ${colors.Purple.lightPurple};
   border-radius: 1rem;
-  @media (max-width: ${theme.breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     width: 21vw;
     height: 28vh;
   }

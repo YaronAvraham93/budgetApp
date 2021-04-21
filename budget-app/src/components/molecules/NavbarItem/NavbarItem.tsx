@@ -6,6 +6,7 @@ import { SelectSize } from '../../../containers/enums/index';
 import { INavbarItem } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
+const { breakpoints } = theme;
 const Container = styled.li(
   () => `
   color:floralwhite;
@@ -18,7 +19,7 @@ const Container = styled.li(
     opacity: 1;
     color: lightgray;
   }
-  @media (max-width: ${theme.breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     display: none;
   }
 `

@@ -7,16 +7,17 @@ import navbarItem from '../../../constants/SidebarItem';
 import theme from '../../../style/theme/theme';
 import { UserContext } from '../../../contexts/userContext';
 
+const { colors, breakpoints } = theme;
 const Container = styled.div(
   () => `
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${theme.colors.darkPurple};
+  background-color: ${colors.Purple.darkPurple};
   border-radius: 1rem;
   height: 140vh;
   width: 15vw;
-  @media (max-width: ${theme.breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     width: 10vw;
     height: 10vh;
 
@@ -26,7 +27,7 @@ const Container = styled.div(
 const CurrentBalanceWrapper = styled.div(
   () => `
   padding-top: 50px;
-  @media (max-width: ${theme.breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     display: none;
    
   }`

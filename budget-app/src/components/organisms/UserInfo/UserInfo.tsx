@@ -5,17 +5,18 @@ import PaymentHistory from '../PaymentHistory/PaymentHistory';
 import theme from '../../../style/theme/theme';
 import { UserContext } from '../../../contexts/userContext';
 
+const { colors, breakpoints } = theme;
 const Container = styled.div(
   () => `
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${theme.colors.lightOrange};
+  background-color: ${colors.Orange.lightOrange};
   border-radius: 1rem;
   margin-left: 25px;
   height: 140vh;
   width: 15vw;
-  @media (max-width:  ${theme.breakpoints.tablet}) {
+  @media (max-width:  ${breakpoints.tablet}) {
     
     display: none;
     

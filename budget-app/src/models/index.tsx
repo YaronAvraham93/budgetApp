@@ -3,6 +3,7 @@ import Selects from '../containers/enums/index';
 export interface ITypographyProps {
   size?: Selects;
   color?: string;
+  fontFamily?: any;
 }
 export interface IAvatarProps {
   src?: any;
@@ -57,6 +58,15 @@ export interface ITransaction {
     country: string;
     city: string;
   };
+}
+export interface ITransactionInfo {
+  date: string;
+  paymentType: string;
+  amount: number;
+  currency: string;
+  category: string;
+  country: string;
+  city: string;
 }
 
 export interface ITransactionInitialState {
