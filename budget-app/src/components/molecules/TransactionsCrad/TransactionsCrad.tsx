@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { faCalculator } from '@fortawesome/free-solid-svg-icons';
-import Icon from '../../atoms/IconImg/Icon';
 import { ITransactionInfo } from '../../../models/index';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
@@ -12,15 +10,14 @@ const SWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30vw;
-  height: 40vh;
+  height: 13%;
 `;
 const SAmountPaymentWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: flex-end;
-  height: 6vh;
+  height: 12%;
 `;
 const SAmountWrapper = styled.div`
   display: flex;
@@ -34,12 +31,12 @@ const SCityCountryWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  height: 8vh;
+  height: 48%;
 `;
 const SDateCategoryWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 10vh;
+  height: 48%;
 `;
 
 const SInfoWrapper = styled.div`
@@ -58,18 +55,17 @@ const TransactionsCrad: React.FC<ITransactionInfo> = ({ date, paymentType, amoun
   <SWrapper>
     <SInfoWrapper>
       <SDateCategoryWrapper>
-        <Icon icon={faCalculator} />
         <Typography size={SelectSize.xl}>{date}</Typography>
       </SDateCategoryWrapper>
       <SCityCountryWrapper>
-        {/* <Typography size={SelectSize.sm} color={colors.gray.mediumGray}>
+        <Typography size={SelectSize.sm} color={colors.gray.lightGray}>
           Location:
-        </Typography> */}
-        <Typography size={SelectSize.sm}>
-          Location:
-          {country}
         </Typography>
-        <Typography size={SelectSize.sm}>{city}</Typography>
+        <Typography size={SelectSize.sm}>
+          {country}
+          -
+          {city}
+        </Typography>
       </SCityCountryWrapper>
       <SAmountPaymentWrapper>
         <SAmountWrapper>

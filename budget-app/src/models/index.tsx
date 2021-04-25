@@ -45,14 +45,12 @@ export interface IUserProfile {
   lastName: string;
 }
 export interface ITransaction {
+  [key: string]: string | number | any;
   date: string;
   paymentType: string;
   paymentMethod: string;
   amount: number;
   currency: string;
-  category?: string;
-  company?: string;
-  cancelled?: boolean;
   location: {
     country: string;
     city: string;

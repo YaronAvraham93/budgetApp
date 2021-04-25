@@ -14,8 +14,8 @@ const Container = styled.div(
   background-color: ${colors.orange.lightOrange};
   border-radius: 1rem;
   margin-left: 25px;
-  height: 100%;
-  width: 160%;
+  height: 100vh;
+  width: 18vw;
   @media (max-width:  ${breakpoints.tablet}) {
     
     display: none;
@@ -24,7 +24,7 @@ const Container = styled.div(
 `
 );
 const UserWrapper = styled.div`
-  height: 30%;
+  height: 70%;
   width: 100%;
   padding-top: 50px;
 `;
