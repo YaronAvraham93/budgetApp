@@ -1,45 +1,24 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import TransactionsInfo from '../../molecules/TransactionsCrad/TransactionsCrad';
-import { TransactionContext } from '../../../contexts/contextTransaction';
+import TransactionsCrad from '../../molecules/TransactionsCrad/TransactionsCrad';
 import getFormtDate from '../../../helpers/getFormtDate';
-import sortBy from '../../../helpers/sortBy';
+import { ITransactionInitialState } from '../../../models';
 
-const SWrapper = styled.div`
-  flex-direction: column;
-`;
-const SSelect = styled.select``;
-const SSelectWrapper = styled.div`
+const SWrapperList = styled.div`
+  overflow-x: scroll;
   display: flex;
-  padding-left: 40px;
+  align-items: center;
+  padding-top: 40px;
 `;
-
-const TransactionsList: React.FC = () => {
-  const { transactions } = useContext(TransactionContext);
-  const [sorted, setSorted] = useState(transactions);
-  const b = [...transactions];
-  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-    const sortedTransactions = sortBy(b, value);
-    setSorted(sortedTransactions);
-  };
-
-  return (
-    <SWrapper>
-      <SSelectWrapper>
-        <SSelect onChange={onChange} defaultValue="sort">
-          <option disabled value="sort">
-            Sort
-          </option>
-          <option value="amount">Amount</option>
-          <option value="paymentType">Payment</option>
-          <option value="date">Date</option>
-          <option value="paymentMethod">Payment Method</option>
-          <option value="currency">Currency</option>
-        </SSelect>
-      </SSelectWrapper>
-      {sorted?.map(({ date, amount, currency, paymentMethod, location }) => (
-        <TransactionsInfo
+const SCountiner = styled.div`
+  display: flex;
+`;
+type ArryTransactions = Pick<ITransactionInitialState, 'transactions'>;
+const TransactionsList: React.FC<ArryTransactions> = ({ transactions }) => (
+  <SCountiner>
+    <SWrapperList>
+      {transactions?.map(({ date, amount, currency, paymentMethod, location }) => (
+        <TransactionsCrad
           date={getFormtDate(date)}
           paymentType={paymentMethod}
           amount={amount}
@@ -48,8 +27,8 @@ const TransactionsList: React.FC = () => {
           city={location.city}
         />
       ))}
-    </SWrapper>
-  );
-};
+    </SWrapperList>
+  </SCountiner>
+);
 
 export default TransactionsList;

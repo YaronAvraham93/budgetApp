@@ -15,8 +15,8 @@ const Container = styled.div(
   align-items: center;
   background-color: ${colors.purple.darkPurple};
   border-radius: 1rem;
-  height: 100vh;
-  width: 16vw;
+  height: 138vh;
+  width: 15vw;
   @media (max-width: ${breakpoints.tablet}) {
     width: 10vw;
     height: 10vh;

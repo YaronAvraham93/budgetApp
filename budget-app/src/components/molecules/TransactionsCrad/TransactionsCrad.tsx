@@ -10,7 +10,7 @@ const SWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 13%;
+  height: 4%;
 `;
 const SAmountPaymentWrapper = styled.div`
   display: flex;

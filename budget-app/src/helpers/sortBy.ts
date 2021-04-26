@@ -1,6 +1,6 @@
 import { ITransaction } from '../models/index';
 
-const sortBy = (transactions: ITransaction[], value: any) => {
+const sortBy = (transactions: ITransaction[], value: string) => {
   const sortedTransactons = transactions.sort((a: ITransaction, b: ITransaction) => {
     const keyOne = a[value];
     const keyTwo = b[value];
