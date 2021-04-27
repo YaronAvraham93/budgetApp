@@ -7,6 +7,7 @@ import filterRange from '../../../helpers/filterRange';
 import Typography from '../../../components/atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
 import theme from '../../../style/theme/theme';
+import Pagination from '../../../components/organisms/PaginationPages/Pagination';
 
 const SSelect = styled.select``;
 const SInput = styled.input`
@@ -49,6 +50,8 @@ const Transactions: React.FC = () => {
   const [sorted, setSorted] = useState(transactions);
   const [rangeStart, setRangeStart] = useState(0);
   const [rangeEnd, setRangeEnd] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [transactionsPerPage] = useState(6);
   const transactionsCopy = [...transactions];
 
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -68,9 +71,15 @@ const Transactions: React.FC = () => {
     const filterTransactions = filterRange(transactions, rangeStart, rangeEnd);
     setSorted(filterTransactions);
   };
+  const lestTransactionsIndex = currentPage * transactionsPerPage;
+  const firstTransactionsIndex = lestTransactionsIndex - transactionsPerPage;
+  const currentTransactions = sorted.slice(firstTransactionsIndex, lestTransactionsIndex);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   return (
     <SWrapper>
-      <TransactionsList transactions={sorted} />
+      <TransactionsList arrTransactions={currentTransactions} />
       <SInputSelect>
         <SSelectWrapper>
           <SSelect onChange={onChange} defaultValue="sort">
@@ -95,6 +104,7 @@ const Transactions: React.FC = () => {
           </SButton>
         </SInputWrapper>
       </SInputSelect>
+      <Pagination transactionsPerPage={transactionsPerPage} totalTransactions={sorted.length} paginate={paginate} />
     </SWrapper>
   );
 };

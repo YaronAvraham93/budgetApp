@@ -34,6 +34,7 @@ const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, last
     <Avatar src={avatarSrc} />
     <Typography size={SelectSize.sm}>
       {firstName}
+      -
       {lastName}
     </Typography>
     <Typography size={SelectSize.xs} color={colors.gray.lightGray}>

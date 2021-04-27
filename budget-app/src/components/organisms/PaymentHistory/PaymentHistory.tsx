@@ -57,7 +57,7 @@ const PaymentHistory: React.FC = () => {
         return (
           <TransactionListWrapper>
             <IconWrapper>
-              <Icon width="2vw" height="6vh" icon={icon} backgroundColor={backgroundColor} />
+              <Icon width="100%" height="100%" icon={icon} backgroundColor={backgroundColor} />
             </IconWrapper>
             <TimenpPymentWrapper>
               <Typography size={SelectSize.xl}>{text}</Typography>

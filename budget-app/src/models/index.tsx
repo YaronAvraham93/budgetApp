@@ -90,3 +90,11 @@ export interface IAction {
   type: string;
   payload: any;
 }
+export interface IPagination {
+  transactionsPerPage: number;
+  totalTransactions: number;
+  paginate: (number: number) => void;
+}
+export interface IArrTransactions {
+  arrTransactions: ITransaction[];
+}
