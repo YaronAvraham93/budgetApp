@@ -7,9 +7,9 @@ const getTotalAmountByPaymentType = (transactions: ITransaction[], Type: string)
 
     if (transaction.paymentType === Type) {
       if (!obj[date]) {
-        obj[date] = +transaction.amount;
+        obj[date] = transaction.amount;
       } else {
-        obj[date] += +transaction.amount;
+        obj[date] += transaction.amount;
       }
     }
   });

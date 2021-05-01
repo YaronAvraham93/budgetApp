@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { faBox, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import Activity from '../Activity/ActivitesChart';
+import Activity from '../../../components/organisms/ActivityChart/ActivitesChart';
 import CreaditCard from '../../../components/molecules/CreditCard/CreditCard';
-import Income from '../Income/IncomeChart';
+// import Income from '../../../components/organisms/IncomeChart/IncomeChart';
 import SummaryCard from '../SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import { UserContext } from '../../../contexts/userContext';
 import getAverage from '../../../helpers/average';
+import PieChart from '../../../components/organisms/PieChart/PieChart';
 
 const Container = styled.div(
   () => `
@@ -61,7 +62,7 @@ const Dashboard: React.FC = () => {
   const { user } = useContext(UserContext);
   const { creditCard, firstName, lastName } = user;
   const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Income'));
-  const Expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
+  const expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
 
   return (
     <Container>
@@ -73,7 +74,7 @@ const Dashboard: React.FC = () => {
           month={creditCard[0].expMonth}
           year={creditCard[0].expYear}
         />
-        <Income />
+        <PieChart />
       </CreaditCardWapper>
       <SummaryCardWapper>
         <SummaryCard
@@ -88,7 +89,7 @@ const Dashboard: React.FC = () => {
         <SummaryCard
           title="Expenses"
           subtitle="Average"
-          revenue={Expenses}
+          revenue={expenses}
           sinceLastMonth="+5.0%"
           subtiteltwo="Since last month"
           icon={faChartLine}

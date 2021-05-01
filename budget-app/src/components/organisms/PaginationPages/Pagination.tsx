@@ -17,13 +17,15 @@ const Pagination: React.FC<IPagination> = ({ transactionsPerPage, totalTransacti
   for (let i = 1; i <= paginationNumber; i += 1) {
     perNumbers.push(i);
   }
-
+  console.log('paginationNumber   ', paginationNumber);
   return (
     <SNav>
       <SUl>
         {perNumbers.map((number) => (
           <SLi key={number}>
-            <SLink onClick={() => paginate(number)}>{number}</SLink>
+            <SLink onClick={() => paginate(number)} type="button">
+              {number}
+            </SLink>
           </SLi>
         ))}
       </SUl>

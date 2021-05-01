@@ -26,6 +26,7 @@ const Container = styled.div(
 const NavBarWapper = styled.div`
   margin: 0;
 `;
+
 const HomePage: React.FC = () => {
   const { setTransactions } = useContext(TransactionContext);
   const { setUser } = useContext(UserContext);
