@@ -6,25 +6,23 @@ import theme from '../../../style/theme/theme';
 import { UserContext } from '../../../contexts/userContext';
 
 const { colors, breakpoints } = theme;
-const Container = styled.div(
-  () => `
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${colors.orange.lightOrange};
   border-radius: 1rem;
   margin-left: 25px;
-  height: 138vh;
-  width: 16vw;
-  @media (max-width:  ${breakpoints.tablet}) {
-    
+  height: 42%;
+  margin: 0;
+  width: 100%;
+  @media (max-width: ${breakpoints.tablet}) {
     display: none;
-    
   }
-`
-);
+`;
+
 const UserWrapper = styled.div`
-  height: 170%;
+  height: 100%;
   width: 100%;
   padding-top: 50px;
 `;

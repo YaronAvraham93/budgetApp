@@ -9,13 +9,19 @@ import { SelectSize } from '../../../containers/enums/index';
 import theme from '../../../style/theme/theme';
 import Pagination from '../../../components/organisms/PaginationPages/Pagination';
 
+const { colors, breakpoints } = theme;
 const SSelect = styled.select``;
 const SInput = styled.input`
   border: none;
-  border-bottom: 2px solid #4caf50;
+  border-bottom: 2px solid ${colors.green.mediumGreen};
   width: 15%;
   :focus {
     border: 1px solid #555;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 100%;
+    width: 32%;
+    display: block;
   }
 `;
 const SButton = styled.button`
@@ -23,26 +29,50 @@ const SButton = styled.button`
   transition-duration: 0.4s;
   cursor: pointer;
   :hover {
-    background-color: #4caf50;
+    background-color: ${colors.green.mediumGreen};
     color: white;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    margin-top: 18px;
   }
 `;
 const SSelectWrapper = styled.div`
   display: flex;
-  padding-left: 40px;
+  padding-right: 97px;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
 `;
 const SWrapper = styled.div`
-  width: 61vw;
+  height: 43%;
+  width: 100%;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 100%;
+    width: 100%;
+  }
 `;
 const SInputWrapper = styled.div`
-  width: 80%;
+  padding-left: 42px;
+  width: 50%;
   display: flex;
   justify-content: space-evenly;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
 `;
 const SInputSelect = styled.div`
   padding-top: 30px;
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 3%;
+    width: 78%;
+  }
 `;
 
 const Transactions: React.FC = () => {
@@ -79,8 +109,17 @@ const Transactions: React.FC = () => {
 
   return (
     <SWrapper>
-      <TransactionsList arrTransactions={currentTransactions} />
       <SInputSelect>
+        <SInputWrapper>
+          <Typography size={SelectSize.xl} color={colors.gray.lightGray}>
+            Amount range:
+          </Typography>
+          <SInput placeholder="Start" onChange={inputOnHandlerStart} />
+          <SInput placeholder="End" onChange={inputOnHandlerEnd} />
+          <SButton onClick={onClick} type="button">
+            Seach
+          </SButton>
+        </SInputWrapper>
         <SSelectWrapper>
           <SSelect onChange={onChange} defaultValue="sort">
             <option disabled value="sort">
@@ -93,17 +132,8 @@ const Transactions: React.FC = () => {
             <option value="currency">Currency</option>
           </SSelect>
         </SSelectWrapper>
-        <SInputWrapper>
-          <Typography size={SelectSize.xl} color={theme.colors.gray.lightGray}>
-            Amount range:
-          </Typography>
-          <SInput placeholder="Start" onChange={inputOnHandlerStart} />
-          <SInput placeholder="End" onChange={inputOnHandlerEnd} />
-          <SButton onClick={onClick} type="button">
-            Seach
-          </SButton>
-        </SInputWrapper>
       </SInputSelect>
+      <TransactionsList arrTransactions={currentTransactions} />
       <Pagination transactionsPerPage={transactionsPerPage} totalTransactions={sorted.length} paginate={paginate} />
     </SWrapper>
   );

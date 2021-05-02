@@ -6,8 +6,8 @@ import { SelectSize } from '../../../containers/enums/index';
 import { ISummaryCard } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
-const Container = styled.div(
-  () => `
+const { breakpoints, colors } = theme;
+const Container = styled.div`
   height: 76%;
   width: 38%;
   display: grid;
@@ -15,36 +15,39 @@ const Container = styled.div(
   padding-top: 10px;
   border-radius: 25px;
   grid-template-columns: 1fr 1fr;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 60%;
-    height: 35%;
+  box-shadow: rgba(149, 157, 165, 70) 0px 8px 24px;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 95%;
+    height: 58%;
   }
-`
-);
+`;
+
 const RevenueWrapper = styled.div`
   display: flex;
   flex-direction: column;
   grid-column: 1/3;
+  @media (max-width: ${breakpoints.tablet}) {
+    justify-content: space-between;
+    height: 40%;
+  }
+`;
+const LastMonthWrapper = styled.div`
+  width: 100%;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 72%;
+  }
 `;
 
-const LastMonthWrapper = styled.div(
-  () => `
-  width: 15vw;
+const IconWrapper = styled.div`
+  width: 39%;
+  height: 67%;
+  padding-left: 65px;
+  padding-bottom: 25px;
   @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 33%;
+    width: 23%;
+    padding-left: 136px;
   }
-`
-);
-const IconWrapper = styled.div(
-  () => `
-  grid-column: 2;
-  padding-left: 75px;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 9%;
-  }
-`
-);
+`;
 const TitlelWrapper = styled.div`
   grid-column: 1/3;
 `;
@@ -62,21 +65,21 @@ const SummaryCard: React.FC<ISummaryCard> = ({
       <Typography size={SelectSize.md}>{title}</Typography>
     </TitlelWrapper>
     <RevenueWrapper>
-      <Typography size={SelectSize.sm} color="#bdbfbf">
+      <Typography size={SelectSize.sm} color={colors.gray.lightGray}>
         {subtitle}
       </Typography>
-      <Typography size={SelectSize.md} color="#0ee7e7">
+      <Typography size={SelectSize.md} color={colors.azure.mediumAzure}>
         {revenue}
       </Typography>
     </RevenueWrapper>
     <LastMonthWrapper>
       <Typography size={SelectSize.sm}>{sinceLastMonth}</Typography>
-      <Typography size={SelectSize.sm} color="#bdbfbf">
+      <Typography size={SelectSize.sm} color={colors.gray.lightGray}>
         {subtiteltwo}
       </Typography>
     </LastMonthWrapper>
     <IconWrapper>
-      <Icon icon={icon || 'check'} color="white" width="4vw" height="7vh" backgroundColor={backgroundColor} />
+      <Icon icon={icon || 'check'} color="white" width="100%" height="90%" backgroundColor={backgroundColor} />
     </IconWrapper>
   </Container>
 );

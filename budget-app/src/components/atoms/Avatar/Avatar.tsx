@@ -11,7 +11,7 @@ const setImage = (src: string) => `
 const SAvatar = styled.div<SAvatarBoxProps>`
   border-radius: 50px;
   ${({ src }) => setImage(src)};
-  height: 60%;
+  height: 54%;
   width: 50%;
 `;
 

@@ -7,23 +7,23 @@ import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
 import getTransactionStyle from '../../../helpers/getTransactionStyle';
 import getFormtDate from '../../../helpers/getFormtDate';
+import { CurrencyContext } from '../../../contexts/currencyContext';
 
-const Container = styled.div(
-  () => `
-  width: 50%;
-  opacity: 0.6;
-  border-radius: 25px;
-  grid-template-columns: 1fr 1fr 1fr;
-  @media (max-width: ${theme.breakpoints.tablet}) {
+const { breakpoints } = theme;
+const Container = styled.div`
+  width: 85%;
+
+  @media (max-width: ${breakpoints.tablet}) {
     width: 18%;
     height: 17%;
   }
-`
-);
+`;
+
 const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 26px;
 `;
 const TimenpPymentWrapper = styled.div`
   display: flex;
@@ -47,6 +47,8 @@ const TransactionListWrapper = styled.div`
 
 const PaymentHistory: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
+  const { currencyRate, selectedCurrency } = useContext(CurrencyContext);
+
   return (
     <Container>
       <TitelWrapper>
@@ -54,6 +56,7 @@ const PaymentHistory: React.FC = () => {
       </TitelWrapper>
       {transactions?.map(({ date, amount, currency, paymentMethod }) => {
         const { icon, text, color, backgroundColor } = getTransactionStyle(paymentMethod);
+        const currencyRates = amount / currencyRate[currency];
         return (
           <TransactionListWrapper>
             <IconWrapper>
@@ -65,9 +68,9 @@ const PaymentHistory: React.FC = () => {
             </TimenpPymentWrapper>
             <MoneyWrapper>
               <Typography size={SelectSize.sm} color={color}>
-                {amount}
+                {currencyRates.toFixed(2)}
               </Typography>
-              <Typography size={SelectSize.xs}>{currency}</Typography>
+              <Typography size={SelectSize.xs}>{selectedCurrency}</Typography>
             </MoneyWrapper>
           </TransactionListWrapper>
         );

@@ -1,4 +1,4 @@
-import { faThLarge, faMoneyCheck, faChartPie, faSquare, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faThLarge, faMoneyCheck, faChartPie, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const navbarItem = [
   {
@@ -18,12 +18,6 @@ const navbarItem = [
     title: 'Charts',
     route: '/Charts',
     id: 3,
-  },
-  {
-    icon: faSquare,
-    title: 'Cards',
-    route: '/Cards',
-    id: 4,
   },
   {
     icon: faUser,

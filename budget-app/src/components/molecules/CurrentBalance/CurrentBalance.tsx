@@ -6,8 +6,7 @@ import { ICurrentBalanceProps } from '../../../models/index';
 import theme from '../../../style/theme/theme';
 
 const { colors, breakpoints } = theme;
-const Container = styled.div<ICurrentBalanceProps>(
-  () => `
+const Container = styled.div<ICurrentBalanceProps>`
   height: 100%;
   width: 100%;
   display: flex;
@@ -18,14 +17,17 @@ const Container = styled.div<ICurrentBalanceProps>(
   background-color: ${colors.purple.lightPurple};
   border-radius: 1rem;
   @media (max-width: ${breakpoints.tablet}) {
-    width: 21%;
-    height: 28%;
+    height: ${({ open }) => (open ? '86%' : ' 0')};
+    width: ${({ open }) => (open ? '50%' : '100%')};
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 94px;
   }
-`
-);
+`;
 
-const CurrentBalance: React.FC<ICurrentBalanceProps> = ({ text, title }) => (
-  <Container>
+const CurrentBalance: React.FC<ICurrentBalanceProps> = ({ open, text, title }) => (
+  <Container open={open}>
     <Typography size={SelectSize.lg} color="white">
       {text}
     </Typography>

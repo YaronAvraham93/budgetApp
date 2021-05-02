@@ -3,67 +3,75 @@ import styled from 'styled-components';
 import { faBox, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import Activity from '../../../components/organisms/ActivityChart/ActivitesChart';
 import CreaditCard from '../../../components/molecules/CreditCard/CreditCard';
-// import Income from '../../../components/organisms/IncomeChart/IncomeChart';
+import Income from '../../../components/organisms/IncomeChart/IncomeChart';
 import SummaryCard from '../SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import { UserContext } from '../../../contexts/userContext';
 import getAverage from '../../../helpers/average';
-import PieChart from '../../../components/organisms/PieChart/PieChart';
+import { CurrencyContext } from '../../../contexts/currencyContext';
 
-const Container = styled.div(
-  () => `
+const { breakpoints, colors } = theme;
+const Container = styled.div`
   display: block;
-  width: 65vw;
-  height: 47vh;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 68vw;
-    height: 175vh;
+  width: 100%;
+  height: 32%;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 97%;
+    height: 100%;
     flex-direction: column;
-    padding-left: 20%;
+    padding-left: 20px;
   }
-`
-);
+`;
+
 const ActivviyWapper = styled.div`
-  width: 68vw;
+  width: 100%;
   display: flex;
   justify-content: center;
+  @media (max-width: ${breakpoints.tablet}) {
+    padding-top: 20px;
+  }
 `;
-const CreaditCardWapper = styled.div(
-  () => `
-  height: 45vh;
-  width: 67vw;
+const CreaditCardWapper = styled.div`
+  height: 40%;
+  width: 100%;
   display: flex;
   padding-top: 15px;
   justify-content: space-around;
   flex-direction: row;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    height: 73vh;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 62%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     flex-direction: column;
   }
-`
-);
-const SummaryCardWapper = styled.div(
-  () => `
-  width: 69vw;
-  height: 30vh;
+`;
+
+const SummaryCardWapper = styled.div`
+  width: 100%;
+  height: 26%;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    height: 73vh;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 50%;
+    width: 100%;
+    padding-top: 26px;
     flex-direction: column;
   }
-`
-);
-const { colors } = theme;
+`;
+
 const Dashboard: React.FC = () => {
+  const { currencyRate, selectedCurrency } = useContext(CurrencyContext);
   const { transactions } = useContext(TransactionContext);
   const { user } = useContext(UserContext);
   const { creditCard, firstName, lastName } = user;
   const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Income'));
   const expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
 
+  const totalIncomes = +income / currencyRate[selectedCurrency];
+  const totalExpenses = +expenses / currencyRate[selectedCurrency];
   return (
     <Container>
       <CreaditCardWapper>
@@ -74,13 +82,13 @@ const Dashboard: React.FC = () => {
           month={creditCard[0].expMonth}
           year={creditCard[0].expYear}
         />
-        <PieChart />
+        <Income />
       </CreaditCardWapper>
       <SummaryCardWapper>
         <SummaryCard
           title="Income"
           subtitle="Average"
-          revenue={income}
+          revenue={totalIncomes}
           sinceLastMonth="+5.0%"
           subtiteltwo="Since last month"
           icon={faBox}
@@ -89,7 +97,7 @@ const Dashboard: React.FC = () => {
         <SummaryCard
           title="Expenses"
           subtitle="Average"
-          revenue={expenses}
+          revenue={totalExpenses}
           sinceLastMonth="+5.0%"
           subtiteltwo="Since last month"
           icon={faChartLine}

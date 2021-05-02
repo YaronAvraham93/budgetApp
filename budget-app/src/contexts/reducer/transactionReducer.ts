@@ -1,5 +1,5 @@
-import { ITransactionInitialState, IAction } from '../models/index';
-import { ActionType } from '../containers/enums/index';
+import { ITransactionInitialState, IAction } from '../../models/index';
+import { ActionType } from '../../containers/enums/index';
 
 const transactionReducer = (state: ITransactionInitialState, action: IAction) => {
   switch (action.type) {

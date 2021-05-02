@@ -7,15 +7,13 @@ import Avatar from '../../atoms/Avatar/Avatar';
 import theme from '../../../style/theme/theme';
 
 const { colors } = theme;
-const Container = styled.div(
-  () => `
+const Container = styled.div`
   display: flex;
-  flex-direction: column;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0.9;
-  background-color:${colors.orange.lightOrange};
+  background-color: ${colors.orange.lightOrange};
   border-radius: 1rem;
   margin-bottom: 5px;
   height: 100%;
@@ -26,8 +24,7 @@ const Container = styled.div(
     display: flex;
     flex-direction: column;
   }
-`
-);
+`;
 
 const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, lastName }) => (
   <Container>

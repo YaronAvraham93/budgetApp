@@ -8,8 +8,8 @@ const getTransactionStyle = (paymentMethod: string) => {
       return {
         text: 'ATM deposit',
         icon: faCheckCircle,
-        color: colors.purple.darkPurple,
-        backgroundColor: colors.purple.darkPurple,
+        color: colors.green.mediumGreen,
+        backgroundColor: colors.green.mediumGreen,
       };
     case 'credit card':
       return {

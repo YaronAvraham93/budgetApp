@@ -17,6 +17,12 @@ const theme = {
     red: {
       mediumRed: '#FF0000',
     },
+    azure: {
+      mediumAzure: '#0ee7e7',
+    },
+    green: {
+      mediumGreen: '#4caf50',
+    },
   },
   breakpoints: {
     mobile: '320px',

@@ -1,6 +1,6 @@
 import React, { useReducer, createContext } from 'react';
 import { ITransaction, ITransactionInitialState } from '../models/index';
-import transactionReducer from './transactionReducer';
+import transactionReducer from './reducer/transactionReducer';
 import { ActionType } from '../containers/enums/index';
 
 const initialState = {

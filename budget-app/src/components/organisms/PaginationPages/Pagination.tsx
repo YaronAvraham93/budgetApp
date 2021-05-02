@@ -1,8 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IPagination } from '../../../models';
+import theme from '../../../style/theme/theme';
 
-const SNav = styled.nav``;
+const { breakpoints } = theme;
+const SNav = styled.nav`
+  padding-left: 15px;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 15%;
+    display: flex;
+    align-items: flex-end;
+  }
+`;
 const SUl = styled.ul`
   list-style-type: none;
   display: inline-flex;
@@ -13,11 +22,11 @@ const SLi = styled.li`
 const SLink = styled.button``;
 const Pagination: React.FC<IPagination> = ({ transactionsPerPage, totalTransactions, paginate }) => {
   const perNumbers = [];
-  const paginationNumber = totalTransactions / transactionsPerPage;
-  for (let i = 1; i <= paginationNumber; i += 1) {
+
+  for (let i = 1; i <= Math.ceil(totalTransactions / transactionsPerPage); i += 1) {
     perNumbers.push(i);
   }
-  console.log('paginationNumber   ', paginationNumber);
+
   return (
     <SNav>
       <SUl>
