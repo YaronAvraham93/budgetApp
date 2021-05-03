@@ -13,7 +13,7 @@ const Container = styled.div`
   width: 90%;
   @media (max-width: ${breakpoints.tablet}) {
     width: 95%;
-    height: 91%;
+    height: 95%;
   }
 `;
 

@@ -106,7 +106,7 @@ const TransactionsCrad: React.FC<ITransactionInfo> = ({
             Amount
           </Typography>
           <Typography size={SelectSize.sm}>
-            {amount}
+            {amount.toFixed(2)}
             -
             {currency}
           </Typography>

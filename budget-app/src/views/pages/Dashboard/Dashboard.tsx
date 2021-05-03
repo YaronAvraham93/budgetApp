@@ -4,7 +4,7 @@ import { faBox, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import Activity from '../../../components/organisms/ActivityChart/ActivitesChart';
 import CreaditCard from '../../../components/molecules/CreditCard/CreditCard';
 import Income from '../../../components/organisms/IncomeChart/IncomeChart';
-import SummaryCard from '../SummaryCard/SummaryCard';
+import SummaryCard from '../../../components/organisms/SummaryCard/SummaryCard';
 import theme from '../../../style/theme/theme';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import { UserContext } from '../../../contexts/userContext';

@@ -52,7 +52,8 @@ const NavbarList = styled.ul<IOpen>`
   @media (max-width: ${breakpoints.tablet}) {
     height: 50%;
     width: 93%;
-    display: ${({ open }) => (open ? 'translateX(100%)' : 'none')};
+    display: ${({ open }) => (open ? 'flex' : 'none')};
+    align-items: flex-start;
   }
 `;
 

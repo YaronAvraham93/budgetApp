@@ -5,6 +5,7 @@ import getFormtDate from '../../../helpers/getFormtDate';
 import { IArrTransactions } from '../../../models';
 import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
+import { CurrencyContext } from '../../../contexts/currencyContext';
 
 const { breakpoints } = theme;
 const SWrapperList = styled.div`
@@ -27,6 +28,7 @@ const SCountiner = styled.div`
 
 const TransactionsList: React.FC<IArrTransactions> = ({ arrTransactions }) => {
   const { transactions } = useContext(TransactionContext);
+  const { selectedCurrency, currencyRate } = useContext(CurrencyContext);
   const array: IArrTransactions[] = [];
   const transactionsList = array ? arrTransactions : transactions;
   return (
@@ -37,8 +39,8 @@ const TransactionsList: React.FC<IArrTransactions> = ({ arrTransactions }) => {
             date={getFormtDate(date)}
             paymentType={paymentType}
             paymentMethod={paymentMethod}
-            amount={amount}
-            currency={currency}
+            amount={amount / currencyRate[currency]}
+            currency={selectedCurrency}
             country={location.country}
             city={location.city}
           />

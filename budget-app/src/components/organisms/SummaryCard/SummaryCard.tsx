@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Typography from '../../../components/atoms/Typography/Typography';
-import Icon from '../../../components/atoms/IconImg/Icon';
+import Typography from '../../atoms/Typography/Typography';
+import Icon from '../../atoms/IconImg/Icon';
 import { SelectSize } from '../../../containers/enums/index';
 import { ISummaryCard } from '../../../models/index';
 import theme from '../../../style/theme/theme';
@@ -19,6 +19,7 @@ const Container = styled.div`
   @media (max-width: ${breakpoints.tablet}) {
     width: 95%;
     height: 58%;
+    margin-bottom: 40px;
   }
 `;
 

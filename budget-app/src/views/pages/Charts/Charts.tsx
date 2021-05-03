@@ -15,6 +15,8 @@ const SContainer = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 `;
 const SPieChart = styled.div`
@@ -22,7 +24,7 @@ const SPieChart = styled.div`
   height: 17%;
   @media (max-width: ${breakpoints.tablet}) {
     width: 85%;
-    height: 27%;
+    height: 40%;
   }
 `;
 const SIncome = styled.div`
@@ -33,6 +35,7 @@ const SIncome = styled.div`
     width: 100%;
     height: 60%;
     padding: 0;
+    display: contents;
   }
 `;
 const SActivity = styled.div`
