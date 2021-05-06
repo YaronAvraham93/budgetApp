@@ -1,5 +1,5 @@
-import { IUserInitialState, IAction } from '../models/index';
-import { ActionType } from '../containers/enums/index';
+import { IUserInitialState, IAction } from '../../models/index';
+import { ActionType } from '../../containers/enums/index';
 
 const userReducer = (state: IUserInitialState, action: IAction) => {
   switch (action.type) {

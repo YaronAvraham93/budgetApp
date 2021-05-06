@@ -5,18 +5,17 @@ import { TransactionContext } from '../../../contexts/contextTransaction';
 import theme from '../../../style/theme/theme';
 import getTotalAmountByPaymentType from '../../../helpers/totalAmountByPaymentType';
 
-const Container = styled.div(
-  () => `
-  height: 40vh;
-  width: 25vw;
+const { breakpoints } = theme;
+const Container = styled.div`
+  height: 81%;
+  width: 40%;
   border-radius: 20px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 60vw;
-    height: 50
+  box-shadow: rgba(149, 157, 165, 70) 0px 8px 24px;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    height: 50%;
   }
-`
-);
+`;
 
 const IncomeChart: React.FC = () => {
   const { transactions } = useContext(TransactionContext);
@@ -56,7 +55,7 @@ const IncomeChart: React.FC = () => {
   };
   return (
     <Container>
-      <ReactApexChart options={options} series={incomeChart} type="line" height={235} />
+      <ReactApexChart options={options} series={incomeChart} type="line" height={210} />
     </Container>
   );
 };

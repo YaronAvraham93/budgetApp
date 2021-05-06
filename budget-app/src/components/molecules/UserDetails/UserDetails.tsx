@@ -2,43 +2,40 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
-import { IUserProfile } from '../../../models/index';
+import { IUserDetails } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
 import theme from '../../../style/theme/theme';
 
-const Container = styled.div(
-  () => `
+const { colors } = theme;
+const Container = styled.div`
   display: flex;
-  flex-direction: column;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0.9;
-  background-color:${theme.colors.lightOrange};
+  background-color: ${colors.orange.lightOrange};
   border-radius: 1rem;
-  margin-bottom: 5px;
-  height: 22vh;
-  width: 12vw;
+  height: 100%;
+  width: 100%;
   @media (max-width: 768px) {
-    width: 20vw;
-    height: 10vh;
+    width: 20%;
+    height: 10%;
     display: flex;
     flex-direction: column;
   }
-`
-);
+`;
 
-const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, lastName }) => (
+const UserDetails: React.FC<IUserDetails> = ({ avatarSrc, email, firstName, lastName }) => (
   <Container>
     <Avatar src={avatarSrc} />
     <Typography size={SelectSize.sm}>
       {firstName}
+      -
       {lastName}
     </Typography>
-    <Typography size={SelectSize.xs} color="#bdbfbf">
+    <Typography size={SelectSize.xs} color={colors.gray.lightGray}>
       {email}
     </Typography>
   </Container>
 );
 
-export default UserProfile;
+export default UserDetails;

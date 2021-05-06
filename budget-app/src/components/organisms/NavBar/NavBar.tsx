@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import NavbarItem from '../../molecules/NavbarItem/NavbarItem';
@@ -6,52 +6,75 @@ import CurrentBalance from '../../molecules/CurrentBalance/CurrentBalance';
 import navbarItem from '../../../constants/SidebarItem';
 import theme from '../../../style/theme/theme';
 import { UserContext } from '../../../contexts/userContext';
+import { IOpen } from '../../../models';
+import SelectCurrency from '../../molecules/SelectCurrency/SelectCurrency';
 
-const Container = styled.div(
-  () => `
+const { colors, breakpoints } = theme;
+const Container = styled.div<IOpen>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${theme.colors.darkPurple};
+  background-color: ${colors.purple.darkPurple};
   border-radius: 1rem;
-  height: 140vh;
-  width: 15vw;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    width: 10vw;
-    height: 10vh;
-
+  height: 100%;
+  width: 100%;
+  @media (max-width: ${breakpoints.tablet}) {
+    display: flex;
+    height: ${({ open }) => (open ? '100%' : ' 10%')};
+    width: ${({ open }) => (open ? '100%' : '8%')};
+    transition: width 1s;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
-`
-);
-const CurrentBalanceWrapper = styled.div(
-  () => `
+`;
+
+const CurrentBalanceWrapper = styled.div<IOpen>`
+  height: 20%;
+  width: 84%;
   padding-top: 50px;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    display: none;
-   
-  }`
-);
-const NavbarList = styled.ul`
-  padding: 0;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  @media (max-width: ${breakpoints.tablet}) {
+    display: ${({ open }) => (open ? 'translateX(100%)' : 'none')};
+    height: ${({ open }) => (open ? '30%' : '0%')};
+    width: ${({ open }) => (open ? '100%' : '0%')};
+    display: ${({ open }) => (open ? 'flex' : 'none')};
+    justify-content: center;
+  }
+`;
+
+const NavbarList = styled.ul<IOpen>`
+  display: flex;
+  height: 35%;
+  margin: 0;
+  padding-right: 65px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 50%;
+    width: 93%;
+    display: ${({ open }) => (open ? 'flex' : 'none')};
+    align-items: flex-start;
+  }
 `;
 
 const NavBar: React.FC = () => {
   const { user } = useContext(UserContext);
   const { currentBalance } = user;
+  const [open, setOpen] = useState(false);
   return (
-    <Container>
-      <CurrentBalanceWrapper>
-        <CurrentBalance text={currentBalance} title="Current Balance" />
+    <Container open={open} onClick={() => setOpen(!open)}>
+      <CurrentBalanceWrapper open={open}>
+        <CurrentBalance open={open} currentBalance={currentBalance} title="Current Balance" />
       </CurrentBalanceWrapper>
-      <NavbarList>
+      <NavbarList open={open}>
         {navbarItem.map(({ icon, title, route, id }) => (
           <Link to={route}>
             <NavbarItem icon={icon} title={title} key={id} />
           </Link>
         ))}
       </NavbarList>
+      <SelectCurrency onChange={() => {}} />
     </Container>
   );
 };

@@ -6,74 +6,74 @@ import { SelectSize } from '../../../containers/enums/index';
 import img from '../../../assets/images/Backgrund.jpg';
 import theme from '../../../style/theme/theme';
 
-const Container = styled.div(
-  () => `
+const { breakpoints, colors } = theme;
+const Container = styled.div`
   background-image: url(${img});
   background-size: cover;
   background-position: center;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: rgba(149, 157, 165, 55) 0px 8px 24px;
-  height: 29vh;
-  width: 23vw;
-  display: block;
+  box-shadow: rgba(149, 157, 165, 70) 0px 8px 24px;
+  height: 61%;
+  width: 36%;
+  margin-right: 43px;
 
-  @media (max-width: ${theme.breakpoints.tablet}) {
-  width: 55vw;
-    height: 30vh;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 91%;
+    height: 40%;
   }
-`
-);
-const FullNameDateWrapper = styled.div(
-  () => `
+`;
+
+const FullNameDateWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 48vh;
+  width: 100%;
   justify-content: space-between;
-  height: 4vh;
+  height: 15%;
   align-items: center;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-  width:45vw;
-    height: 9vh;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: flex-end;
   }
-  
-`
-);
-const DateWrapper = styled.div(
-  () => `
+`;
+
+const DateWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    height: 0vh;
-    width: 0vw;
-    }
-`
-);
-const CardNumWerapper = styled.div(
-  () => `
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 20%;
+  }
+`;
+
+const CardNumWerapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 17vh;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    height: 12vh;
+  height: 50%;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 33%;
     display: block;
-    }
-`
-);
+    padding-left: 60px;
+  }
+`;
+
 const TitelWrapper = styled.div`
   display: block;
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 40%;
+  }
 `;
-const FullNameWrapper = styled.div(
-  () => `
+const FullNameWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    height: 12vh;
-    width: 14vw;
-    }
-`
-);
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+`;
 
 const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastName, year, month }) => (
   <Container>
@@ -90,7 +90,7 @@ const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastNa
     </CardNumWerapper>
     <FullNameDateWrapper>
       <FullNameWrapper>
-        <Typography size={SelectSize.xs} color="#bdbfbf">
+        <Typography size={SelectSize.xs} color={colors.gray.lightGray}>
           CARD HOLDER
         </Typography>
         <Typography size={SelectSize.sm} color="white">
@@ -100,7 +100,7 @@ const CreditCard: React.FC<ICreditCardProps> = ({ last4Digits, firstName, lastNa
         </Typography>
       </FullNameWrapper>
       <DateWrapper>
-        <Typography size={SelectSize.xs} color="#bdbfbf">
+        <Typography size={SelectSize.xs} color={colors.gray.lightGray}>
           VALID THRU
         </Typography>
         <Typography size={SelectSize.sm} color="white">

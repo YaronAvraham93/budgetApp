@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import UserInfro from './UserInfo';
+import UserDetails from './UserDetails';
 
 export default {
-  title: 'organisms/UserInfro',
-  component: UserInfro,
+  title: 'organisms/UserDetails',
+  component: UserDetails,
 } as Meta;
 
-const Template: Story = (args) => <UserInfro {...args} />;
-export const SUserInfro = Template.bind({});
+const Template: Story = (args) => <UserDetails {...args} />;
+export const SUserDetails = Template.bind({});

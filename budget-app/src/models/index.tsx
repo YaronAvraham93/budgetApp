@@ -20,7 +20,8 @@ export interface INavbarItem {
 }
 export interface ICurrentBalanceProps {
   title?: string;
-  text?: string;
+  currentBalance?: string;
+  open: boolean;
 }
 export interface ICreditCardProps {
   last4Digits: number;
@@ -35,28 +36,34 @@ export interface ISummaryCard {
   sinceLastMonth: string;
   title: string;
   subtitle: string;
-  subtiteltwo: string;
   backgroundColor?: string;
 }
-export interface IUserProfile {
+export interface IUserDetails {
   avatarSrc?: string;
   email: string;
   firstName: string;
   lastName: string;
 }
 export interface ITransaction {
+  [key: string]: string | number | any;
   date: string;
   paymentType: string;
   paymentMethod: string;
   amount: number;
   currency: string;
-  category?: string;
-  company?: string;
-  cancelled?: boolean;
   location: {
     country: string;
     city: string;
   };
+}
+export interface ITransactionInfo {
+  paymentMethod: string;
+  date: string;
+  paymentType: string;
+  amount: number;
+  currency: string;
+  country: string;
+  city: string;
 }
 
 export interface ITransactionInitialState {
@@ -80,7 +87,27 @@ export interface IUserInitialState {
   user: IUser;
   setUser: (user: IUser) => void;
 }
+export interface IOpen {
+  open: boolean;
+}
 export interface IAction {
   type: string;
   payload: any;
+}
+export interface IPagination {
+  transactionsPerPage: number;
+  totalTransactions: number;
+  paginate: (number: number) => void;
+}
+export interface IArrTransactions {
+  arrTransactions: ITransaction[];
+}
+export interface ICurrency {
+  currencyRate: any;
+  selectedCurrency: string;
+  setSelectCurrency: (currency: string) => void;
+  setCurrencyRate: (currencyRate: object) => void;
+}
+export interface ICurrencyRowProps {
+  onChange: () => void;
 }

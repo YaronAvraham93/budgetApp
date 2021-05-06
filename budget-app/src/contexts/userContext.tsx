@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 import { IUser, IUserInitialState } from '../models/index';
-import userReducer from './userReducer';
+import userReducer from './reducer/userReducer';
 import { ActionType } from '../containers/enums/index';
 
 const initialState = {
