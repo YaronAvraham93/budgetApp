@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '../../atoms/Typography/Typography';
 import { SelectSize } from '../../../containers/enums/index';
-import { IUserProfile } from '../../../models/index';
+import { IUserDetails } from '../../../models/index';
 import Avatar from '../../atoms/Avatar/Avatar';
 import theme from '../../../style/theme/theme';
 
@@ -24,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, lastName }) => (
+const UserDetails: React.FC<IUserDetails> = ({ avatarSrc, email, firstName, lastName }) => (
   <Container>
     <Avatar src={avatarSrc} />
     <Typography size={SelectSize.sm}>
@@ -38,4 +38,4 @@ const UserProfile: React.FC<IUserProfile> = ({ avatarSrc, email, firstName, last
   </Container>
 );
 
-export default UserProfile;
+export default UserDetails;

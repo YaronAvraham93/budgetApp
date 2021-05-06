@@ -12,6 +12,7 @@ import { TransactionContext } from '../../../contexts/contextTransaction';
 import { UserContext } from '../../../contexts/userContext';
 import theme from '../../../style/theme/theme';
 import { CurrencyContext } from '../../../contexts/currencyContext';
+import UserProfile from '../UserProfile/UserProfile';
 
 const Container = styled.div`
   display: grid;
@@ -70,6 +71,7 @@ const HomePage: React.FC = () => {
             <Route exact path="/" component={Dashboard} />
             <Route path="/Transactions" component={Transactions} />
             <Route path="/Charts" component={Charts} />
+            <Route path="/UserProfile" component={UserProfile} />
           </Switch>
           <UserInfo />
         </>

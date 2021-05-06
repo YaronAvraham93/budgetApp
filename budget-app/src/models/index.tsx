@@ -38,7 +38,7 @@ export interface ISummaryCard {
   subtitle: string;
   backgroundColor?: string;
 }
-export interface IUserProfile {
+export interface IUserDetails {
   avatarSrc?: string;
   email: string;
   firstName: string;
