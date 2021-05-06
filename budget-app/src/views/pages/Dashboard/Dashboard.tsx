@@ -33,12 +33,12 @@ const ActivviyWapper = styled.div`
   }
 `;
 const CreaditCardWapper = styled.div`
-  height: 40%;
+  height: 32%;
   width: 100%;
   display: flex;
-  padding-top: 15px;
-  justify-content: space-around;
-  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
   @media (max-width: ${breakpoints.tablet}) {
     height: 62%;
     width: 100%;
@@ -63,15 +63,13 @@ const SummaryCardWapper = styled.div`
 `;
 
 const Dashboard: React.FC = () => {
-  const { currencyRate, selectedCurrency } = useContext(CurrencyContext);
   const { transactions } = useContext(TransactionContext);
   const { user } = useContext(UserContext);
+  const { currencyRate } = useContext(CurrencyContext);
   const { creditCard, firstName, lastName } = user;
-  const income = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Income'));
-  const expenses = getAverage(transactions.filter(({ paymentType }) => paymentType === 'Expenses'));
+  const income = transactions.filter(({ paymentType }) => paymentType === 'Income');
+  const expenses = transactions.filter(({ paymentType }) => paymentType === 'Expenses');
 
-  const totalIncomes = +income / currencyRate[selectedCurrency];
-  const totalExpenses = +expenses / currencyRate[selectedCurrency];
   return (
     <Container>
       <CreaditCardWapper>
@@ -88,18 +86,16 @@ const Dashboard: React.FC = () => {
         <SummaryCard
           title="Income"
           subtitle="Average"
-          revenue={totalIncomes}
-          sinceLastMonth="+5.0%"
-          subtiteltwo="Since last month"
+          revenue={getAverage(income, currencyRate)}
+          sinceLastMonth="Since last month"
           icon={faBox}
           backgroundColor={colors.blue.lightBlue}
         />
         <SummaryCard
           title="Expenses"
           subtitle="Average"
-          revenue={totalExpenses}
-          sinceLastMonth="+5.0%"
-          subtiteltwo="Since last month"
+          revenue={getAverage(expenses, currencyRate)}
+          sinceLastMonth="Since last month"
           icon={faChartLine}
           backgroundColor={colors.blue.darkBlue}
         />

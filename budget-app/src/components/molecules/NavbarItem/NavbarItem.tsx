@@ -12,8 +12,6 @@ const Container = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 8%;
-  width: 12%;
   cursor: pointer;
   &:hover {
     opacity: 1;
@@ -23,10 +21,15 @@ const Container = styled.li`
     display: block;
   }
 `;
+const Sicon = styled.div`
+  width: 0%;
+`;
 
 const NavbarItem: React.FC<INavbarItem> = ({ title, icon }) => (
   <Container>
-    <Icon icon={icon} color="white" />
+    <Sicon>
+      <Icon icon={icon} color="white" />
+    </Sicon>
     <Typography size={SelectSize.sm}>{title}</Typography>
   </Container>
 );

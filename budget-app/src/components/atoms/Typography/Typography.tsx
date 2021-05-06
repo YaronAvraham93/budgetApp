@@ -21,7 +21,8 @@ const getSize = (size?: SelectSize) => {
 const STypographyProps = styled.label<ITypographyProps>`
   ${(props) => getSize(props.size)};
   ${(props) => `color:${props.color}`};
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
   @media (max-width: 768px) {
     width: 10%;
     height: 10%;

@@ -52,15 +52,7 @@ const IconWrapper = styled.div`
 const TitlelWrapper = styled.div`
   grid-column: 1/3;
 `;
-const SummaryCard: React.FC<ISummaryCard> = ({
-  backgroundColor,
-  icon,
-  subtiteltwo,
-  subtitle,
-  title,
-  revenue,
-  sinceLastMonth,
-}) => (
+const SummaryCard: React.FC<ISummaryCard> = ({ backgroundColor, icon, subtitle, title, revenue, sinceLastMonth }) => (
   <Container>
     <TitlelWrapper>
       <Typography size={SelectSize.md}>{title}</Typography>
@@ -75,9 +67,6 @@ const SummaryCard: React.FC<ISummaryCard> = ({
     </RevenueWrapper>
     <LastMonthWrapper>
       <Typography size={SelectSize.sm}>{sinceLastMonth}</Typography>
-      <Typography size={SelectSize.sm} color={colors.gray.lightGray}>
-        {subtiteltwo}
-      </Typography>
     </LastMonthWrapper>
     <IconWrapper>
       <Icon icon={icon || 'check'} color="white" width="100%" height="90%" backgroundColor={backgroundColor} />

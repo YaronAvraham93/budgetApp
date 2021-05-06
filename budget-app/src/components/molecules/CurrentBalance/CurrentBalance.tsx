@@ -26,10 +26,11 @@ const Container = styled.div<ICurrentBalanceProps>`
   }
 `;
 
-const CurrentBalance: React.FC<ICurrentBalanceProps> = ({ open, text, title }) => (
+const CurrentBalance: React.FC<ICurrentBalanceProps> = ({ open, currentBalance, title }) => (
   <Container open={open}>
     <Typography size={SelectSize.lg} color="white">
-      {text}
+      $
+      {currentBalance}
     </Typography>
     <Typography size={SelectSize.sm} color="white">
       {title}

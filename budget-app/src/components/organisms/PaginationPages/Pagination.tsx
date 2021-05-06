@@ -6,6 +6,7 @@ import theme from '../../../style/theme/theme';
 const { breakpoints } = theme;
 const SNav = styled.nav`
   padding-left: 15px;
+
   @media (max-width: ${breakpoints.tablet}) {
     height: 15%;
     display: flex;
@@ -19,7 +20,9 @@ const SUl = styled.ul`
 const SLi = styled.li`
   padding-left: 15px;
 `;
-const SLink = styled.button``;
+const SLink = styled.button`
+  cursor: pointer;
+`;
 const Pagination: React.FC<IPagination> = ({ transactionsPerPage, totalTransactions, paginate }) => {
   const perNumbers = [];
 

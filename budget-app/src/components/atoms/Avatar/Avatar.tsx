@@ -13,6 +13,7 @@ const SAvatar = styled.div<SAvatarBoxProps>`
   ${({ src }) => setImage(src)};
   height: 54%;
   width: 50%;
+  margin-bottom: 13px;
 `;
 
 const Avatar: React.FC<IAvatarProps> = ({ src }) => <SAvatar src={src} />;

@@ -30,7 +30,7 @@ const Container = styled.div<IOpen>`
 `;
 
 const CurrentBalanceWrapper = styled.div<IOpen>`
-  height: 14%;
+  height: 20%;
   width: 84%;
   padding-top: 50px;
   @media (max-width: ${breakpoints.tablet}) {
@@ -46,8 +46,9 @@ const NavbarList = styled.ul<IOpen>`
   display: flex;
   height: 35%;
   margin: 0;
-  padding: 0;
+  padding-right: 65px;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-evenly;
   @media (max-width: ${breakpoints.tablet}) {
     height: 50%;
@@ -64,7 +65,7 @@ const NavBar: React.FC = () => {
   return (
     <Container open={open} onClick={() => setOpen(!open)}>
       <CurrentBalanceWrapper open={open}>
-        <CurrentBalance open={open} text={currentBalance} title="Current Balance" />
+        <CurrentBalance open={open} currentBalance={currentBalance} title="Current Balance" />
       </CurrentBalanceWrapper>
       <NavbarList open={open}>
         {navbarItem.map(({ icon, title, route, id }) => (

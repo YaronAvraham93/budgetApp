@@ -6,7 +6,9 @@ import theme from '../../../style/theme/theme';
 
 const { breakpoints, colors } = theme;
 const Container = styled.div`
-  height: 85%;
+  height: 73%;
+  width: 100%;
+  margin-bottom: 4px;
   display: flex;
   align-items: flex-end;
   @media (max-width: ${breakpoints.tablet}) {
@@ -21,9 +23,8 @@ const SSelect = styled.select`
   border: none;
   font-size: 20px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  -webkit-appearance: button;
-  appearance: button;
   outline: none;
+  cursor: pointer;
 `;
 
 const SelectCurrency: FC<ICurrencyRowProps> = () => {

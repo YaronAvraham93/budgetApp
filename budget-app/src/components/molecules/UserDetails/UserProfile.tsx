@@ -12,10 +12,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0.9;
   background-color: ${colors.orange.lightOrange};
   border-radius: 1rem;
-  margin-bottom: 5px;
   height: 100%;
   width: 100%;
   @media (max-width: 768px) {

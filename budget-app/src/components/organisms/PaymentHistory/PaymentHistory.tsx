@@ -11,7 +11,7 @@ import { CurrencyContext } from '../../../contexts/currencyContext';
 
 const { breakpoints } = theme;
 const Container = styled.div`
-  width: 85%;
+  width: 87%;
 
   @media (max-width: ${breakpoints.tablet}) {
     width: 18%;

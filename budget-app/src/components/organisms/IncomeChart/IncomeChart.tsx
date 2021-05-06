@@ -7,7 +7,7 @@ import getTotalAmountByPaymentType from '../../../helpers/totalAmountByPaymentTy
 
 const { breakpoints } = theme;
 const Container = styled.div`
-  height: 85%;
+  height: 81%;
   width: 40%;
   border-radius: 20px;
   box-shadow: rgba(149, 157, 165, 70) 0px 8px 24px;

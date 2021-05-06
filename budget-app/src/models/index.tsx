@@ -20,7 +20,7 @@ export interface INavbarItem {
 }
 export interface ICurrentBalanceProps {
   title?: string;
-  text?: string;
+  currentBalance?: string;
   open: boolean;
 }
 export interface ICreditCardProps {
@@ -32,11 +32,10 @@ export interface ICreditCardProps {
 }
 export interface ISummaryCard {
   icon?: any;
-  revenue: number;
+  revenue: string;
   sinceLastMonth: string;
   title: string;
   subtitle: string;
-  subtiteltwo: string;
   backgroundColor?: string;
 }
 export interface IUserProfile {

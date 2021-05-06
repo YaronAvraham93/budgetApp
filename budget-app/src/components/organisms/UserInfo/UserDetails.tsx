@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import UserProfile from '../../molecules/UserProfile/UserProfile';
+import UserDetails from '../../molecules/UserDetails/UserProfile';
 import PaymentHistory from '../PaymentHistory/PaymentHistory';
 import theme from '../../../style/theme/theme';
 import { UserContext } from '../../../contexts/userContext';
@@ -10,10 +10,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.orange.lightOrange};
+  background-color: ${colors.orange.mediumOrange};
   border-radius: 1rem;
   margin-left: 25px;
-  height: 42%;
+  height: 34%;
   margin: 0;
   width: 100%;
   @media (max-width: ${breakpoints.tablet}) {
@@ -22,9 +22,12 @@ const Container = styled.div`
 `;
 
 const UserWrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  padding-top: 50px;
+  background-color: ${colors.orange.lightOrange};
+  border-radius: 1rem;
+  height: 65%;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;
 const PaymentListWrapper = styled.div`
   padding-top: 15px;
@@ -37,7 +40,7 @@ const UserInfo: React.FC = () => {
   return (
     <Container>
       <UserWrapper>
-        <UserProfile avatarSrc={avatar} firstName={firstName} lastName={lastName} email={email} />
+        <UserDetails avatarSrc={avatar} firstName={firstName} lastName={lastName} email={email} />
       </UserWrapper>
       <PaymentListWrapper>
         <PaymentHistory />
