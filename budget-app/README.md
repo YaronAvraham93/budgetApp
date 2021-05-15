@@ -13,6 +13,8 @@
 
 # About The Project
 
-![img(59)](https://cdn.dribbble.com/users/2017098/screenshots/7662703/media/9960af28e73fb4c6bfb9f7f68320f1a2.jpg)
+User interface specification:
+![img(59)](![Screenshot (61)](https://user-images.githubusercontent.com/69208518/118379900-d96f7d00-b5e6-11eb-94da-2ed259730398.png)
+)
 
 
