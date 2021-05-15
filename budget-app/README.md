@@ -20,4 +20,14 @@ This app is an app to review and manage ones expenses and incomes.
 
 It includes info about incomes, expenses and cancelled transactions.
 
-## Built With
+### Built With
+
+- [Storybook](https://storybook.js.org/)
+- [React](https://reactjs.org/)
+- [Styled-Components](https://styled-components.com/)
+- [Typescript](https://www.typescriptlang.org/docs/handbook/react.html)
+- [Apexcharts](https://apexcharts.com/)
+
+# Contact
+
+Project Link:https://github.com/YaronAvraham93/budgetApp
