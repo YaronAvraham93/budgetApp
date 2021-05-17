@@ -22,7 +22,6 @@ It includes info about incomes, expenses and cancelled transactions.
 
 ### Built With
 
-- [Storybook](https://storybook.js.org/)
 - [React](https://reactjs.org/)
 - [Styled-Components](https://styled-components.com/)
 - [Typescript](https://www.typescriptlang.org/docs/handbook/react.html)
