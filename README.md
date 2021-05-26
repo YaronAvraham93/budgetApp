@@ -1,14 +1,11 @@
-
 # Budget App
-
-
 
 ## Table of Contents
 
 1.About The Project.
 
- -  Built With
- 
+- Built With
+
 2.Contact
 
 # About The Project
